@@ -1,0 +1,1918 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Acclamons Jésus, un grand concert gospel porté par Michel Bakenda, artiste gospel.">
+  <title>Acclamons Jésus | Concert Gospel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,300,0,0&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #111827;
+      --night: #0d111b;
+      --night-2: #171d2a;
+      --paper: #f8f4ee;
+      --ivory: #fffaf2;
+      --gold: #deb24d;
+      --gold-deep: #9d6b16;
+      --wine: #74283d;
+      --teal: #176b62;
+      --muted: #667085;
+      --line: rgba(17, 24, 39, 0.14);
+      --white: #ffffff;
+      --radius: 8px;
+      --shadow: 0 26px 82px rgba(17, 24, 39, 0.16);
+      --container: min(1180px, calc(100vw - 40px));
+      color-scheme: light;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--ivory);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button {
+      border: 0;
+      cursor: pointer;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: "EB Garamond", Georgia, serif;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .material-symbols-rounded {
+      font-family: "Material Symbols Rounded";
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+      white-space: nowrap;
+      direction: ltr;
+      -webkit-font-feature-settings: "liga";
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      width: var(--container);
+      margin: 0 auto;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--gold-deep);
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 80;
+      color: var(--white);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      transition: background 220ms ease, color 220ms ease, border-color 220ms ease;
+    }
+
+    .site-header.is-scrolled,
+    .site-header.menu-active {
+      color: var(--ink);
+      background: rgba(255, 250, 242, 0.94);
+      border-bottom-color: rgba(17, 24, 39, 0.11);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 74px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .brand-logo {
+      width: auto;
+      height: 58px;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.22));
+    }
+
+    .nav-links {
+      justify-self: center;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      opacity: 0.84;
+      transition: color 180ms ease, opacity 180ms ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+      opacity: 1;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      gap: 10px;
+    }
+
+    .icon-button {
+      width: 44px;
+      height: 44px;
+      display: none;
+      place-items: center;
+      color: inherit;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius);
+    }
+
+    .site-header.is-scrolled .icon-button,
+    .site-header.menu-active .icon-button {
+      background: rgba(17, 24, 39, 0.04);
+      border-color: rgba(17, 24, 39, 0.13);
+    }
+
+    .button {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 18px;
+      color: var(--ink);
+      background: var(--gold);
+      border-radius: var(--radius);
+      font-size: 0.77rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 44px rgba(222, 178, 77, 0.3);
+    }
+
+    .button.ghost {
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.36);
+    }
+
+    .button.ghost:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .button.dark {
+      color: var(--white);
+      background: var(--night);
+      box-shadow: 0 18px 42px rgba(17, 24, 39, 0.2);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 90svh;
+      display: flex;
+      align-items: end;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(9, 12, 20, 0.92) 0%, rgba(9, 12, 20, 0.68) 48%, rgba(9, 12, 20, 0.26) 100%),
+        url("assets/video-poster.jpg") center / cover no-repeat;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -3;
+      filter: saturate(1.05) contrast(1.05);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(9, 12, 20, 0.92) 0%, rgba(9, 12, 20, 0.64) 48%, rgba(9, 12, 20, 0.22) 100%),
+        linear-gradient(0deg, rgba(9, 12, 20, 0.94) 0%, rgba(9, 12, 20, 0) 44%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(90deg, #000 0%, transparent 78%);
+      opacity: 0.48;
+    }
+
+    .hero-inner {
+      width: var(--container);
+      margin: 0 auto;
+      padding: 118px 0 48px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+      align-items: end;
+      gap: 42px;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      color: #f9dd91;
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .hero-kicker::before {
+      content: "";
+      width: 44px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      font-size: clamp(4.3rem, 11vw, 9.6rem);
+      line-height: 0.83;
+      font-weight: 700;
+    }
+
+    .hero-copy {
+      max-width: 660px;
+      margin-top: 28px;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: clamp(1rem, 1.6vw, 1.18rem);
+      line-height: 1.66;
+      overflow-wrap: break-word;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .hero-panel {
+      padding: 16px;
+      color: var(--white);
+      background: rgba(10, 14, 24, 0.56);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: var(--radius);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-panel span {
+      display: block;
+      margin-bottom: 9px;
+      color: rgba(255, 255, 255, 0.64);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-panel strong {
+      display: block;
+      font-family: "EB Garamond", Georgia, serif;
+      font-size: clamp(2rem, 3.6vw, 3rem);
+      line-height: 0.94;
+    }
+
+    .hero-panel p {
+      margin-top: 14px;
+      color: rgba(255, 255, 255, 0.76);
+      line-height: 1.6;
+    }
+
+    .countdown-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .countdown-heading span {
+      margin: 0;
+    }
+
+    .countdown-heading strong {
+      font-family: Inter, system-ui, sans-serif;
+      color: #f9dd91;
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 6px;
+    }
+
+    .countdown-item {
+      min-width: 0;
+      padding: 10px 7px 9px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius);
+    }
+
+    .countdown-item strong {
+      display: block;
+      font-family: "EB Garamond", Georgia, serif;
+      font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+      line-height: 0.9;
+    }
+
+    .countdown-item span {
+      display: block;
+      margin: 7px 0 0;
+      color: rgba(255, 255, 255, 0.66);
+      font-size: 0.58rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section {
+      padding: 104px 0;
+      scroll-margin-top: 88px;
+    }
+
+    .section.alt {
+      background: var(--paper);
+    }
+
+    .section.dark {
+      color: var(--white);
+      background: var(--night);
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 0.76fr) minmax(280px, 0.46fr);
+      align-items: end;
+      gap: 40px;
+      margin-bottom: 44px;
+    }
+
+    .section-heading h2 {
+      max-width: 780px;
+      font-size: clamp(2.55rem, 5.4vw, 5rem);
+      line-height: 0.95;
+      font-weight: 650;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .section.dark .section-heading p,
+    .section.dark .eyebrow {
+      color: rgba(255, 255, 255, 0.68);
+    }
+
+    .guest-stage {
+      position: relative;
+      padding: 72px 0;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(222, 178, 77, 0.2), transparent 34%),
+        linear-gradient(135deg, #0b0f19 0%, #141826 54%, #251024 100%);
+      overflow: hidden;
+    }
+
+    .guest-stage::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      background-size: 64px 64px;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .guest-stage-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(300px, 0.96fr) minmax(280px, 0.62fr);
+      gap: 36px;
+      align-items: center;
+    }
+
+    .guest-visual {
+      position: relative;
+      min-height: 560px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 26px 90px rgba(0, 0, 0, 0.32);
+    }
+
+    .guest-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transform: scale(1.05);
+      transition: opacity 800ms ease, transform 900ms ease;
+    }
+
+    .guest-slide.is-active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .guest-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: saturate(1.04) contrast(1.03);
+    }
+
+    .guest-slide::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(0deg, rgba(8, 11, 18, 0.82), transparent 48%),
+        linear-gradient(90deg, rgba(8, 11, 18, 0.42), transparent 58%);
+    }
+
+    .guest-caption {
+      position: absolute;
+      inset: auto 24px 24px;
+      z-index: 2;
+      max-width: 620px;
+    }
+
+    .guest-caption span {
+      color: #f6d98d;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .guest-caption h3 {
+      margin-top: 8px;
+      font-size: clamp(3rem, 6vw, 5.4rem);
+      line-height: 0.9;
+    }
+
+    .guest-caption p {
+      max-width: 520px;
+      margin-top: 14px;
+      color: rgba(255, 255, 255, 0.76);
+      line-height: 1.64;
+    }
+
+    .guest-copy {
+      display: grid;
+      gap: 24px;
+    }
+
+    .guest-copy h2 {
+      max-width: 520px;
+      font-size: clamp(2.45rem, 5vw, 4.5rem);
+      line-height: 0.95;
+      font-weight: 650;
+    }
+
+    .guest-copy > p {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.75;
+    }
+
+    .guest-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .guest-trigger {
+      width: 100%;
+      min-height: 66px;
+      display: grid;
+      grid-template-columns: 44px 1fr auto;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 12px;
+      color: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius);
+      text-align: left;
+      transition: color 180ms ease, background 180ms ease, border-color 180ms ease, transform 180ms ease;
+    }
+
+    .guest-trigger:hover,
+    .guest-trigger.is-active {
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.11);
+      border-color: rgba(222, 178, 77, 0.6);
+      transform: translateX(4px);
+    }
+
+    .guest-trigger img {
+      width: 44px;
+      height: 44px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .guest-trigger strong {
+      display: block;
+      font-size: 0.96rem;
+      font-weight: 900;
+    }
+
+    .guest-trigger-copy span {
+      display: block;
+      margin-top: 3px;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .guest-trigger .material-symbols-rounded {
+      color: #f6d98d;
+      opacity: 0;
+      transition: opacity 180ms ease;
+    }
+
+    .guest-trigger.is-active .material-symbols-rounded {
+      opacity: 1;
+    }
+
+    .guest-progress {
+      height: 3px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+    }
+
+    .guest-progress span {
+      display: block;
+      width: 25%;
+      height: 100%;
+      background: var(--gold);
+      border-radius: inherit;
+      transform: translateX(0);
+      transition: transform 500ms ease;
+    }
+
+    @media (min-width: 981px) {
+      .guest-stage-inner {
+        grid-template-columns: minmax(330px, 500px) minmax(380px, 1fr);
+        gap: 54px;
+      }
+
+      .guest-visual {
+        width: min(100%, 500px);
+        min-height: 660px;
+        aspect-ratio: 4 / 5;
+        justify-self: start;
+        background: #05070d;
+      }
+
+      .guest-slide img {
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(320px, 1.08fr);
+      align-items: center;
+      gap: 54px;
+    }
+
+    .story-copy {
+      display: grid;
+      gap: 24px;
+    }
+
+    .story-copy h2 {
+      max-width: 660px;
+      font-size: clamp(2.6rem, 5.1vw, 4.9rem);
+      line-height: 0.95;
+      font-weight: 650;
+    }
+
+    .lead {
+      color: #344054;
+      font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+      line-height: 1.75;
+    }
+
+    .pillars {
+      display: grid;
+      gap: 0;
+      margin-top: 8px;
+    }
+
+    .pillar {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .pillar:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .pillar-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      background: var(--teal);
+      border-radius: var(--radius);
+    }
+
+    .pillar:nth-child(2) .pillar-icon {
+      background: var(--wine);
+    }
+
+    .pillar:nth-child(3) .pillar-icon {
+      background: var(--gold-deep);
+    }
+
+    .pillar h3 {
+      margin: 0 0 5px;
+      font-family: Inter, system-ui, sans-serif;
+      font-size: 1rem;
+      font-weight: 900;
+    }
+
+    .pillar p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .image-feature {
+      position: relative;
+      min-height: 620px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--night);
+      box-shadow: var(--shadow);
+    }
+
+    .image-feature img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .image-feature::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(0deg, rgba(13, 17, 27, 0.78), transparent 50%),
+        linear-gradient(90deg, rgba(13, 17, 27, 0.26), transparent 58%);
+    }
+
+    .feature-caption {
+      position: absolute;
+      inset: auto 22px 22px;
+      z-index: 2;
+      display: grid;
+      gap: 8px;
+      color: var(--white);
+    }
+
+    .feature-caption strong {
+      font-family: "EB Garamond", Georgia, serif;
+      font-size: 2.15rem;
+      line-height: 1;
+    }
+
+    .feature-caption span {
+      max-width: 430px;
+      color: rgba(255, 255, 255, 0.76);
+      line-height: 1.6;
+    }
+
+    .michel-grid {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.22fr);
+      gap: 36px;
+      align-items: stretch;
+    }
+
+    .guests-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .guest-card {
+      min-height: 210px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22px;
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(17, 24, 39, 0.1);
+      border-radius: var(--radius);
+    }
+
+    .guest-card span {
+      color: var(--gold-deep);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .guest-card h3 {
+      margin-top: 30px;
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .guest-card p {
+      margin-top: 10px;
+      color: var(--muted);
+      line-height: 1.62;
+    }
+
+    .portrait-card,
+    .live-card {
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--night-2);
+      box-shadow: 0 18px 54px rgba(17, 24, 39, 0.14);
+    }
+
+    .portrait-card img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .portrait-body {
+      display: grid;
+      gap: 10px;
+      padding: 22px;
+      color: var(--white);
+    }
+
+    .portrait-body span {
+      color: #f7dc93;
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .portrait-body h3 {
+      font-size: 2.2rem;
+      line-height: 1;
+    }
+
+    .portrait-body p {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.62;
+    }
+
+    .live-card {
+      position: relative;
+      min-height: 100%;
+    }
+
+    .live-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 620px;
+      object-fit: cover;
+    }
+
+    .live-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(13, 17, 27, 0.72), transparent 48%);
+    }
+
+    .live-caption {
+      position: absolute;
+      inset: auto 24px 24px;
+      z-index: 2;
+      max-width: 620px;
+      color: var(--white);
+    }
+
+    .live-caption h3 {
+      margin-bottom: 10px;
+      font-size: clamp(2.3rem, 4.4vw, 4rem);
+      line-height: 0.95;
+    }
+
+    .live-caption p {
+      color: rgba(255, 255, 255, 0.76);
+      line-height: 1.65;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .event-row {
+      display: grid;
+      grid-template-columns: 116px 1fr auto;
+      align-items: center;
+      gap: 22px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .event-row:last-child {
+      border-bottom: 0;
+    }
+
+    .event-time {
+      color: var(--gold-deep);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .event-main h3 {
+      margin: 0 0 7px;
+      font-family: Inter, system-ui, sans-serif;
+      font-size: clamp(1.08rem, 1.8vw, 1.32rem);
+      font-weight: 900;
+    }
+
+    .event-main p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 10px;
+      color: var(--night);
+      background: rgba(222, 178, 77, 0.22);
+      border-radius: var(--radius);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .access-grid {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+      gap: 40px;
+      align-items: start;
+    }
+
+    .access-copy h2 {
+      max-width: 560px;
+      font-size: clamp(2.7rem, 5.2vw, 4.9rem);
+      line-height: 0.95;
+      font-weight: 650;
+    }
+
+    .access-copy p {
+      margin-top: 20px;
+      color: rgba(255, 255, 255, 0.68);
+      line-height: 1.75;
+    }
+
+    .passes {
+      display: grid;
+      gap: 14px;
+    }
+
+    .pass-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: center;
+      padding: 22px;
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius);
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .pass-card:hover,
+    .pass-card.is-selected {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.11);
+      border-color: rgba(222, 178, 77, 0.82);
+    }
+
+    .pass-card h3 {
+      margin: 0 0 8px;
+      font-family: Inter, system-ui, sans-serif;
+      font-size: 1.05rem;
+      font-weight: 900;
+    }
+
+    .pass-card p {
+      color: rgba(255, 255, 255, 0.66);
+      line-height: 1.55;
+    }
+
+    .pass-note {
+      color: #f6d98d;
+      font-family: "EB Garamond", Georgia, serif;
+      font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr 0.88fr;
+      grid-auto-rows: 230px;
+      gap: 14px;
+    }
+
+    .media-tile {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--night);
+      box-shadow: 0 14px 44px rgba(17, 24, 39, 0.1);
+    }
+
+    .media-tile.large {
+      grid-row: span 2;
+    }
+
+    .media-tile.wide {
+      grid-column: span 2;
+    }
+
+    .media-tile img,
+    .media-tile video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .media-tile::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(13, 17, 27, 0.54), transparent 54%);
+    }
+
+    .media-caption {
+      position: absolute;
+      inset: auto 14px 14px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .final-cta {
+      padding: 82px 0;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(116, 40, 61, 0.94), rgba(23, 107, 98, 0.9)),
+        url("assets/michel-bakenda-live.png") center / cover no-repeat;
+    }
+
+    .cta-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(320px, 0.58fr);
+      align-items: center;
+      gap: 40px;
+    }
+
+    .cta-inner h2 {
+      max-width: 760px;
+      font-size: clamp(2.6rem, 5vw, 4.8rem);
+      line-height: 0.95;
+      font-weight: 650;
+    }
+
+    .cta-inner p {
+      max-width: 620px;
+      margin-top: 18px;
+      color: rgba(255, 255, 255, 0.74);
+      line-height: 1.7;
+    }
+
+    .signup {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: var(--radius);
+      backdrop-filter: blur(16px);
+    }
+
+    .signup input {
+      min-width: 0;
+      min-height: 50px;
+      padding: 0 14px;
+      color: var(--white);
+      background: transparent;
+      border: 0;
+      outline: 0;
+    }
+
+    .signup input::placeholder {
+      color: rgba(255, 255, 255, 0.62);
+    }
+
+    .form-note {
+      min-height: 20px;
+      margin-top: 10px;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 0.88rem;
+    }
+
+    .site-footer {
+      padding: 42px 0;
+      background: var(--ivory);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      color: #475467;
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-weight: 800;
+    }
+
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: opacity 700ms ease, transform 700ms ease;
+    }
+
+    body.animations-ready .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+    }
+
+    body.animations-ready .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+
+    @media (max-width: 980px) {
+      :root {
+        --container: min(100vw - 32px, 760px);
+      }
+
+      .nav {
+        grid-template-columns: auto auto;
+      }
+
+      .nav-links {
+        position: fixed;
+        inset: 74px 16px auto;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px;
+        color: var(--ink);
+        background: rgba(255, 250, 242, 0.98);
+        border: 1px solid rgba(17, 24, 39, 0.1);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.is-open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 16px;
+        border-bottom: 1px solid rgba(17, 24, 39, 0.08);
+      }
+
+      .nav-links a:last-child {
+        border-bottom: 0;
+      }
+
+      .nav-actions {
+        justify-self: end;
+      }
+
+      .nav-actions .button {
+        display: none;
+      }
+
+      .icon-button {
+        display: grid;
+      }
+
+      .hero {
+        min-height: 88svh;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 96px 0 34px;
+      }
+
+      .hero-panel {
+        max-width: 560px;
+      }
+
+      .media-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .section-heading,
+      .guest-stage-inner,
+      .story-grid,
+      .michel-grid,
+      .guests-grid,
+      .access-grid,
+      .cta-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .live-card img {
+        min-height: 520px;
+      }
+
+      .guest-visual {
+        min-height: 520px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      :root {
+        --container: min(100vw - 28px, 520px);
+      }
+
+      .brand-logo {
+        height: 50px;
+      }
+
+      .hero {
+        min-height: 86svh;
+      }
+
+      .hero h1 {
+        max-width: 100%;
+        font-size: clamp(3.05rem, 15vw, 4.85rem);
+      }
+
+      .hero-copy {
+        max-width: 31ch;
+        margin-top: 18px;
+        font-size: 0.98rem;
+        line-height: 1.55;
+      }
+
+      .hero-actions {
+        margin-top: 22px;
+      }
+
+      .hero-actions .button {
+        width: 100%;
+      }
+
+      .hero-panel {
+        margin-top: 4px;
+      }
+
+      .countdown-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .countdown-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .media-grid,
+      .guests-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 76px 0;
+      }
+
+      .guest-stage {
+        padding: 56px 0;
+      }
+
+      .guest-stage-inner {
+        gap: 26px;
+      }
+
+      .guest-visual {
+        min-height: 430px;
+      }
+
+      .guest-caption {
+        inset: auto 16px 16px;
+      }
+
+      .guest-caption h3 {
+        font-size: clamp(2.45rem, 13vw, 3.6rem);
+      }
+
+      .guest-trigger {
+        grid-template-columns: 40px 1fr auto;
+      }
+
+      .guest-trigger img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .section-heading {
+        margin-bottom: 34px;
+      }
+
+      .image-feature {
+        min-height: 430px;
+      }
+
+      .portrait-card img {
+        height: 390px;
+      }
+
+      .live-card img {
+        min-height: 430px;
+      }
+
+      .event-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .event-row .tag {
+        justify-self: start;
+      }
+
+      .pass-card {
+        grid-template-columns: 1fr;
+      }
+
+      .pass-note {
+        font-size: 2.25rem;
+      }
+
+      .media-tile,
+      .media-tile.large,
+      .media-tile.wide {
+        min-height: 260px;
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+      .signup {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <nav class="nav container" aria-label="Navigation principale">
+      <a class="brand" href="#top" aria-label="Acclamons Jésus">
+        <img class="brand-logo" src="assets/logo-acclamons-jesus.png" alt="Acclamons Jésus">
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#concept">Concept</a>
+        <a href="#programme">Programme</a>
+        <a href="#artistes">Artistes</a>
+        <a href="#acces">Accès</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a class="button" href="#contact">
+          <span class="material-symbols-rounded" aria-hidden="true">confirmation_number</span>
+          Réserver
+        </a>
+        <button class="icon-button" id="menuButton" type="button" aria-label="Ouvrir le menu" aria-controls="navLinks" aria-expanded="false">
+          <span class="material-symbols-rounded" aria-hidden="true">menu</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Accueil">
+      <video class="hero-video" autoplay muted loop playsinline poster="assets/video-poster.jpg">
+        <source src="assets/hero-video.mp4" type="video/mp4">
+      </video>
+      <div class="hero-inner">
+        <div>
+          <h1>Acclamons Jésus</h1>
+          <p class="hero-copy">Une grande soirée de louange et d'adoration portée par Michel Bakenda, artiste gospel.</p>
+          <div class="hero-actions">
+            <a class="button" href="#contact">
+              <span class="material-symbols-rounded" aria-hidden="true">confirmation_number</span>
+              Réserver
+            </a>
+            <a class="button ghost" href="#artistes">
+              <span class="material-symbols-rounded" aria-hidden="true">group</span>
+              Voir les artistes
+            </a>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="Compte à rebours">
+          <div class="countdown-heading">
+            <span>Compte à rebours</span>
+            <strong>30 août 2026</strong>
+          </div>
+          <div class="countdown-grid" id="countdown">
+            <div class="countdown-item"><strong data-unit="days">00</strong><span>Jours</span></div>
+            <div class="countdown-item"><strong data-unit="hours">00</strong><span>Heures</span></div>
+            <div class="countdown-item"><strong data-unit="minutes">00</strong><span>Min</span></div>
+            <div class="countdown-item"><strong data-unit="seconds">00</strong><span>Sec</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="guest-stage" id="artistes" aria-label="Invités">
+      <div class="guest-stage-inner container">
+        <div class="guest-visual reveal" id="guestVisual">
+          <article class="guest-slide is-active" data-guest-slide="0">
+            <img src="assets/moise-mbiye.jpg" alt="Moise Mbiye">
+            <div class="guest-caption">
+              <span>Invité</span>
+              <h3>Moise Mbiye</h3>
+              <p>Une voix de foi et de profondeur pour une soirée tournée vers l'adoration.</p>
+            </div>
+          </article>
+          <article class="guest-slide" data-guest-slide="1">
+            <img src="assets/natalie-makoma.jpg" alt="Natalie Makoma">
+            <div class="guest-caption">
+              <span>Invitée</span>
+              <h3>Natalie Makoma</h3>
+              <p>Une présence lumineuse pour porter la célébration avec force et émotion.</p>
+            </div>
+          </article>
+          <article class="guest-slide" data-guest-slide="2">
+            <img src="assets/bishop-benjamin-dube.jpeg" alt="Bishop Benjamin Dube">
+            <div class="guest-caption">
+              <span>Invité spécial</span>
+              <h3>Bishop Benjamin Dube</h3>
+              <p>Une dimension internationale pour élever l'atmosphère de louange.</p>
+            </div>
+          </article>
+          <article class="guest-slide" data-guest-slide="3">
+            <img src="assets/eunice-manyanga.jpg" alt="Eunice Manyanga">
+            <div class="guest-caption">
+              <span>Invitée</span>
+              <h3>Eunice Manyanga</h3>
+              <p>Une couleur vocale chaleureuse pour rejoindre le cœur du public.</p>
+            </div>
+          </article>
+        </div>
+        <div class="guest-copy reveal">
+          <div>
+            <p class="eyebrow">Invités</p>
+            <h2>Ils rejoignent l'acclamation.</h2>
+          </div>
+          <p>Les invités apparaissent un par un, comme une annonce de scène. Chaque nom garde son moment, sans tout montrer en même temps.</p>
+          <div class="guest-list" aria-label="Liste des invités">
+            <button class="guest-trigger is-active" type="button" data-guest-index="0">
+              <img src="assets/moise-mbiye.jpg" alt="">
+              <div class="guest-trigger-copy"><strong>Moise Mbiye</strong><span>Invité</span></div>
+              <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+            </button>
+            <button class="guest-trigger" type="button" data-guest-index="1">
+              <img src="assets/natalie-makoma.jpg" alt="">
+              <div class="guest-trigger-copy"><strong>Natalie Makoma</strong><span>Invitée</span></div>
+              <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+            </button>
+            <button class="guest-trigger" type="button" data-guest-index="2">
+              <img src="assets/bishop-benjamin-dube.jpeg" alt="">
+              <div class="guest-trigger-copy"><strong>Bishop Benjamin Dube</strong><span>Invité spécial</span></div>
+              <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+            </button>
+            <button class="guest-trigger" type="button" data-guest-index="3">
+              <img src="assets/eunice-manyanga.jpg" alt="">
+              <div class="guest-trigger-copy"><strong>Eunice Manyanga</strong><span>Invitée</span></div>
+              <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+            </button>
+          </div>
+          <div class="guest-progress" aria-hidden="true"><span id="guestProgress"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="concept">
+      <div class="story-grid container">
+        <div class="story-copy reveal">
+          <div>
+            <p class="eyebrow">Le concept</p>
+            <h2>Un concert pour acclamer Jésus d'une seule voix.</h2>
+          </div>
+          <p class="lead">Acclamons Jésus est un rendez-vous de louange: une soirée intense, directe et habitée, pensée pour rassembler le public autour de l'adoration, de la parole chantée et d'une vraie présence scénique.</p>
+          <div class="pillars">
+            <div class="pillar">
+              <span class="pillar-icon"><span class="material-symbols-rounded" aria-hidden="true">church</span></span>
+              <div>
+                <h3>Une adoration centrale</h3>
+                <p>La soirée place Jésus au centre, avec des chants connus, des moments spontanés et une atmosphère de prière.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <span class="pillar-icon"><span class="material-symbols-rounded" aria-hidden="true">graphic_eq</span></span>
+              <div>
+                <h3>Une scène live</h3>
+                <p>Musiciens, voix, lumières et transitions sont pensés pour garder l'énergie du concert sans perdre la profondeur.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <span class="pillar-icon"><span class="material-symbols-rounded" aria-hidden="true">groups</span></span>
+              <div>
+                <h3>Une assemblée réunie</h3>
+                <p>Le public est invité à participer, chanter, répondre et vivre un temps fort commun.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <figure class="image-feature reveal">
+          <img src="assets/michel-bakenda-live.png" alt="Michel Bakenda sur scène pendant un concert gospel">
+          <figcaption class="feature-caption">
+            <strong>Une soirée avec une présence scénique forte.</strong>
+            <span>Un moment pensé pour vivre la louange en direct, avec une scène habitée et une assemblée pleinement participante.</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section alt" id="michel">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">Artiste principal</p>
+            <h2>Michel Bakenda porte le cœur d'Acclamons Jésus.</h2>
+          </div>
+        </div>
+        <div class="michel-grid">
+          <article class="portrait-card reveal">
+            <img src="assets/michel-bakenda.jpg" alt="Portrait de Michel Bakenda">
+            <div class="portrait-body">
+              <span>Artiste gospel</span>
+              <h3>Michel Bakenda</h3>
+              <p>Voix reconnue de la scène gospel francophone, il initie Acclamons Jésus comme un temps fort de louange et de rassemblement.</p>
+            </div>
+          </article>
+          <article class="live-card reveal">
+            <img src="assets/michel-bakenda-live.png" alt="Michel Bakenda en performance live">
+            <div class="live-caption">
+              <h3>Un concert, pas une simple affiche.</h3>
+              <p>Voir l'artiste, sentir la scène, comprendre le message et rejoindre l'assemblée: tout converge vers une même acclamation.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="programme">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">Déroulé</p>
+            <h2>Un seul jour, une soirée claire et puissante.</h2>
+          </div>
+          <p>Le programme ci-dessous sert de structure pour le jour du concert. Les horaires peuvent être ajustés dès que la production confirme l'ouverture des portes, les invités et l'heure de passage principale.</p>
+        </div>
+        <div class="timeline reveal">
+          <article class="event-row">
+            <div class="event-time">16:30</div>
+            <div class="event-main">
+              <h3>Ouverture des portes</h3>
+              <p>Accueil du public, orientation, contrôle des accès et ambiance musicale d'avant-concert.</p>
+            </div>
+            <span class="tag">Accueil</span>
+          </article>
+          <article class="event-row">
+            <div class="event-time">18:00</div>
+            <div class="event-main">
+              <h3>Louange d'ouverture</h3>
+              <p>Temps d'entrée dans l'adoration avec chœur, musiciens et premières interventions.</p>
+            </div>
+            <span class="tag">Louange</span>
+          </article>
+          <article class="event-row">
+            <div class="event-time">19:30</div>
+            <div class="event-main">
+              <h3>Michel Bakenda live</h3>
+              <p>Moment principal du concert: chants phares, communion avec le public et séquences d'adoration.</p>
+            </div>
+            <span class="tag">Concert</span>
+          </article>
+          <article class="event-row">
+            <div class="event-time">21:30</div>
+            <div class="event-main">
+              <h3>Finale Acclamons Jésus</h3>
+              <p>Dernier chant collectif, prière finale et sortie progressive du public.</p>
+            </div>
+            <span class="tag">Finale</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="acces">
+      <div class="access-grid container">
+        <div class="access-copy reveal">
+          <p class="eyebrow">Accès et réservations</p>
+          <h2>Préparer la billetterie sans inventer les prix.</h2>
+          <p>Les catégories sont prêtes pour communiquer proprement, mais les tarifs restent à confirmer. Dès que tu me donnes les vrais prix, je les mets en place.</p>
+          <div class="hero-actions">
+            <a class="button" href="#contact">
+              <span class="material-symbols-rounded" aria-hidden="true">mail</span>
+              Réserver
+            </a>
+          </div>
+        </div>
+        <div class="passes reveal" aria-label="Types d'accès">
+          <button class="pass-card is-selected" type="button">
+            <div>
+              <h3>Accès Standard</h3>
+              <p>Entrée concert avec placement selon l'organisation de la salle.</p>
+            </div>
+            <strong class="pass-note">À venir</strong>
+          </button>
+          <button class="pass-card" type="button">
+            <div>
+              <h3>Accès VIP</h3>
+              <p>Zone dédiée, entrée prioritaire et avantages à confirmer par la production.</p>
+            </div>
+            <strong class="pass-note">À venir</strong>
+          </button>
+          <button class="pass-card" type="button">
+            <div>
+              <h3>Partenaires</h3>
+              <p>Accès prévu pour sponsors, presse, invités et équipes associées.</p>
+            </div>
+            <strong class="pass-note">Contact</strong>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Médias">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">Médias</p>
+            <h2>Vidéo d'accueil et visuels artiste.</h2>
+          </div>
+          <p>La vidéo d'accueil, le portrait et la photo live donnent au public une première sensation de la soirée avant même l'ouverture des portes.</p>
+        </div>
+        <div class="media-grid reveal">
+          <div class="media-tile large">
+            <video autoplay muted loop playsinline poster="assets/video-poster.jpg">
+              <source src="assets/hero-video.mp4" type="video/mp4">
+            </video>
+            <div class="media-caption"><span>Vidéo accueil</span><span class="material-symbols-rounded" aria-hidden="true">play_circle</span></div>
+          </div>
+          <div class="media-tile">
+            <img src="assets/michel-bakenda.jpg" alt="Portrait de Michel Bakenda">
+            <div class="media-caption"><span>Portrait</span><span class="material-symbols-rounded" aria-hidden="true">portrait</span></div>
+          </div>
+          <div class="media-tile">
+            <img src="assets/michel-bakenda-live.png" alt="Michel Bakenda sur scène">
+            <div class="media-caption"><span>Live</span><span class="material-symbols-rounded" aria-hidden="true">mic_external_on</span></div>
+          </div>
+          <div class="media-tile wide">
+            <img src="assets/video-poster.jpg" alt="Image de scène extraite de la vidéo d'accueil">
+            <div class="media-caption"><span>Ambiance</span><span class="material-symbols-rounded" aria-hidden="true">stage</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" id="contact">
+      <div class="cta-inner container">
+        <div class="reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>Réserver sa place pour Acclamons Jésus.</h2>
+          <p>Laisse une adresse pour être rappelé dès l'ouverture officielle des réservations.</p>
+        </div>
+        <div class="reveal">
+          <form class="signup" id="signupForm">
+            <label class="sr-only" for="email">Adresse email</label>
+            <input id="email" name="email" type="email" placeholder="tonemail@example.com" required>
+            <button class="button" type="submit">
+              <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
+              Réserver
+            </button>
+          </form>
+          <p class="form-note" id="formNote" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid container">
+      <div>
+        <strong>Acclamons Jésus</strong>
+        <span> · Concert gospel avec Michel Bakenda et invités</span>
+      </div>
+      <div class="footer-links">
+        <a href="#programme">Programme</a>
+        <a href="#artistes">Artistes</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const header = document.getElementById("siteHeader");
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+    const passCards = Array.from(document.querySelectorAll(".pass-card"));
+    const revealItems = Array.from(document.querySelectorAll(".reveal"));
+    const guestSlides = Array.from(document.querySelectorAll(".guest-slide"));
+    const guestTriggers = Array.from(document.querySelectorAll(".guest-trigger"));
+    const guestProgress = document.getElementById("guestProgress");
+    const countdownTarget = new Date("2026-08-30T18:00:00+01:00").getTime();
+    const initialAnchor = window.location.hash ? document.getElementById(decodeURIComponent(window.location.hash.slice(1))) : null;
+
+    if (initialAnchor) {
+      initialAnchor.scrollIntoView({ block: "start", behavior: "auto" });
+    }
+
+    if (window.location.hash) {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+    } else {
+      document.body.classList.add("animations-ready");
+    }
+
+    function updateHeader() {
+      header.classList.toggle("is-scrolled", window.scrollY > 12);
+    }
+
+    function closeMenu() {
+      document.body.classList.remove("menu-open");
+      header.classList.remove("menu-active");
+      navLinks.classList.remove("is-open");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.querySelector(".material-symbols-rounded").textContent = "menu";
+    }
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("is-open");
+      document.body.classList.toggle("menu-open", isOpen);
+      header.classList.toggle("menu-active", isOpen);
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.querySelector(".material-symbols-rounded").textContent = isOpen ? "close" : "menu";
+    });
+
+    navLinks.addEventListener("click", (event) => {
+      if (event.target.matches("a")) closeMenu();
+    });
+
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    updateHeader();
+
+    passCards.forEach((card) => {
+      card.addEventListener("click", () => {
+        passCards.forEach((item) => item.classList.remove("is-selected"));
+        card.classList.add("is-selected");
+      });
+    });
+
+    function pad(value) {
+      return String(value).padStart(2, "0");
+    }
+
+    function updateCountdown() {
+      const diff = Math.max(0, countdownTarget - Date.now());
+      const days = Math.floor(diff / 86400000);
+      const hours = Math.floor((diff / 3600000) % 24);
+      const minutes = Math.floor((diff / 60000) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      const values = { days, hours, minutes, seconds };
+
+      Object.entries(values).forEach(([unit, value]) => {
+        const node = document.querySelector(`[data-unit="${unit}"]`);
+        if (node) node.textContent = unit === "days" ? String(value) : pad(value);
+      });
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    let activeGuest = 0;
+    let guestTimer;
+
+    function showGuest(index) {
+      if (!guestSlides.length) return;
+      activeGuest = (index + guestSlides.length) % guestSlides.length;
+
+      guestSlides.forEach((slide, slideIndex) => {
+        slide.classList.toggle("is-active", slideIndex === activeGuest);
+      });
+
+      guestTriggers.forEach((trigger, triggerIndex) => {
+        trigger.classList.toggle("is-active", triggerIndex === activeGuest);
+      });
+
+      if (guestProgress) {
+        guestProgress.style.transform = `translateX(${activeGuest * 100}%)`;
+      }
+    }
+
+    function startGuestTimer() {
+      window.clearInterval(guestTimer);
+      guestTimer = window.setInterval(() => showGuest(activeGuest + 1), 4200);
+    }
+
+    guestTriggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => {
+        showGuest(Number(trigger.dataset.guestIndex || 0));
+        startGuestTimer();
+      });
+    });
+
+    showGuest(0);
+    startGuestTimer();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16 });
+
+    revealItems.forEach((item) => {
+      if (item.getBoundingClientRect().top < window.innerHeight * 0.98) {
+        item.classList.add("is-visible");
+      }
+      observer.observe(item);
+    });
+
+    document.getElementById("signupForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+      event.currentTarget.reset();
+      document.getElementById("formNote").textContent = "Merci, ta demande de réservation est bien notée.";
+    });
+  </script>
+</body>
+</html>
