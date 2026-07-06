@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { FadeIn } from '../components/FadeIn'
 import { TextReveal } from '../components/TextReveal'
 import { Music } from 'lucide-react'
+import { asset } from '../lib/site'
 
 const artists = [
   {
@@ -99,7 +100,7 @@ export function Artists() {
                   >
                     <div
                       className="absolute inset-0 bg-cover bg-center"
-                      style={{ backgroundImage: `url(${artist.image})` }}
+                      style={{ backgroundImage: `url(${asset(artist.image)})` }}
                     />
                   </motion.div>
 
@@ -140,7 +141,7 @@ export function Artists() {
         </div>
 
         <FadeIn delay={0.5} className="mt-16 text-center">
-          <a href="/commande.html" className="btn-sacred inline-block">
+          <a href={asset('/commande.html')} className="btn-sacred inline-block">
             Réserver ma place
           </a>
         </FadeIn>

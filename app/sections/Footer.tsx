@@ -1,13 +1,14 @@
 'use client'
 
 import { FadeIn } from '../components/FadeIn'
+import { asset } from '../lib/site'
 import { Instagram, Youtube, Facebook, Music, Heart, Mail, MapPin } from 'lucide-react'
 
 const navItems = [
   { label: 'Le Festival', href: '#about' },
   { label: 'Programme', href: '#experience' },
   { label: 'Artistes', href: '#artists' },
-  { label: 'Billetterie', href: '/commande.html' },
+  { label: 'Billetterie', href: asset('/commande.html') },
   { label: 'Solidarité FARDC', href: '#humanitarian' },
   { label: 'Faire un don', href: '#faire-un-don' },
 ]
@@ -25,7 +26,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           <FadeIn className="lg:col-span-1">
             <img
-              src="/logos/logo-edition5-blanc-dore.png"
+              src={asset('/logos/logo-edition5-blanc-dore.png')}
               alt="Acclamons Jésus — 5e édition"
               className="h-20 w-auto mb-6"
             />

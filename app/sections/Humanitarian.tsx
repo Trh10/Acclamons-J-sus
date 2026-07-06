@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { FadeIn } from '../components/FadeIn'
 import { TextReveal } from '../components/TextReveal'
 import { Heart, Package, Wallet, HandHeart, ArrowRight } from 'lucide-react'
+import { asset } from '../lib/site'
 
 const stats = [
   { icon: Heart, value: '+10 000', label: 'Personnes attendues sur 3 jours', color: 'text-soft-gold' },
@@ -99,7 +100,7 @@ export function Humanitarian() {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 1 }}
                     className="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700"
-                    style={{ backgroundImage: `url(${project.image})` }}
+                    style={{ backgroundImage: `url(${asset(project.image)})` }}
                   />
                 </div>
 
@@ -177,7 +178,7 @@ export function Humanitarian() {
           </div>
 
           <div className="text-center">
-            <a href="/commande.html" className="legacy-btn">
+            <a href={asset('/commande.html')} className="legacy-btn">
               Faire un don
             </a>
             <p className="mt-6 text-body-sm text-charcoal/50 max-w-md mx-auto">

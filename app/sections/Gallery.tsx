@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { asset } from '../lib/site'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FadeIn } from '../components/FadeIn'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
@@ -64,7 +65,7 @@ export function Gallery() {
                 >
                   <div
                     className="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700"
-                    style={{ backgroundImage: `url(${image.src})` }}
+                    style={{ backgroundImage: `url(${asset(image.src)})` }}
                   />
                   <div className="absolute inset-0 bg-deep-black/0 group-hover:bg-deep-black/40 transition-all duration-500" />
 
@@ -124,7 +125,7 @@ export function Gallery() {
               <div
                 className="w-full h-full bg-cover bg-center"
                 style={{
-                  backgroundImage: `url(${galleryImages[selectedImage].src})`,
+                  backgroundImage: `url(${asset(galleryImages[selectedImage].src)})`,
                   aspectRatio: '3/4'
                 }}
               />

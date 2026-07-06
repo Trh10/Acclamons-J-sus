@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { Navigation } from './components/Navigation'
+import { asset } from './lib/site'
 
 export const metadata: Metadata = {
   title: 'Acclamons Jésus pour la Paix | Festival Gospel 2026',
@@ -27,7 +28,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800;900&display=swap"
           rel="stylesheet"
         />
-        <link rel="icon" href="/logos/logo-edition5-blanc-dore.png" type="image/png" />
+        <link rel="icon" href={asset('/logos/logo-edition5-blanc-dore.png')} type="image/png" />
       </head>
       <body className="antialiased">
         <Navigation />

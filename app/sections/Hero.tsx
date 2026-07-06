@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback, type CSSProperties } from 'react'
 import { Calendar, MapPin, Users, Ticket, Church } from 'lucide-react'
+import { asset } from '../lib/site'
 
 const HERO_DURATIONS = [1800, 4200, 4200, 5600]
 const COUNTDOWN_TARGET = new Date('2026-08-28T08:00:00+01:00').getTime()
@@ -123,9 +124,9 @@ export function Hero() {
         loop
         playsInline
         preload="metadata"
-        poster="/images/hero-worship.jpg"
+        poster={asset('/images/hero-worship.jpg')}
       >
-        <source src="/hero-video.mp4" type="video/mp4" />
+        <source src={asset('/hero-video.mp4')} type="video/mp4" />
       </video>
       <div className="legacy-hero-aura" aria-hidden="true" />
       <div className="legacy-hero-shine" aria-hidden="true" />
@@ -195,7 +196,7 @@ export function Hero() {
                 </span>
               </div>
               <div className="legacy-hero-actions">
-                <a href="/commande.html" className="legacy-btn">
+                <a href={asset('/commande.html')} className="legacy-btn">
                   <Ticket size={18} aria-hidden="true" />
                   Réserver ma place
                 </a>

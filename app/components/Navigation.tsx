@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Ticket, Menu, X } from 'lucide-react'
+import { asset } from '../lib/site'
 
 const navLinks = [
   { name: 'Contexte', href: '#about' },
@@ -35,9 +36,9 @@ export function Navigation() {
   }
 
   const useDarkLogo = isScrolled || menuOpen
-  const logoSrc = useDarkLogo
-    ? '/logos/logo-edition5-noir.png'
-    : '/logos/logo-edition5-blanc-dore.png'
+  const logoSrc = asset(
+    useDarkLogo ? '/logos/logo-edition5-noir.png' : '/logos/logo-edition5-blanc-dore.png'
+  )
 
   return (
     <header
@@ -73,7 +74,7 @@ export function Navigation() {
         </div>
 
         <div className="legacy-nav-actions">
-          <a href="/commande.html" className="legacy-btn">
+          <a href={asset('/commande.html')} className="legacy-btn">
             <Ticket size={18} aria-hidden="true" />
             Réserver
           </a>
