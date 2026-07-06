@@ -1,6 +1,6 @@
 'use client'
 
-import Image from 'next/image'
+import { asset } from '../lib/site'
 import { TextReveal } from '../components/TextReveal'
 import { FadeIn } from '../components/FadeIn'
 
@@ -57,12 +57,11 @@ export function Theme() {
 
           <FadeIn delay={0.3} direction="left">
             <div className="theme-photo-frame relative aspect-[4/5] lg:aspect-[3/4]">
-              <Image
-                src="/images/theme-peace-children.jpg"
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={asset('/images/theme-peace-children.jpg')}
                 alt="Enfants dans un village — symbole d'espérance et de paix"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="absolute inset-0 h-full w-full object-cover"
                 loading="lazy"
               />
               <div className="theme-photo-grain" aria-hidden="true" />
