@@ -1,3 +1,30 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Next.js
+/.next/
+/out/
+next-env.d.ts
+
+# Production
+/build
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Env
+.env*.local
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+
 # Local drafts and source assets not needed by the deployed site
 /video aceuil.mp4
 /michel bakenda.jpeg
@@ -11,3 +38,6 @@
 /heavenly_voices_*/
 /an_elegant_and_spiritual_high_resolution_photograph_of_a_diverse_gospel_choir/
 /celestial_harmony/
+/_template_stitch_peace/
+/new photo/
+/michel bakenda adoration.png

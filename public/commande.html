@@ -1,0 +1,1218 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Réservez votre place pour Acclamons Jésus pour la Paix — 5e édition, 28-30 août 2026, Centre Culturel Grand Tambour, Kinshasa.">
+  <title>Réserver | Acclamons Jésus pour la Paix 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700;800&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,300,0,0&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1e2433;
+      --night: #1e2433;
+      --night-2: #2f3648;
+      --paper: #f7f3eb;
+      --ivory: #fffdf8;
+      --card: #ffffff;
+      --gold: #c9922a;
+      --gold-soft: #e4bc5a;
+      --gold-deep: #9a7428;
+      --wine: #8b4560;
+      --teal: #3d7a6a;
+      --muted: #5c6370;
+      --line: rgba(30, 36, 51, 0.1);
+      --white: #ffffff;
+      --radius: 8px;
+      --radius-lg: 16px;
+      --shadow: 0 24px 70px rgba(30, 36, 51, 0.1);
+      --container: min(1180px, calc(100vw - 40px));
+      color-scheme: light;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse 90% 60% at 70% -10%, rgba(201, 146, 42, 0.1), transparent 60%),
+        radial-gradient(ellipse 70% 50% at 10% 40%, rgba(139, 69, 96, 0.05), transparent 65%),
+        var(--ivory);
+      font-family: Manrope, system-ui, sans-serif;
+    }
+
+    body.menu-open { overflow: hidden; }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    button { border: 0; cursor: pointer; }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+    }
+
+    p { margin: 0; }
+
+    .material-symbols-rounded {
+      font-family: "Material Symbols Rounded";
+      font-size: 20px;
+      line-height: 1;
+      display: inline-block;
+    }
+
+    .container { width: var(--container); margin: 0 auto; }
+
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 16px;
+      color: var(--gold);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      flex-shrink: 0;
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 80;
+      color: var(--ink);
+      background: rgba(255, 253, 248, 0.94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 8px 30px rgba(30, 36, 51, 0.04);
+    }
+
+    .nav {
+      min-height: 74px;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand-logo {
+      height: 52px;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      justify-self: center;
+      display: flex;
+      gap: 22px;
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon-button {
+      width: 44px;
+      height: 44px;
+      display: none;
+      place-items: center;
+      color: inherit;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .button {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 18px;
+      color: #0c0e14;
+      background: linear-gradient(135deg, var(--gold-soft) 0%, var(--gold) 45%, var(--gold-deep) 100%);
+      border-radius: var(--radius);
+      font-size: 0.77rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 44px rgba(222, 178, 77, 0.3);
+    }
+
+    .button.dark {
+      color: var(--white);
+      background: var(--night);
+      border: 1px solid var(--night);
+    }
+
+    .button.full { width: 100%; }
+
+    .button:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* Page hero */
+    .page-hero {
+      padding: 56px 0 48px;
+      background:
+        radial-gradient(ellipse 70% 90% at 80% -20%, rgba(212, 169, 82, 0.12), transparent 60%),
+        var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .page-hero h1 {
+      font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+      line-height: 0.95;
+      font-weight: 650;
+      max-width: 720px;
+    }
+
+    .page-hero p {
+      max-width: 620px;
+      margin-top: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .page-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      margin-top: 22px;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .page-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .page-meta .material-symbols-rounded {
+      font-size: 18px;
+      color: var(--gold);
+    }
+
+    /* Steps */
+    .steps {
+      display: flex;
+      gap: 0;
+      margin: 36px 0 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--card);
+    }
+
+    .step-btn {
+      flex: 1;
+      display: grid;
+      gap: 4px;
+      padding: 16px 14px;
+      text-align: left;
+      color: var(--muted);
+      background: transparent;
+      border-right: 1px solid var(--line);
+      transition: background 180ms ease, color 180ms ease;
+    }
+
+    .step-btn:last-child { border-right: 0; }
+
+    .step-btn strong {
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-deep);
+    }
+
+    .step-btn span {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .step-btn.is-active {
+      background: linear-gradient(150deg, #fff9ef, #f7edd9);
+      color: var(--muted);
+      box-shadow: inset 0 0 0 1px rgba(201, 146, 42, 0.35);
+    }
+
+    .step-btn.is-active strong { color: var(--gold-deep); }
+    .step-btn.is-active span { color: var(--ink); }
+
+    .step-btn.is-done strong { color: #7fb59a; }
+
+    /* Layout */
+    .order-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 380px);
+      gap: 32px;
+      align-items: start;
+      padding: 48px 0 80px;
+    }
+
+    .panel {
+      padding: 28px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 16px 48px rgba(30, 36, 51, 0.08);
+    }
+
+    .panel h2 {
+      font-size: 1.8rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .panel > p {
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 24px;
+      font-size: 0.92rem;
+    }
+
+    .order-step { display: none; }
+    .order-step.is-active { display: block; }
+
+    /* Tickets */
+    .ticket-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .ticket-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: center;
+      padding: 20px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      text-align: left;
+      color: var(--ink);
+      transition: border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .ticket-card:hover { border-color: rgba(212, 169, 82, 0.5); }
+
+    .ticket-card.is-selected {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 1px var(--gold);
+      background: rgba(212, 169, 82, 0.09);
+    }
+
+    .ticket-card h3 {
+      font-family: Manrope, sans-serif;
+      font-size: 1rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .ticket-card p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    .ticket-tag {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 4px 8px;
+      background: rgba(201, 146, 42, 0.14);
+      color: var(--gold-deep);
+      border-radius: 4px;
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .ticket-price {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    .ticket-price small {
+      display: block;
+      font-family: Manrope, sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .qty-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .qty-row label {
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .qty-control {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .qty-control button {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .qty-control button:hover { background: var(--gold); color: #0c0e14; }
+
+    .qty-control input {
+      width: 48px;
+      height: 40px;
+      text-align: center;
+      border: 0;
+      border-left: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--ink);
+      font-weight: 900;
+    }
+
+    /* Don */
+    .don-box {
+      margin-top: 20px;
+      padding: 20px;
+      background: linear-gradient(135deg, rgba(201, 146, 42, 0.1), rgba(255, 253, 248, 0.98));
+      border: 1px solid rgba(201, 146, 42, 0.18);
+      border-radius: var(--radius);
+    }
+
+    .don-box h3 {
+      font-family: Manrope, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .don-box p {
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+
+    .don-presets {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .don-presets button {
+      padding: 8px 14px;
+      color: var(--ink);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      transition: border-color 160ms ease, background 160ms ease;
+    }
+
+    .don-presets button:hover { border-color: rgba(212, 169, 82, 0.5); }
+
+    .don-presets button.is-active {
+      background: var(--gold);
+      color: #0c0e14;
+      border-color: var(--gold);
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .field label {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      min-height: 48px;
+      padding: 0 14px;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      outline: 0;
+      transition: border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .field textarea {
+      min-height: 100px;
+      padding: 12px 14px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(212, 169, 82, 0.22);
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    /* Payment */
+    .pay-options {
+      display: grid;
+      gap: 10px;
+    }
+
+    .pay-option {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 14px;
+      align-items: center;
+      padding: 16px;
+      color: var(--ink);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      text-align: left;
+      transition: border-color 180ms ease;
+    }
+
+    .pay-option:hover { border-color: rgba(212, 169, 82, 0.4); }
+
+    .pay-option.is-selected {
+      border-color: var(--gold);
+      background: rgba(212, 169, 82, 0.09);
+    }
+
+    .pay-option .ico {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      background: var(--paper);
+      color: var(--gold-deep);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+
+    .pay-option strong {
+      display: block;
+      font-size: 0.92rem;
+      font-weight: 900;
+    }
+
+    .pay-option span {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .pay-option .radio {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--line);
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .pay-option.is-selected .radio {
+      border-color: var(--gold);
+    }
+
+    .pay-option.is-selected .radio::after {
+      content: "";
+      position: absolute;
+      inset: 3px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    .step-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    /* Summary */
+    .summary {
+      position: sticky;
+      top: 94px;
+    }
+
+    .summary h2 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+
+    .summary-lines {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .summary-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.9rem;
+    }
+
+    .summary-line span:first-child { color: var(--muted); }
+    .summary-line strong { font-weight: 800; text-align: right; }
+
+    .summary-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 20px;
+    }
+
+    .summary-total span {
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .summary-total strong {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 2rem;
+      color: var(--gold);
+    }
+
+    .summary-note {
+      padding: 14px;
+      background: var(--paper);
+      border-radius: var(--radius);
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.55;
+      margin-bottom: 20px;
+    }
+
+    .summary-note .material-symbols-rounded {
+      font-size: 16px;
+      color: var(--gold);
+      vertical-align: -3px;
+      margin-right: 4px;
+    }
+
+    /* Success */
+    .success-panel {
+      display: none;
+      text-align: center;
+      padding: 60px 28px;
+    }
+
+    .success-panel.is-visible { display: block; }
+
+    .success-panel .ico {
+      width: 72px;
+      height: 72px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 20px;
+      background: rgba(212, 169, 82, 0.14);
+      color: var(--gold);
+      border-radius: 50%;
+      font-size: 36px;
+    }
+
+    .success-panel h2 {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+    }
+
+    .success-panel p {
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 480px;
+      margin: 0 auto 24px;
+    }
+
+    .order-main.is-hidden { display: none; }
+
+    .site-footer {
+      padding: 42px 0;
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-weight: 800;
+    }
+
+    @media (max-width: 980px) {
+      :root { --container: min(100vw - 32px, 760px); }
+      .nav { grid-template-columns: auto auto; }
+      .nav-links {
+        position: fixed;
+        inset: 74px 16px auto;
+        display: none;
+        flex-direction: column;
+        padding: 12px;
+        background: rgba(255, 253, 248, 0.98);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(20px);
+      }
+      .nav-links.is-open { display: flex; }
+      .nav-links a { padding: 14px; border-bottom: 1px solid var(--line); }
+      .nav-actions .button { display: none; }
+      .icon-button { display: grid; }
+      .order-layout { grid-template-columns: 1fr; }
+      .summary { position: static; }
+      .steps { flex-direction: column; }
+      .step-btn { border-right: 0; border-bottom: 1px solid var(--line); }
+      .step-btn:last-child { border-bottom: 0; }
+    }
+
+    @media (max-width: 680px) {
+      :root { --container: min(100vw - 28px, 520px); }
+      .field-row { grid-template-columns: 1fr; }
+      .ticket-card { grid-template-columns: 1fr; }
+      .ticket-price { justify-self: start; }
+      .step-actions .button { flex: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navigation">
+      <a class="brand" href="/">
+        <img class="brand-logo" src="/logos/logo-edition5-noir.png" alt="Acclamons Jésus — 5e édition">
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/#about">Concept</a>
+        <a href="/#experience">Programme</a>
+        <a href="/#artists">Artistes</a>
+        <a href="/#humanitarian">Solidarité</a>
+        <a href="commande.html">Réserver</a>
+      </div>
+      <div class="nav-actions">
+        <a class="button" href="/">Accueil</a>
+        <button class="icon-button" id="menuButton" type="button" aria-label="Menu" aria-expanded="false">
+          <span class="material-symbols-rounded">menu</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Billetterie · 5<sup>e</sup> édition</p>
+        <h1>Réservez votre place pour la Paix.</h1>
+        <p>Choisissez votre accès, ajoutez un geste de solidarité pour les familles des FARDC si vous le souhaitez, puis confirmez votre commande. Vous recevrez les instructions de paiement par email ou SMS.</p>
+        <div class="page-meta">
+          <span><span class="material-symbols-rounded">calendar_month</span>28 – 30 août 2026</span>
+          <span><span class="material-symbols-rounded">location_on</span>Centre Culturel Grand Tambour</span>
+          <span><span class="material-symbols-rounded">groups</span>+ 10 000 places</span>
+        </div>
+        <div class="steps" role="tablist" aria-label="Étapes de commande">
+          <button class="step-btn is-active" type="button" data-step-nav="0" role="tab" aria-selected="true">
+            <strong>Étape 1</strong><span>Accès</span>
+          </button>
+          <button class="step-btn" type="button" data-step-nav="1" role="tab" aria-selected="false">
+            <strong>Étape 2</strong><span>Coordonnées</span>
+          </button>
+          <button class="step-btn" type="button" data-step-nav="2" role="tab" aria-selected="false">
+            <strong>Étape 3</strong><span>Paiement</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="success-panel" id="successPanel">
+        <div class="ico"><span class="material-symbols-rounded">check_circle</span></div>
+        <h2>Commande enregistrée</h2>
+        <p>Merci <strong id="successName"></strong>. Votre demande de réservation a bien été reçue. L'équipe Acclamons Jésus vous enverra les instructions de paiement et votre confirmation sous 48 h.</p>
+        <a class="button" href="/">
+          <span class="material-symbols-rounded">home</span>
+          Retour à l'accueil
+        </a>
+      </div>
+
+      <div class="order-layout order-main" id="orderMain">
+        <div class="panel">
+          <form id="orderForm" novalidate>
+            <div class="order-step is-active" data-step="0">
+              <h2>Choisissez votre accès</h2>
+              <p>Sélectionnez la formule qui correspond à votre participation au festival.</p>
+
+              <div class="ticket-list" id="ticketList">
+                <button type="button" class="ticket-card is-selected" data-ticket="standard" data-label="Accès Standard" data-price="0">
+                  <div>
+                    <h3>Accès Standard</h3>
+                    <p>Entrée pour le show de célébration du 30 août. Placement selon l'organisation de la salle.</p>
+                    <span class="ticket-tag">30 août · Concert</span>
+                  </div>
+                  <div class="ticket-price">À confirmer<small>Tarif indicatif</small></div>
+                </button>
+                <button type="button" class="ticket-card" data-ticket="vip" data-label="Accès VIP" data-price="0">
+                  <div>
+                    <h3>Accès VIP</h3>
+                    <p>Zone dédiée, entrée prioritaire et avantages confirmés par la production.</p>
+                    <span class="ticket-tag">30 août · VIP</span>
+                  </div>
+                  <div class="ticket-price">À confirmer<small>Tarif indicatif</small></div>
+                </button>
+                <button type="button" class="ticket-card" data-ticket="pass3" data-label="Pass 3 jours" data-price="0">
+                  <div>
+                    <h3>Pass 3 jours</h3>
+                    <p>Accès complet du 28 au 30 août : descente humanitaire, concours de talents et grand concert.</p>
+                    <span class="ticket-tag">28 – 30 août</span>
+                  </div>
+                  <div class="ticket-price">À confirmer<small>Tarif indicatif</small></div>
+                </button>
+                <button type="button" class="ticket-card" data-ticket="presse" data-label="Partenaires & Presse" data-price="0">
+                  <div>
+                    <h3>Partenaires &amp; Presse</h3>
+                    <p>Accès réservé aux sponsors, médias, invités et équipes associées sur les 3 journées.</p>
+                    <span class="ticket-tag">Sur invitation</span>
+                  </div>
+                  <div class="ticket-price">Contact<small>Validation requise</small></div>
+                </button>
+              </div>
+
+              <div class="qty-row">
+                <label for="quantity">Nombre de places</label>
+                <div class="qty-control">
+                  <button type="button" id="qtyMinus" aria-label="Diminuer">−</button>
+                  <input id="quantity" type="number" min="1" max="20" value="1" aria-label="Quantité">
+                  <button type="button" id="qtyPlus" aria-label="Augmenter">+</button>
+                </div>
+              </div>
+
+              <div class="don-box">
+                <h3>Don solidarité FARDC (optionnel)</h3>
+                <p>Soutenez les familles des militaires déployés au front. 100 % des dons sont tracés par la commission de transparence.</p>
+                <div class="don-presets" id="donPresets">
+                  <button type="button" data-don="0" class="is-active">Aucun</button>
+                  <button type="button" data-don="10">10 $</button>
+                  <button type="button" data-don="25">25 $</button>
+                  <button type="button" data-don="50">50 $</button>
+                  <button type="button" data-don="100">100 $</button>
+                </div>
+                <div class="field" style="margin-bottom:0">
+                  <label for="donCustom">Montant libre (USD)</label>
+                  <input id="donCustom" type="number" min="0" step="1" placeholder="0">
+                </div>
+              </div>
+
+              <div class="step-actions">
+                <button class="button" type="button" id="toStep1">
+                  Continuer
+                  <span class="material-symbols-rounded">arrow_forward</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="order-step" data-step="1">
+              <h2>Vos coordonnées</h2>
+              <p>Renseignez vos informations pour recevoir votre confirmation et vos billets.</p>
+
+              <div class="field-row">
+                <div class="field">
+                  <label for="firstName">Prénom *</label>
+                  <input id="firstName" name="firstName" required autocomplete="given-name">
+                </div>
+                <div class="field">
+                  <label for="lastName">Nom *</label>
+                  <input id="lastName" name="lastName" required autocomplete="family-name">
+                </div>
+              </div>
+              <div class="field">
+                <label for="email">Email *</label>
+                <input id="email" name="email" type="email" required autocomplete="email" placeholder="votre@email.com">
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="phone">Téléphone *</label>
+                  <input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="+243 …">
+                </div>
+                <div class="field">
+                  <label for="city">Ville</label>
+                  <input id="city" name="city" autocomplete="address-level2" placeholder="Kinshasa">
+                </div>
+              </div>
+              <div class="field">
+                <label for="notes">Message (optionnel)</label>
+                <textarea id="notes" name="notes" placeholder="Besoins particuliers, groupe, organisation…"></textarea>
+              </div>
+
+              <div class="step-actions">
+                <button class="button dark" type="button" id="backStep0">
+                  <span class="material-symbols-rounded">arrow_back</span>
+                  Retour
+                </button>
+                <button class="button" type="button" id="toStep2">
+                  Continuer
+                  <span class="material-symbols-rounded">arrow_forward</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="order-step" data-step="2">
+              <h2>Mode de paiement</h2>
+              <p>Choisissez comment vous souhaitez régler. Les instructions vous seront envoyées après validation de la commande.</p>
+
+              <div class="pay-options" id="payOptions">
+                <button type="button" class="pay-option is-selected" data-pay="mpesa">
+                  <span class="ico"><span class="material-symbols-rounded">phone_android</span></span>
+                  <div>
+                    <strong>Mobile Money</strong>
+                    <span>M-Pesa, Orange Money, Airtel Money</span>
+                  </div>
+                  <span class="radio" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="pay-option" data-pay="virement">
+                  <span class="ico"><span class="material-symbols-rounded">account_balance</span></span>
+                  <div>
+                    <strong>Virement bancaire</strong>
+                    <span>Compte dédié Acclamons Jésus</span>
+                  </div>
+                  <span class="radio" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="pay-option" data-pay="cash">
+                  <span class="ico"><span class="material-symbols-rounded">payments</span></span>
+                  <div>
+                    <strong>Paiement sur place</strong>
+                    <span>Retrait au guichet le jour J</span>
+                  </div>
+                  <span class="radio" aria-hidden="true"></span>
+                </button>
+              </div>
+
+              <div class="step-actions">
+                <button class="button dark" type="button" id="backStep1">
+                  <span class="material-symbols-rounded">arrow_back</span>
+                  Retour
+                </button>
+                <button class="button" type="submit" id="submitOrder">
+                  <span class="material-symbols-rounded">confirmation_number</span>
+                  Confirmer la commande
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <aside class="panel summary" aria-label="Récapitulatif">
+          <h2>Récapitulatif</h2>
+          <div class="summary-lines">
+            <div class="summary-line">
+              <span>Accès</span>
+              <strong id="sumTicket">Accès Standard</strong>
+            </div>
+            <div class="summary-line">
+              <span>Quantité</span>
+              <strong id="sumQty">1 place</strong>
+            </div>
+            <div class="summary-line">
+              <span>Don solidarité</span>
+              <strong id="sumDon">—</strong>
+            </div>
+            <div class="summary-line">
+              <span>Date</span>
+              <strong id="sumDate">30 août 2026</strong>
+            </div>
+            <div class="summary-line">
+              <span>Lieu</span>
+              <strong>Grand Tambour</strong>
+            </div>
+          </div>
+          <div class="summary-total">
+            <span>Total estimé</span>
+            <strong id="sumTotal">À confirmer</strong>
+          </div>
+          <div class="summary-note">
+            <span class="material-symbols-rounded">info</span>
+            Les tarifs définitifs seront confirmés par la production. Votre commande constitue une pré-réservation ferme.
+          </div>
+          <p class="summary-note" style="margin-bottom:0">
+            <span class="material-symbols-rounded">volunteer_activism</span>
+            Chaque billet contribue à la plateforme d'assistance aux familles des FARDC.
+          </p>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid container">
+      <div>
+        <strong>Acclamons Jésus pour la Paix</strong>
+        <span> · Fondation Michel Bakenda</span>
+      </div>
+      <div class="footer-links">
+        <a href="/">Accueil</a>
+        <a href="/#experience">Programme</a>
+        <a href="/#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const preselect = params.get("type");
+
+    const ticketCards = Array.from(document.querySelectorAll(".ticket-card"));
+    const donPresets = Array.from(document.querySelectorAll("#donPresets button"));
+    const payOptions = Array.from(document.querySelectorAll(".pay-option"));
+    const stepBtns = Array.from(document.querySelectorAll(".step-btn"));
+    const orderSteps = Array.from(document.querySelectorAll(".order-step"));
+    const qtyInput = document.getElementById("quantity");
+    const donCustom = document.getElementById("donCustom");
+
+    let currentStep = 0;
+    let selectedTicket = ticketCards.find((c) => c.classList.contains("is-selected")) || ticketCards[0];
+    let selectedPay = payOptions.find((p) => p.classList.contains("is-selected"));
+    let donAmount = 0;
+
+    const dateMap = {
+      standard: "30 août 2026",
+      vip: "30 août 2026",
+      pass3: "28 – 30 août 2026",
+      presse: "28 – 30 août 2026"
+    };
+
+    function selectTicket(card) {
+      ticketCards.forEach((c) => c.classList.remove("is-selected"));
+      card.classList.add("is-selected");
+      selectedTicket = card;
+      updateSummary();
+    }
+
+    if (preselect) {
+      const match = ticketCards.find((c) => c.dataset.ticket === preselect);
+      if (match) selectTicket(match);
+    }
+
+    ticketCards.forEach((card) => {
+      card.addEventListener("click", () => selectTicket(card));
+    });
+
+    function setDon(amount) {
+      donAmount = Math.max(0, amount);
+      donPresets.forEach((btn) => {
+        btn.classList.toggle("is-active", Number(btn.dataset.don) === donAmount && !donCustom.value);
+      });
+      if (donAmount > 0 && !donPresets.some((b) => Number(b.dataset.don) === donAmount)) {
+        donPresets.forEach((b) => b.classList.remove("is-active"));
+      }
+      if (donAmount === 0) donPresets[0].classList.add("is-active");
+      donCustom.value = donAmount > 0 && !donPresets.some((b) => Number(b.dataset.don) === donAmount && b.classList.contains("is-active")) ? donAmount : (donPresets.some((b) => b.classList.contains("is-active") && Number(b.dataset.don) > 0) ? "" : donCustom.value);
+      updateSummary();
+    }
+
+    donPresets.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        donCustom.value = "";
+        setDon(Number(btn.dataset.don));
+      });
+    });
+
+    donCustom.addEventListener("input", () => {
+      donPresets.forEach((b) => b.classList.remove("is-active"));
+      setDon(Number(donCustom.value) || 0);
+    });
+
+    document.getElementById("qtyMinus").addEventListener("click", () => {
+      qtyInput.value = Math.max(1, Number(qtyInput.value) - 1);
+      updateSummary();
+    });
+
+    document.getElementById("qtyPlus").addEventListener("click", () => {
+      qtyInput.value = Math.min(20, Number(qtyInput.value) + 1);
+      updateSummary();
+    });
+
+    qtyInput.addEventListener("input", updateSummary);
+
+    payOptions.forEach((opt) => {
+      opt.addEventListener("click", () => {
+        payOptions.forEach((p) => p.classList.remove("is-selected"));
+        opt.classList.add("is-selected");
+        selectedPay = opt;
+      });
+    });
+
+    function updateSummary() {
+      const qty = Math.max(1, Number(qtyInput.value) || 1);
+      const ticket = selectedTicket.dataset.label;
+      const ticketId = selectedTicket.dataset.ticket;
+
+      document.getElementById("sumTicket").textContent = ticket;
+      document.getElementById("sumQty").textContent = qty + (qty > 1 ? " places" : " place");
+      document.getElementById("sumDate").textContent = dateMap[ticketId] || "30 août 2026";
+      document.getElementById("sumDon").textContent = donAmount > 0 ? donAmount + " $" : "—";
+
+      const priceNote = selectedTicket.querySelector(".ticket-price").childNodes[0].textContent.trim();
+      document.getElementById("sumTotal").textContent = donAmount > 0
+        ? (priceNote === "À confirmer" ? "À confirmer + " + donAmount + " $" : priceNote)
+        : priceNote;
+    }
+
+    function goStep(step) {
+      currentStep = Math.max(0, Math.min(2, step));
+      orderSteps.forEach((s) => s.classList.toggle("is-active", Number(s.dataset.step) === currentStep));
+      stepBtns.forEach((btn, i) => {
+        btn.classList.toggle("is-active", i === currentStep);
+        btn.classList.toggle("is-done", i < currentStep);
+        btn.setAttribute("aria-selected", String(i === currentStep));
+      });
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function validateStep1() {
+      const required = ["firstName", "lastName", "email", "phone"];
+      let valid = true;
+      required.forEach((id) => {
+        const el = document.getElementById(id);
+        if (!el.value.trim()) {
+          el.style.borderColor = "#d05a6e";
+          valid = false;
+        } else {
+          el.style.borderColor = "";
+        }
+      });
+      const email = document.getElementById("email");
+      if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        email.style.borderColor = "#d05a6e";
+        valid = false;
+      }
+      return valid;
+    }
+
+    document.getElementById("toStep1").addEventListener("click", () => goStep(1));
+    document.getElementById("toStep2").addEventListener("click", () => {
+      if (validateStep1()) goStep(2);
+    });
+    document.getElementById("backStep0").addEventListener("click", () => goStep(0));
+    document.getElementById("backStep1").addEventListener("click", () => goStep(1));
+
+    stepBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const target = Number(btn.dataset.stepNav);
+        if (target === 1 && currentStep === 0) goStep(1);
+        else if (target === 2 && currentStep >= 1) {
+          if (validateStep1()) goStep(2);
+        } else if (target <= currentStep) goStep(target);
+      });
+    });
+
+    document.getElementById("orderForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!validateStep1()) {
+        goStep(1);
+        return;
+      }
+      const name = document.getElementById("firstName").value.trim();
+      document.getElementById("successName").textContent = name;
+      document.getElementById("orderMain").classList.add("is-hidden");
+      document.querySelector(".page-hero .steps").style.display = "none";
+      document.getElementById("successPanel").classList.add("is-visible");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+    menuButton.addEventListener("click", () => {
+      const open = navLinks.classList.toggle("is-open");
+      menuButton.setAttribute("aria-expanded", String(open));
+      menuButton.querySelector(".material-symbols-rounded").textContent = open ? "close" : "menu";
+    });
+    navLinks.addEventListener("click", (e) => {
+      if (e.target.matches("a")) navLinks.classList.remove("is-open");
+    });
+
+    updateSummary();
+  </script>
+</body>
+</html>

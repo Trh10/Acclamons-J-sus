@@ -3,27 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Acclamons Jésus, trois jours d'activités gospel du 28 au 30 août 2026 avec Michel Bakenda, jeunes talents, actions caritatives et grand concert.">
-  <title>Acclamons Jésus | Concert Gospel</title>
+  <meta name="description" content="Festival Acclamons Jésus pour la Paix — 5e édition, du 28 au 30 août 2026 au Centre Culturel Grand Tambour de Kinshasa. Trois jours d'adoration, d'action humanitaire pour les familles des FARDC et de célébration avec Michel Bakenda et ses invités.">
+  <meta property="og:title" content="Acclamons Jésus pour la Paix — 5e Édition 2026">
+  <meta property="og:description" content="Trois jours d'adoration, de solidarité et de célébration à Kinshasa. Michel Bakenda, Moïse Mbiye, Nathalie Makoma, Benjamin Dube et plus.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#fffdf8">
+  <title>Acclamons Jésus pour la Paix | Festival Gospel 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800;900&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,300,0,0&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700;800&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,300,0,0&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ink: #111827;
-      --night: #0d111b;
-      --night-2: #171d2a;
-      --paper: #f8f4ee;
-      --ivory: #fffaf2;
-      --gold: #deb24d;
-      --gold-deep: #9d6b16;
-      --wine: #74283d;
-      --teal: #176b62;
-      --muted: #667085;
-      --line: rgba(17, 24, 39, 0.14);
+      --ink: #1e2433;
+      --night: #1e2433;
+      --night-2: #2f3648;
+      --paper: #f7f3eb;
+      --ivory: #fffdf8;
+      --card: #ffffff;
+      --gold: #c9922a;
+      --gold-soft: #e4bc5a;
+      --gold-deep: #9a7428;
+      --wine: #8b4560;
+      --teal: #3d7a6a;
+      --muted: #5c6370;
+      --line: rgba(30, 36, 51, 0.1);
       --white: #ffffff;
       --radius: 8px;
-      --shadow: 0 26px 82px rgba(17, 24, 39, 0.16);
+      --radius-lg: 16px;
+      --shadow: 0 24px 70px rgba(30, 36, 51, 0.1);
       --container: min(1180px, calc(100vw - 40px));
       color-scheme: light;
     }
@@ -39,8 +46,11 @@
     body {
       margin: 0;
       color: var(--ink);
-      background: var(--ivory);
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(ellipse 90% 60% at 70% -10%, rgba(201, 146, 42, 0.1), transparent 60%),
+        radial-gradient(ellipse 70% 50% at 10% 40%, rgba(139, 69, 96, 0.05), transparent 65%),
+        var(--ivory);
+      font-family: Manrope, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       overflow-x: hidden;
     }
 
@@ -73,7 +83,7 @@
     h2,
     h3 {
       margin: 0;
-      font-family: "EB Garamond", Georgia, serif;
+      font-family: "Cormorant Garamond", Georgia, serif;
       letter-spacing: 0;
     }
 
@@ -112,12 +122,23 @@
     }
 
     .eyebrow {
-      margin: 0 0 14px;
-      color: var(--gold-deep);
-      font-size: 0.74rem;
-      font-weight: 900;
-      letter-spacing: 0.16em;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 16px;
+      color: var(--gold);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      flex-shrink: 0;
     }
 
     .site-header {
@@ -132,9 +153,10 @@
     .site-header.is-scrolled,
     .site-header.menu-active {
       color: var(--ink);
-      background: rgba(255, 250, 242, 0.94);
-      border-bottom-color: rgba(17, 24, 39, 0.11);
-      backdrop-filter: blur(18px);
+      background: rgba(255, 253, 248, 0.94);
+      border-bottom-color: var(--line);
+      box-shadow: 0 8px 30px rgba(30, 36, 51, 0.06);
+      backdrop-filter: blur(20px);
     }
 
     .nav {
@@ -164,8 +186,8 @@
       justify-self: center;
       display: flex;
       align-items: center;
-      gap: 24px;
-      font-size: 0.76rem;
+      gap: 22px;
+      font-size: 0.74rem;
       font-weight: 900;
       letter-spacing: 0.09em;
       text-transform: uppercase;
@@ -201,8 +223,9 @@
 
     .site-header.is-scrolled .icon-button,
     .site-header.menu-active .icon-button {
-      background: rgba(17, 24, 39, 0.04);
-      border-color: rgba(17, 24, 39, 0.13);
+      background: var(--paper);
+      border-color: var(--line);
+      color: var(--ink);
     }
 
     .button {
@@ -212,8 +235,8 @@
       justify-content: center;
       gap: 9px;
       padding: 0 18px;
-      color: var(--ink);
-      background: var(--gold);
+      color: #0c0e14;
+      background: linear-gradient(135deg, var(--gold-soft) 0%, var(--gold) 45%, var(--gold-deep) 100%);
       border-radius: var(--radius);
       font-size: 0.77rem;
       font-weight: 900;
@@ -240,12 +263,13 @@
     .button.dark {
       color: var(--white);
       background: var(--night);
-      box-shadow: 0 18px 42px rgba(17, 24, 39, 0.2);
+      box-shadow: 0 12px 32px rgba(30, 36, 51, 0.18);
     }
 
+    /* HERO */
     .hero {
       position: relative;
-      min-height: 90svh;
+      min-height: 100svh;
       display: flex;
       align-items: end;
       color: var(--white);
@@ -254,6 +278,7 @@
         url("assets/video-poster.jpg") center / cover no-repeat;
       overflow: hidden;
       isolation: isolate;
+      transition: align-items 900ms cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .hero-video {
@@ -264,6 +289,20 @@
       object-fit: cover;
       z-index: -3;
       filter: saturate(1.05) contrast(1.05);
+      transform-origin: center;
+      animation: heroBgDrift 22s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroBgDrift {
+      0% {
+        transform: scale(1.06) translate3d(-1.2%, 0.6%, 0);
+      }
+      50% {
+        transform: scale(1.11) translate3d(1%, -1%, 0);
+      }
+      100% {
+        transform: scale(1.08) translate3d(-0.6%, 1.2%, 0);
+      }
     }
 
     .hero::before {
@@ -273,7 +312,7 @@
       z-index: -2;
       background:
         linear-gradient(90deg, rgba(9, 12, 20, 0.92) 0%, rgba(9, 12, 20, 0.64) 48%, rgba(9, 12, 20, 0.22) 100%),
-        linear-gradient(0deg, rgba(9, 12, 20, 0.94) 0%, rgba(9, 12, 20, 0) 44%);
+        linear-gradient(0deg, rgba(9, 12, 20, 0.96) 0%, rgba(9, 12, 20, 0) 46%);
     }
 
     .hero::after {
@@ -287,24 +326,236 @@
       background-size: 72px 72px;
       mask-image: linear-gradient(90deg, #000 0%, transparent 78%);
       opacity: 0.48;
+      animation: heroGridPan 30s linear infinite;
     }
 
-    .hero-inner {
+    @keyframes heroGridPan {
+      from { background-position: 0 0, 0 0; }
+      to { background-position: 72px 0, 0 72px; }
+    }
+
+    .hero-aura {
+      position: absolute;
+      inset: -15%;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 20% 40%, rgba(212, 169, 82, 0.16), transparent 42%),
+        radial-gradient(circle at 78% 65%, rgba(66, 76, 108, 0.28), transparent 46%),
+        radial-gradient(circle at 55% 20%, rgba(150, 116, 51, 0.12), transparent 40%);
+      filter: blur(6px);
+      animation: heroAura 18s ease-in-out infinite alternate;
+    }
+
+    @keyframes heroAura {
+      0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.85; }
+      50% { transform: translate3d(2%, -1.5%, 0) scale(1.05); opacity: 1; }
+      100% { transform: translate3d(-1.5%, 2%, 0) scale(1.02); opacity: 0.9; }
+    }
+
+    .hero-shine {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background: linear-gradient(
+        115deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.045) 45%,
+        rgba(249, 221, 145, 0.09) 50%,
+        rgba(255, 255, 255, 0.045) 55%,
+        transparent 70%
+      );
+      background-size: 250% 100%;
+      background-position: 200% 0;
+      animation: heroShine 9s ease-in-out infinite;
+      mix-blend-mode: screen;
+    }
+
+    @keyframes heroShine {
+      0% { background-position: 200% 0; }
+      55%, 100% { background-position: -60% 0; }
+    }
+
+    .hero {
+      align-items: end;
+    }
+
+    .hero-slides {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      min-height: min(820px, calc(100svh - 74px));
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      padding: 96px 0 clamp(150px, 17vh, 220px);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(28px);
+      transition:
+        opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 900ms;
+      pointer-events: none;
+    }
+
+    .hero-slide[data-slide="1"],
+    .hero-slide[data-slide="2"] {
+      padding-bottom: clamp(180px, 22vh, 280px);
+    }
+
+    .hero-slide.is-live {
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      pointer-events: auto;
+    }
+
+    .hero-slide.is-leaving {
+      opacity: 0;
+      transform: translateY(-22px);
+    }
+
+    .hero-slide-inner {
       width: var(--container);
       margin: 0 auto;
-      padding: 118px 0 48px;
+    }
+
+    .hero-slide[data-slide="3"] .hero-slide-inner {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(240px, 330px);
       align-items: end;
       gap: 42px;
     }
 
+    /* Staggered children reveal */
+    .hero-slide > .hero-slide-inner > *,
+    .hero-slide-inner > div > * {
+      transition:
+        opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .hero-slide:not(.is-live) .hero-slide-inner > *,
+    .hero-slide:not(.is-live) .hero-slide-inner > div > * {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+
+    .hero-slide.is-live .hero-slide-inner > *,
+    .hero-slide.is-live .hero-slide-inner > div > * {
+      opacity: 1;
+      transform: none;
+    }
+
+    .hero-slide.is-live .hero-kicker { transition-delay: 120ms; }
+    .hero-slide.is-live h1 { transition-delay: 240ms; }
+    .hero-slide.is-live .hero-desc { transition-delay: 200ms; }
+    .hero-slide.is-live .hero-meta { transition-delay: 180ms; }
+    .hero-slide.is-live .hero-actions { transition-delay: 320ms; }
+    .hero-slide.is-live .hero-panel { transition-delay: 380ms; }
+
+    .hero-desc {
+      max-width: 720px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+      line-height: 1.5;
+      font-weight: 300;
+    }
+
+    .hero h1 em {
+      display: block;
+      font-style: italic;
+      color: var(--gold-soft);
+      background: linear-gradient(
+        100deg,
+        var(--gold-soft) 0%,
+        #fff2c7 45%,
+        var(--gold) 55%,
+        var(--gold-soft) 100%
+      );
+      background-size: 220% 100%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: heroGoldShift 6s ease-in-out infinite;
+    }
+
+    @keyframes heroGoldShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .hero-kicker::before {
+      animation: heroKickerLine 4s ease-in-out infinite;
+    }
+
+    @keyframes heroKickerLine {
+      0%, 100% { width: 44px; opacity: 0.9; }
+      50% { width: 72px; opacity: 1; }
+    }
+
+    .hero-progress button.is-active::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: rgba(249, 221, 145, 0.5);
+      animation: heroDotPulse 2.4s ease-out infinite;
+    }
+
+    .hero-progress button {
+      position: relative;
+    }
+
+    @keyframes heroDotPulse {
+      0% { transform: scaleX(0); transform-origin: left; opacity: 0.9; }
+      70%, 100% { transform: scaleX(1); transform-origin: left; opacity: 0; }
+    }
+
+    .hero-progress {
+      position: absolute;
+      inset: auto 0 22px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      pointer-events: none;
+    }
+
+    .hero-progress button {
+      width: 32px;
+      height: 2px;
+      padding: 0;
+      pointer-events: auto;
+      background: rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      transition: width 280ms ease, background 280ms ease;
+    }
+
+    .hero-progress button.is-active {
+      width: 52px;
+      background: var(--gold);
+    }
+
+    .hero-progress button:hover {
+      background: rgba(249, 221, 145, 0.72);
+    }
+
     .hero-kicker {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      margin: 0 0 18px;
-      color: #f9dd91;
+      margin: 0 0 20px;
+      color: var(--gold-soft);
       font-size: 0.76rem;
       font-weight: 900;
       letter-spacing: 0.14em;
@@ -319,19 +570,41 @@
     }
 
     .hero h1 {
-      max-width: 850px;
-      font-size: clamp(4.3rem, 11vw, 9.6rem);
-      line-height: 0.83;
+      max-width: 900px;
+      font-size: clamp(3.4rem, 8.4vw, 8rem);
+      line-height: 0.9;
       font-weight: 700;
     }
 
     .hero-copy {
-      max-width: 660px;
-      margin-top: 28px;
+      max-width: 620px;
+      margin-top: 26px;
       color: rgba(255, 255, 255, 0.86);
-      font-size: clamp(1rem, 1.6vw, 1.18rem);
+      font-size: clamp(1rem, 1.6vw, 1.16rem);
       line-height: 1.66;
       overflow-wrap: break-word;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 22px;
+      margin-top: 26px;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-meta .material-symbols-rounded {
+      font-size: 18px;
+      color: var(--gold-soft);
     }
 
     .hero-actions {
@@ -344,7 +617,7 @@
     .hero-panel {
       width: min(100%, 330px);
       justify-self: end;
-      padding: 13px;
+      padding: 15px;
       color: var(--white);
       background: rgba(10, 14, 24, 0.56);
       border: 1px solid rgba(255, 255, 255, 0.18);
@@ -352,7 +625,7 @@
       backdrop-filter: blur(18px);
     }
 
-    .hero-panel span {
+    .hero-panel > span {
       display: block;
       margin-bottom: 9px;
       color: rgba(255, 255, 255, 0.64);
@@ -362,25 +635,12 @@
       text-transform: uppercase;
     }
 
-    .hero-panel strong {
-      display: block;
-      font-family: "EB Garamond", Georgia, serif;
-      font-size: clamp(2rem, 3.6vw, 3rem);
-      line-height: 0.94;
-    }
-
-    .hero-panel p {
-      margin-top: 14px;
-      color: rgba(255, 255, 255, 0.76);
-      line-height: 1.6;
-    }
-
     .countdown-heading {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 14px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .countdown-heading span {
@@ -388,8 +648,8 @@
     }
 
     .countdown-heading strong {
-      font-family: Inter, system-ui, sans-serif;
-      color: #f9dd91;
+      font-family: Manrope, system-ui, sans-serif;
+      color: var(--gold-soft);
       font-size: 0.7rem;
       font-weight: 900;
       letter-spacing: 0.08em;
@@ -409,7 +669,7 @@
 
     .countdown-item {
       min-width: 0;
-      padding: 8px 6px 7px;
+      padding: 9px 6px 8px;
       text-align: center;
       background: rgba(255, 255, 255, 0.09);
       border-radius: 10px;
@@ -417,8 +677,8 @@
 
     .countdown-item strong {
       display: block;
-      font-family: "EB Garamond", Georgia, serif;
-      font-size: clamp(1.08rem, 1.7vw, 1.36rem);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(1.08rem, 1.7vw, 1.4rem);
       line-height: 0.9;
     }
 
@@ -432,9 +692,43 @@
       text-transform: uppercase;
     }
 
+    .hero-days {
+      display: grid;
+      gap: 6px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .hero-days div {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 0.78rem;
+    }
+
+    .hero-days div strong {
+      color: var(--gold-soft);
+      font-family: Manrope, sans-serif;
+      font-weight: 900;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-days div span {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    /* SECTIONS */
     .section {
-      padding: 104px 0;
-      scroll-margin-top: 88px;
+      padding: 120px 0;
+      scroll-margin-top: 84px;
+    }
+
+    .section.alt,
+    .section.dark {
+      border-block: 1px solid var(--line);
     }
 
     .section.alt {
@@ -442,8 +736,8 @@
     }
 
     .section.dark {
-      color: var(--white);
-      background: var(--night);
+      color: var(--ink);
+      background: var(--ivory);
     }
 
     .section-heading {
@@ -466,226 +760,95 @@
       line-height: 1.75;
     }
 
-    .section.dark .section-heading p,
-    .section.dark .eyebrow {
-      color: rgba(255, 255, 255, 0.68);
+    .section.dark .section-heading p {
+      color: var(--muted);
     }
 
-    .guest-stage {
+    /* SCRIPTURE BANNER */
+    .verse {
       position: relative;
-      padding: 72px 0;
+      padding: 84px 0;
       color: var(--white);
+      text-align: center;
       background:
-        radial-gradient(circle at 18% 0%, rgba(222, 178, 77, 0.2), transparent 34%),
-        linear-gradient(135deg, #0b0f19 0%, #141826 54%, #251024 100%);
-      overflow: hidden;
+        linear-gradient(90deg, rgba(7, 9, 15, 0.93), rgba(20, 16, 6, 0.88), rgba(7, 9, 15, 0.93)),
+        url("assets/choir-stage.png") center / cover no-repeat;
+      background-attachment: fixed;
+      border-block: 1px solid rgba(212, 169, 82, 0.22);
     }
 
-    .guest-stage::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-      background-size: 64px 64px;
-      opacity: 0.4;
-      pointer-events: none;
+    .verse blockquote {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 8px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-style: italic;
+      font-size: clamp(1.5rem, 3.6vw, 2.7rem);
+      line-height: 1.28;
     }
 
-    .guest-stage-inner {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: minmax(300px, 0.96fr) minmax(280px, 0.62fr);
-      gap: 36px;
-      align-items: center;
-    }
-
-    .guest-visual {
-      position: relative;
-      min-height: 560px;
-      overflow: hidden;
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      box-shadow: 0 26px 90px rgba(0, 0, 0, 0.32);
-    }
-
-    .guest-slide {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      transform: scale(1.05);
-      transition: opacity 800ms ease, transform 900ms ease;
-    }
-
-    .guest-slide.is-active {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .guest-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      filter: saturate(1.04) contrast(1.03);
-    }
-
-    .guest-slide::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(0deg, rgba(8, 11, 18, 0.82), transparent 48%),
-        linear-gradient(90deg, rgba(8, 11, 18, 0.42), transparent 58%);
-    }
-
-    .guest-caption {
-      position: absolute;
-      inset: auto 24px 24px;
-      z-index: 2;
-      max-width: 620px;
-    }
-
-    .guest-caption span {
-      color: #f6d98d;
-      font-size: 0.72rem;
+    .verse cite {
+      display: block;
+      margin-top: 20px;
+      color: var(--gold-soft);
+      font-family: Manrope, sans-serif;
+      font-style: normal;
+      font-size: 0.8rem;
       font-weight: 900;
-      letter-spacing: 0.13em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
     }
 
-    .guest-caption h3 {
-      margin-top: 8px;
-      font-size: clamp(3rem, 6vw, 5.4rem);
-      line-height: 0.9;
-    }
-
-    .guest-caption p {
-      max-width: 520px;
-      margin-top: 14px;
-      color: rgba(255, 255, 255, 0.76);
-      line-height: 1.64;
-    }
-
-    .guest-copy {
+    /* CONTEXT */
+    .context-grid {
       display: grid;
-      gap: 24px;
+      grid-template-columns: minmax(0, 1.04fr) minmax(300px, 0.96fr);
+      gap: 54px;
+      align-items: center;
     }
 
-    .guest-copy h2 {
-      max-width: 520px;
-      font-size: clamp(2.45rem, 5vw, 4.5rem);
-      line-height: 0.95;
+    .context-copy h2 {
+      max-width: 620px;
+      font-size: clamp(2.4rem, 4.8vw, 4.4rem);
+      line-height: 0.98;
       font-weight: 650;
     }
 
-    .guest-copy > p {
-      color: rgba(255, 255, 255, 0.7);
-      line-height: 1.75;
+    .context-copy p {
+      margin-top: 22px;
+      color: var(--muted);
+      line-height: 1.78;
     }
 
-    .guest-list {
-      display: grid;
-      gap: 10px;
+    .context-copy p.lead-dark {
+      color: var(--ink);
+      font-size: clamp(1.05rem, 1.7vw, 1.24rem);
     }
 
-    .guest-trigger {
-      width: 100%;
-      min-height: 66px;
-      display: grid;
-      grid-template-columns: 44px 1fr auto;
-      align-items: center;
-      gap: 14px;
-      padding: 10px 12px;
-      color: rgba(255, 255, 255, 0.7);
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: var(--radius);
-      text-align: left;
-      transition: color 180ms ease, background 180ms ease, border-color 180ms ease, transform 180ms ease;
-    }
-
-    .guest-trigger:hover,
-    .guest-trigger.is-active {
-      color: var(--white);
-      background: rgba(255, 255, 255, 0.11);
-      border-color: rgba(222, 178, 77, 0.6);
-      transform: translateX(4px);
-    }
-
-    .guest-trigger img {
-      width: 44px;
-      height: 44px;
-      object-fit: cover;
-      border-radius: 50%;
-    }
-
-    .guest-trigger strong {
-      display: block;
-      font-size: 0.96rem;
-      font-weight: 900;
-    }
-
-    .guest-trigger-copy span {
-      display: block;
-      margin-top: 3px;
-      color: rgba(255, 255, 255, 0.5);
-      font-size: 0.68rem;
-      font-weight: 900;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .guest-trigger .material-symbols-rounded {
-      color: #f6d98d;
-      opacity: 0;
-      transition: opacity 180ms ease;
-    }
-
-    .guest-trigger.is-active .material-symbols-rounded {
-      opacity: 1;
-    }
-
-    .guest-progress {
-      height: 3px;
+    .context-visual {
+      position: relative;
+      min-height: 460px;
       overflow: hidden;
-      background: rgba(255, 255, 255, 0.12);
-      border-radius: 999px;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 26px 90px rgba(0, 0, 0, 0.4);
     }
 
-    .guest-progress span {
-      display: block;
-      width: 25%;
+    .context-visual img {
+      width: 100%;
       height: 100%;
-      background: var(--gold);
-      border-radius: inherit;
-      transform: translateX(0);
-      transition: transform 500ms ease;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
     }
 
-    @media (min-width: 981px) {
-      .guest-stage-inner {
-        grid-template-columns: minmax(330px, 500px) minmax(380px, 1fr);
-        gap: 54px;
-      }
-
-      .guest-visual {
-        width: min(100%, 500px);
-        min-height: 660px;
-        aspect-ratio: 4 / 5;
-        justify-self: start;
-        background: #05070d;
-      }
-
-      .guest-slide img {
-        object-fit: contain;
-        object-position: center;
-      }
+    .context-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(13, 17, 27, 0.6), transparent 55%);
     }
 
+    /* STORY / PILLARS */
     .story-grid {
       display: grid;
       grid-template-columns: minmax(0, 0.92fr) minmax(320px, 1.08fr);
@@ -706,7 +869,7 @@
     }
 
     .lead {
-      color: #344054;
+      color: var(--muted);
       font-size: clamp(1.05rem, 1.7vw, 1.25rem);
       line-height: 1.75;
     }
@@ -750,7 +913,7 @@
 
     .pillar h3 {
       margin: 0 0 5px;
-      font-family: Inter, system-ui, sans-serif;
+      font-family: Manrope, system-ui, sans-serif;
       font-size: 1rem;
       font-weight: 900;
     }
@@ -797,7 +960,7 @@
     }
 
     .feature-caption strong {
-      font-family: "EB Garamond", Georgia, serif;
+      font-family: "Cormorant Garamond", Georgia, serif;
       font-size: 2.15rem;
       line-height: 1;
     }
@@ -808,6 +971,80 @@
       line-height: 1.6;
     }
 
+    /* THEME PEACE */
+    .theme-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .theme-card {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 26px 24px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 10px 32px rgba(30, 36, 51, 0.06);
+      transition: transform 200ms ease, border-color 200ms ease, background 200ms ease, box-shadow 200ms ease;
+    }
+
+    .theme-card:hover {
+      transform: translateY(-4px);
+      background: #fffdf8;
+      border-color: rgba(201, 146, 42, 0.45);
+      box-shadow: 0 16px 40px rgba(201, 146, 42, 0.12);
+    }
+
+    .theme-card .badge {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      color: var(--night);
+      background: var(--gold);
+      border-radius: 12px;
+    }
+
+    .theme-card h3 {
+      font-family: Manrope, sans-serif;
+      font-size: 1.06rem;
+      font-weight: 900;
+      color: var(--ink);
+    }
+
+    .theme-card p {
+      color: var(--muted);
+      line-height: 1.62;
+    }
+
+    .shalom-box {
+      margin-top: 40px;
+      padding: 30px;
+      background: linear-gradient(135deg, rgba(201, 146, 42, 0.12), rgba(255, 253, 248, 0.95));
+      border: 1px solid rgba(201, 146, 42, 0.22);
+      border-radius: var(--radius-lg);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .shalom-box strong {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2.6rem, 5vw, 3.6rem);
+      color: var(--gold-deep);
+      line-height: 1;
+    }
+
+    .shalom-box p {
+      color: var(--muted);
+      line-height: 1.72;
+    }
+
+    /* MICHEL */
     .michel-grid {
       display: grid;
       grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.22fr);
@@ -815,50 +1052,12 @@
       align-items: stretch;
     }
 
-    .guests-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 18px;
-    }
-
-    .guest-card {
-      min-height: 210px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 22px;
-      background: rgba(255, 255, 255, 0.86);
-      border: 1px solid rgba(17, 24, 39, 0.1);
-      border-radius: var(--radius);
-    }
-
-    .guest-card span {
-      color: var(--gold-deep);
-      font-size: 0.68rem;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .guest-card h3 {
-      margin-top: 30px;
-      font-size: 1.8rem;
-      line-height: 1;
-    }
-
-    .guest-card p {
-      margin-top: 10px;
-      color: var(--muted);
-      line-height: 1.62;
-    }
-
     .portrait-card,
     .live-card {
       overflow: hidden;
       border-radius: var(--radius);
-      background: var(--night-2);
-      box-shadow: 0 18px 54px rgba(17, 24, 39, 0.14);
+      background: var(--paper);
+      box-shadow: 0 18px 54px rgba(30, 36, 51, 0.1);
     }
 
     .portrait-card img {
@@ -872,11 +1071,12 @@
       display: grid;
       gap: 10px;
       padding: 22px;
-      color: var(--white);
+      color: var(--ink);
+      background: var(--card);
     }
 
     .portrait-body span {
-      color: #f7dc93;
+      color: var(--gold-deep);
       font-size: 0.7rem;
       font-weight: 900;
       letter-spacing: 0.12em;
@@ -889,7 +1089,7 @@
     }
 
     .portrait-body p {
-      color: rgba(255, 255, 255, 0.7);
+      color: var(--muted);
       line-height: 1.62;
     }
 
@@ -909,7 +1109,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(0deg, rgba(13, 17, 27, 0.72), transparent 48%);
+      background: linear-gradient(0deg, rgba(13, 17, 27, 0.78), transparent 46%);
     }
 
     .live-caption {
@@ -922,13 +1122,171 @@
 
     .live-caption h3 {
       margin-bottom: 10px;
-      font-size: clamp(2.3rem, 4.4vw, 4rem);
-      line-height: 0.95;
+      font-size: clamp(2.1rem, 4.2vw, 3.4rem);
+      line-height: 0.98;
     }
 
     .live-caption p {
-      color: rgba(255, 255, 255, 0.76);
+      color: rgba(255, 255, 255, 0.8);
       line-height: 1.65;
+    }
+
+    /* ARTISTS */
+    .artist-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .artist-card {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 10px 32px rgba(30, 36, 51, 0.06);
+      transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+    }
+
+    .artist-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(201, 146, 42, 0.45);
+      box-shadow: 0 16px 40px rgba(201, 146, 42, 0.12);
+    }
+
+    .artist-photo {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+    }
+
+    .artist-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 22%;
+      transition: transform 600ms ease;
+    }
+
+    .artist-card:hover .artist-photo img {
+      transform: scale(1.06);
+    }
+
+    .artist-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(13, 17, 27, 0.55), transparent 55%);
+    }
+
+    .artist-body {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 22px 22px 26px;
+    }
+
+    .artist-body span.role {
+      color: var(--gold-deep);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .artist-body h3 {
+      font-size: 1.7rem;
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    .artist-body p {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.93rem;
+    }
+
+    /* PROGRAM TABS */
+    .day-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .day-tab {
+      flex: 1 1 220px;
+      display: grid;
+      gap: 4px;
+      padding: 16px 20px;
+      text-align: left;
+      color: var(--ink);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
+    }
+
+    .day-tab:hover {
+      border-color: rgba(212, 169, 82, 0.45);
+      transform: translateY(-2px);
+    }
+
+    .day-tab strong {
+      font-family: Manrope, sans-serif;
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-deep);
+    }
+
+    .day-tab b {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .day-tab span {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .day-tab.is-active {
+      color: var(--ink);
+      background: linear-gradient(150deg, #fff9ef, #f7edd9);
+      border-color: rgba(201, 146, 42, 0.55);
+      box-shadow: 0 14px 40px rgba(201, 146, 42, 0.14);
+    }
+
+    .day-tab.is-active strong {
+      color: var(--gold-deep);
+    }
+
+    .day-tab.is-active span {
+      color: var(--muted);
+    }
+
+    .day-panel {
+      display: none;
+    }
+
+    .day-panel.is-active {
+      display: block;
+      animation: fadeUp 420ms ease;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    .day-intro {
+      max-width: 760px;
+      margin-bottom: 26px;
+      color: var(--muted);
+      line-height: 1.75;
     }
 
     .timeline {
@@ -940,10 +1298,10 @@
 
     .event-row {
       display: grid;
-      grid-template-columns: 116px 1fr auto;
-      align-items: center;
+      grid-template-columns: 132px 1fr;
+      align-items: baseline;
       gap: 22px;
-      padding: 22px 0;
+      padding: 20px 0;
       border-bottom: 1px solid var(--line);
     }
 
@@ -953,17 +1311,16 @@
 
     .event-time {
       color: var(--gold-deep);
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 900;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      letter-spacing: 0.06em;
     }
 
     .event-main h3 {
-      margin: 0 0 7px;
-      font-family: Inter, system-ui, sans-serif;
-      font-size: clamp(1.08rem, 1.8vw, 1.32rem);
-      font-weight: 900;
+      margin: 0 0 6px;
+      font-family: Manrope, system-ui, sans-serif;
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      font-weight: 800;
     }
 
     .event-main p {
@@ -971,21 +1328,514 @@
       line-height: 1.6;
     }
 
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      min-height: 30px;
-      padding: 0 10px;
-      color: var(--night);
-      background: rgba(222, 178, 77, 0.22);
-      border-radius: var(--radius);
-      font-size: 0.68rem;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      white-space: nowrap;
+    /* FARDC PLATFORM */
+    .needs-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 8px;
     }
 
+    .need-card {
+      padding: 24px 20px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      transition: transform 200ms ease, border-color 200ms ease;
+    }
+
+    .need-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212, 169, 82, 0.4);
+    }
+
+    .need-card .need-ico {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      color: var(--white);
+      border-radius: 12px;
+      background: var(--teal);
+    }
+
+    .need-card:nth-child(2) .need-ico { background: var(--wine); }
+    .need-card:nth-child(3) .need-ico { background: var(--gold-deep); }
+    .need-card:nth-child(4) .need-ico { background: #6b5b8a; }
+
+    .need-card h3 {
+      font-family: Manrope, sans-serif;
+      font-size: 1rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .need-card p {
+      color: var(--muted);
+      line-height: 1.58;
+      font-size: 0.92rem;
+    }
+
+    .mech-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .mech-card {
+      position: relative;
+      padding: 30px 26px;
+      background: linear-gradient(155deg, rgba(201, 146, 42, 0.1), rgba(255, 255, 255, 0.98));
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      transition: transform 200ms ease, border-color 200ms ease;
+    }
+
+    .mech-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212, 169, 82, 0.4);
+    }
+
+    .mech-num {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 2.4rem;
+      color: var(--gold-deep);
+      line-height: 1;
+    }
+
+    .mech-card h3 {
+      margin: 12px 0 10px;
+      font-family: Manrope, sans-serif;
+      font-size: 1.08rem;
+      font-weight: 900;
+    }
+
+    .mech-card p {
+      color: var(--muted);
+      line-height: 1.66;
+    }
+
+    .partners-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 40px;
+    }
+
+    .partner-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 11px 16px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      transition: border-color 200ms ease, transform 200ms ease;
+    }
+
+    .partner-chip:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212, 169, 82, 0.45);
+    }
+
+    .partner-chip .material-symbols-rounded {
+      font-size: 18px;
+      color: var(--gold);
+    }
+
+    /* DON */
+    .donate-block {
+      margin-top: 56px;
+      padding: 36px;
+      background: linear-gradient(155deg, rgba(201, 146, 42, 0.1), rgba(255, 253, 248, 0.98));
+      border: 1px solid rgba(201, 146, 42, 0.18);
+      border-radius: var(--radius-lg);
+    }
+
+    .donate-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 0.85fr);
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 32px;
+    }
+
+    .donate-intro h3 {
+      margin-top: 10px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.05;
+    }
+
+    .donate-intro p {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.94rem;
+    }
+
+    .donate-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .donate-panel {
+      padding: 24px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+    }
+
+    .donate-panel h4 {
+      margin-bottom: 6px;
+      font-family: Manrope, sans-serif;
+      font-size: 1rem;
+      font-weight: 900;
+    }
+
+    .donate-panel > p {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    .don-type-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .don-type-tabs button {
+      padding: 9px 14px;
+      color: var(--ink);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: border-color 160ms ease, background 160ms ease, color 160ms ease;
+    }
+
+    .don-type-tabs button.is-active {
+      background: var(--gold);
+      color: #0c0e14;
+      border-color: var(--gold);
+    }
+
+    .don-amounts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .don-amounts button {
+      padding: 8px 14px;
+      color: var(--ink);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      transition: border-color 160ms ease, background 160ms ease;
+    }
+
+    .don-amounts button.is-active {
+      background: rgba(201, 146, 42, 0.16);
+      border-color: var(--gold);
+      color: var(--gold-deep);
+    }
+
+    .don-field {
+      display: grid;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .don-field label {
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .don-field input,
+    .don-field select,
+    .don-field textarea {
+      min-height: 46px;
+      padding: 0 14px;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      outline: 0;
+      transition: border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .don-field textarea {
+      min-height: 92px;
+      padding: 12px 14px;
+      resize: vertical;
+    }
+
+    .don-field input:focus,
+    .don-field select:focus,
+    .don-field textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(212, 169, 82, 0.22);
+    }
+
+    .don-field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .don-pay-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .don-pay-item {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 14px;
+      color: var(--ink);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      text-align: left;
+      transition: border-color 180ms ease, background 180ms ease;
+    }
+
+    .don-pay-item:hover { border-color: rgba(212, 169, 82, 0.4); }
+
+    .don-pay-item.is-active {
+      border-color: var(--gold);
+      background: rgba(212, 169, 82, 0.09);
+    }
+
+    .don-pay-item .ico {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      background: var(--ivory);
+      color: var(--gold-deep);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+
+    .don-pay-item strong {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 900;
+    }
+
+    .don-pay-item span {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .don-pay-item .radio {
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--line);
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .don-pay-item.is-active .radio {
+      border-color: var(--gold);
+    }
+
+    .don-pay-item.is-active .radio::after {
+      content: "";
+      position: absolute;
+      inset: 3px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .don-detail {
+      display: none;
+      margin-top: 16px;
+      padding: 18px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .don-detail.is-visible { display: block; }
+
+    .don-detail h5 {
+      margin-bottom: 10px;
+      font-family: Manrope, sans-serif;
+      font-size: 0.88rem;
+      font-weight: 900;
+      color: var(--gold-deep);
+    }
+
+    .don-detail ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .don-detail li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+
+    .don-detail li strong {
+      color: var(--ink);
+      font-weight: 800;
+    }
+
+    .don-detail li .material-symbols-rounded {
+      font-size: 18px;
+      color: var(--gold);
+    }
+
+    .don-channels {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .don-channel {
+      padding: 20px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      transition: transform 200ms ease, border-color 200ms ease;
+    }
+
+    .don-channel:hover {
+      transform: translateY(-3px);
+      border-color: rgba(212, 169, 82, 0.4);
+    }
+
+    .don-channel .channel-ico {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 12px;
+      color: var(--gold-deep);
+      background: rgba(201, 146, 42, 0.12);
+      border: 1px solid rgba(201, 146, 42, 0.25);
+      border-radius: 12px;
+    }
+
+    .don-channel h5 {
+      margin-bottom: 8px;
+      font-family: Manrope, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 900;
+    }
+
+    .don-channel p,
+    .don-channel li {
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.55;
+    }
+
+    .don-channel ul {
+      margin: 10px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 6px;
+    }
+
+    .don-channel li strong {
+      color: var(--ink);
+      font-weight: 800;
+    }
+
+    .don-note {
+      margin-top: 18px;
+      padding: 14px 16px;
+      display: flex;
+      gap: 10px;
+      align-items: start;
+      color: var(--muted);
+      font-size: 0.84rem;
+      line-height: 1.6;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .don-note .material-symbols-rounded {
+      color: var(--gold);
+      font-size: 20px;
+    }
+
+    .don-form-note {
+      margin-top: 12px;
+      color: var(--gold-deep);
+      font-size: 0.86rem;
+      min-height: 1.2em;
+    }
+
+    .don-material-panel { display: none; }
+    .don-material-panel.is-visible { display: block; }
+    .don-financial-panel.is-hidden { display: none; }
+
+    /* STATS */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .stat {
+      padding: 30px 24px;
+      text-align: center;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 8px 28px rgba(30, 36, 51, 0.06);
+    }
+
+    .stat strong {
+      display: block;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2.4rem, 5vw, 3.4rem);
+      line-height: 1;
+      color: var(--gold-deep);
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.4;
+    }
+
+    /* ACCESS */
     .access-grid {
       display: grid;
       grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
@@ -1002,7 +1852,7 @@
 
     .access-copy p {
       margin-top: 20px;
-      color: rgba(255, 255, 255, 0.68);
+      color: var(--muted);
       line-height: 1.75;
     }
 
@@ -1017,40 +1867,44 @@
       gap: 18px;
       align-items: center;
       padding: 22px;
-      color: var(--white);
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: var(--ink);
+      background: var(--card);
+      border: 1px solid var(--line);
       border-radius: var(--radius);
-      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+      text-align: left;
+      box-shadow: 0 8px 28px rgba(30, 36, 51, 0.05);
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
     }
 
     .pass-card:hover,
     .pass-card.is-selected {
       transform: translateY(-2px);
-      background: rgba(255, 255, 255, 0.11);
-      border-color: rgba(222, 178, 77, 0.82);
+      background: #fffdf8;
+      border-color: rgba(201, 146, 42, 0.65);
+      box-shadow: 0 12px 32px rgba(201, 146, 42, 0.12);
     }
 
     .pass-card h3 {
       margin: 0 0 8px;
-      font-family: Inter, system-ui, sans-serif;
+      font-family: Manrope, system-ui, sans-serif;
       font-size: 1.05rem;
       font-weight: 900;
     }
 
     .pass-card p {
-      color: rgba(255, 255, 255, 0.66);
+      color: var(--muted);
       line-height: 1.55;
     }
 
     .pass-note {
-      color: #f6d98d;
-      font-family: "EB Garamond", Georgia, serif;
-      font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+      color: var(--gold-deep);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
       line-height: 1;
       white-space: nowrap;
     }
 
+    /* MEDIA */
     .media-grid {
       display: grid;
       grid-template-columns: 1.12fr 0.88fr 0.88fr;
@@ -1066,13 +1920,8 @@
       box-shadow: 0 14px 44px rgba(17, 24, 39, 0.1);
     }
 
-    .media-tile.large {
-      grid-row: span 2;
-    }
-
-    .media-tile.wide {
-      grid-column: span 2;
-    }
+    .media-tile.large { grid-row: span 2; }
+    .media-tile.wide { grid-column: span 2; }
 
     .media-tile img,
     .media-tile video {
@@ -1103,12 +1952,14 @@
       text-transform: uppercase;
     }
 
+    /* FINAL CTA */
     .final-cta {
-      padding: 82px 0;
+      padding: 100px 0;
       color: var(--white);
       background:
-        linear-gradient(90deg, rgba(116, 40, 61, 0.94), rgba(23, 107, 98, 0.9)),
+        linear-gradient(100deg, rgba(6, 8, 13, 0.96) 15%, rgba(28, 22, 9, 0.82) 60%, rgba(6, 8, 13, 0.94)),
         url("assets/michel-bakenda-live.png") center / cover no-repeat;
+      border-top: 1px solid rgba(212, 169, 82, 0.22);
     }
 
     .cta-inner {
@@ -1128,8 +1979,28 @@
     .cta-inner p {
       max-width: 620px;
       margin-top: 18px;
-      color: rgba(255, 255, 255, 0.74);
+      color: rgba(255, 255, 255, 0.82);
       line-height: 1.7;
+    }
+
+    .cta-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 26px;
+      margin-top: 22px;
+    }
+
+    .cta-contacts span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .cta-contacts .material-symbols-rounded {
+      font-size: 19px;
+      color: var(--gold-soft);
     }
 
     .signup {
@@ -1160,29 +2031,66 @@
     .form-note {
       min-height: 20px;
       margin-top: 10px;
-      color: rgba(255, 255, 255, 0.74);
+      color: rgba(255, 255, 255, 0.82);
       font-size: 0.88rem;
     }
 
     .site-footer {
-      padding: 42px 0;
-      background: var(--ivory);
+      padding: 54px 0 42px;
+      background: var(--paper);
+      border-top: 1px solid var(--line);
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 24px;
-      align-items: center;
-      color: #475467;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 30px;
+      color: var(--muted);
       font-size: 0.9rem;
     }
 
-    .footer-links {
+    .footer-grid h4 {
+      margin: 0 0 12px;
+      font-family: Manrope, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-deep);
+    }
+
+    .footer-brand strong {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.5rem;
+      color: var(--ink);
+    }
+
+    .footer-brand p {
+      margin-top: 10px;
+      line-height: 1.6;
+      max-width: 34ch;
+    }
+
+    .footer-col a {
+      display: block;
+      padding: 5px 0;
+      font-weight: 700;
+    }
+
+    .footer-col a:hover {
+      color: var(--gold-deep);
+    }
+
+    .footer-bottom {
       display: flex;
       flex-wrap: wrap;
-      gap: 18px;
-      font-weight: 800;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 36px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.82rem;
     }
 
     .reveal {
@@ -1210,6 +2118,33 @@
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
       }
+      .verse { background-attachment: scroll; }
+      .hero-slide {
+        position: relative !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+      }
+      .hero-slide[data-slide="0"],
+      .hero-slide[data-slide="1"],
+      .hero-slide[data-slide="2"] {
+        display: none !important;
+      }
+      .hero-slide .hero-slide-inner > *,
+      .hero-slide .hero-slide-inner > div > * {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .hero-progress { display: none; }
+    }
+
+    @media (max-width: 1080px) {
+      .nav-links { gap: 16px; font-size: 0.7rem; }
+      .needs-grid { grid-template-columns: repeat(2, 1fr); }
+      .donate-intro,
+      .donate-layout,
+      .don-channels { grid-template-columns: 1fr; }
+      .artist-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 980px) {
@@ -1230,45 +2165,42 @@
         gap: 0;
         padding: 12px;
         color: var(--ink);
-        background: rgba(255, 250, 242, 0.98);
-        border: 1px solid rgba(17, 24, 39, 0.1);
+        background: rgba(255, 253, 248, 0.98);
+        border: 1px solid var(--line);
         border-radius: var(--radius);
         box-shadow: var(--shadow);
+        backdrop-filter: blur(20px);
       }
 
-      .nav-links.is-open {
-        display: flex;
-      }
+      .nav-links.is-open { display: flex; }
 
       .nav-links a {
-        padding: 16px;
-        border-bottom: 1px solid rgba(17, 24, 39, 0.08);
+        padding: 15px;
+        border-bottom: 1px solid var(--line);
       }
 
-      .nav-links a:last-child {
-        border-bottom: 0;
+      .nav-links a:last-child { border-bottom: 0; }
+
+      .nav-actions { justify-self: end; }
+      .nav-actions .button { display: none; }
+      .icon-button { display: grid; }
+
+      .hero-slide {
+        padding: 88px 0 clamp(120px, 14vh, 160px);
       }
 
-      .nav-actions {
-        justify-self: end;
+      .hero-slide[data-slide="1"],
+      .hero-slide[data-slide="2"] {
+        padding-bottom: clamp(140px, 18vh, 200px);
       }
 
-      .nav-actions .button {
-        display: none;
-      }
-
-      .icon-button {
-        display: grid;
-      }
-
-      .hero {
-        min-height: 88svh;
-      }
-
-      .hero-inner {
+      .hero-slide[data-slide="3"] .hero-slide-inner {
         grid-template-columns: 1fr;
         gap: 24px;
-        padding: 96px 0 34px;
+      }
+
+      .hero-progress {
+        bottom: 16px;
       }
 
       .hero-panel {
@@ -1277,27 +2209,22 @@
         justify-self: start;
       }
 
-      .media-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .media-grid { grid-template-columns: repeat(2, 1fr); }
+      .theme-grid,
+      .mech-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
 
       .section-heading,
-      .guest-stage-inner,
+      .context-grid,
       .story-grid,
       .michel-grid,
-      .guests-grid,
       .access-grid,
       .cta-inner {
         grid-template-columns: 1fr;
       }
 
-      .live-card img {
-        min-height: 520px;
-      }
-
-      .guest-visual {
-        min-height: 520px;
-      }
+      .live-card img { min-height: 520px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 680px) {
@@ -1305,202 +2232,401 @@
         --container: min(100vw - 28px, 520px);
       }
 
-      .brand-logo {
-        height: 50px;
-      }
+      .brand-logo { height: 50px; }
+      .hero { min-height: 92svh; }
 
-      .hero {
-        min-height: 86svh;
-      }
-
-      .hero h1 {
-        max-width: 100%;
-        font-size: clamp(3.05rem, 15vw, 4.85rem);
-      }
-
-      .hero-copy {
-        max-width: 31ch;
-        margin-top: 18px;
-        font-size: 0.98rem;
-        line-height: 1.55;
-      }
-
-      .hero-actions {
-        margin-top: 22px;
-      }
-
-      .hero-actions .button {
-        width: 100%;
-      }
+      .hero h1 { max-width: 100%; font-size: clamp(2.7rem, 13vw, 4.6rem); }
+      .hero-copy { max-width: 100%; margin-top: 18px; font-size: 0.98rem; line-height: 1.55; }
+      .hero-actions { margin-top: 22px; }
+      .hero-actions .button { width: 100%; }
 
       .hero-panel {
-        width: fit-content;
-        max-width: 100%;
+        width: 100%;
         margin-top: 2px;
-        padding: 0;
-        display: block;
-        background: transparent;
-        border: 0;
-        backdrop-filter: none;
-      }
-
-      .countdown-heading {
-        display: none;
-      }
-
-      .countdown-grid {
-        display: none;
-      }
-
-      .countdown-mobile-line {
-        width: auto;
-        max-width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 10px;
-        padding: 10px 14px;
-        color: var(--white);
-        background: rgba(8, 11, 20, 0.72);
-        border: 1px solid rgba(249, 221, 145, 0.22);
-        border-radius: 999px;
-      }
-
-      .countdown-mobile-line span {
-        display: inline;
-        margin: 0;
-        color: #f9dd91;
-        font-size: 0.62rem;
-        font-weight: 900;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-      }
-
-      .countdown-mobile-line strong {
-        display: inline-flex;
-        align-items: baseline;
-        gap: 2px;
-        font-family: Inter, system-ui, sans-serif;
-        font-size: 0.98rem;
-        font-weight: 900;
-        line-height: 1;
-        white-space: nowrap;
-        padding-left: 10px;
-        border-left: 1px solid rgba(255, 255, 255, 0.14);
-      }
-
-      .countdown-mobile-line strong span {
-        color: inherit;
-        font-size: inherit;
-        letter-spacing: 0;
-        text-transform: none;
+        padding: 14px;
       }
 
       .media-grid,
-      .guests-grid {
-        grid-template-columns: 1fr;
-      }
+      .artist-grid,
+      .needs-grid,
+      .stats-grid,
+      .don-channels { grid-template-columns: 1fr; }
 
-      .section {
-        padding: 76px 0;
-      }
+      .donate-block { padding: 24px 18px; }
+      .don-field-row { grid-template-columns: 1fr; }
 
-      .guest-stage {
-        padding: 56px 0;
-      }
+      .shalom-box { grid-template-columns: 1fr; gap: 12px; }
 
-      .guest-stage-inner {
-        gap: 26px;
-      }
+      .section { padding: 72px 0; }
+      .verse { padding: 56px 0; }
+      .section-heading { margin-bottom: 32px; }
 
-      .guest-visual {
-        min-height: 430px;
-      }
+      .image-feature { min-height: 430px; }
+      .portrait-card img { height: 390px; }
+      .live-card img { min-height: 430px; }
+      .context-visual { min-height: 340px; }
 
-      .guest-caption {
-        inset: auto 16px 16px;
-      }
+      .event-row { grid-template-columns: 1fr; gap: 6px; }
+      .day-tab { flex-basis: 100%; }
 
-      .guest-caption h3 {
-        font-size: clamp(2.45rem, 13vw, 3.6rem);
-      }
+      .pass-card { grid-template-columns: 1fr; }
+      .signup { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
 
-      .guest-trigger {
-        grid-template-columns: 40px 1fr auto;
-      }
+    /* ============================================
+       PREMIUM LAYER — animations & effets
+       ============================================ */
 
-      .guest-trigger img {
-        width: 40px;
-        height: 40px;
-      }
+    ::selection {
+      background: var(--gold);
+      color: var(--night);
+    }
 
-      .section-heading {
-        margin-bottom: 34px;
-      }
+    /* Preloader cinématique */
+    .preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: grid;
+      place-items: center;
+      background: var(--ivory);
+      transition: clip-path 1s cubic-bezier(0.76, 0, 0.24, 1);
+      clip-path: inset(0 0 0 0);
+    }
 
-      .image-feature {
-        min-height: 430px;
-      }
+    .preloader.is-done {
+      clip-path: inset(0 0 100% 0);
+      pointer-events: none;
+    }
 
-      .portrait-card img {
-        height: 390px;
-      }
+    .preloader-inner {
+      text-align: center;
+      color: var(--ink);
+    }
 
-      .live-card img {
-        min-height: 430px;
-      }
+    .preloader-inner img {
+      height: 110px;
+      margin: 0 auto 22px;
+      animation: preLogo 1.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+      filter: drop-shadow(0 18px 44px rgba(222, 178, 77, 0.35));
+    }
 
-      .event-row {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
+    @keyframes preLogo {
+      from { opacity: 0; transform: translateY(26px) scale(0.9); }
+      to { opacity: 1; transform: none; }
+    }
 
-      .event-row .tag {
-        justify-self: start;
-      }
+    .preloader-title {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(1.6rem, 4vw, 2.6rem);
+      line-height: 1.1;
+      animation: preLogo 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
+    }
 
-      .pass-card {
-        grid-template-columns: 1fr;
-      }
+    .preloader-title em {
+      font-style: italic;
+      color: var(--gold-soft);
+    }
 
-      .pass-note {
-        font-size: 2.25rem;
-      }
+    .preloader-bar {
+      width: min(240px, 60vw);
+      height: 2px;
+      margin: 26px auto 0;
+      background: rgba(30, 36, 51, 0.1);
+      border-radius: 999px;
+      overflow: hidden;
+      animation: preLogo 1s ease 0.4s both;
+    }
 
-      .media-tile,
-      .media-tile.large,
-      .media-tile.wide {
-        min-height: 260px;
-        grid-column: auto;
-        grid-row: auto;
-      }
+    .preloader-bar span {
+      display: block;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(90deg, var(--gold-deep), var(--gold-soft));
+      transform-origin: left;
+      animation: preBar 1.7s cubic-bezier(0.65, 0, 0.35, 1) 0.35s both;
+    }
 
-      .signup {
-        grid-template-columns: 1fr;
-      }
+    @keyframes preBar {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
 
-      .footer-grid {
-        grid-template-columns: 1fr;
+    body.is-loading {
+      overflow: hidden;
+    }
+
+    /* Barre de progression du scroll */
+    .scroll-progress {
+      position: fixed;
+      inset: 0 auto auto 0;
+      z-index: 120;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold-deep), var(--gold), var(--gold-soft));
+      box-shadow: 0 0 18px rgba(222, 178, 77, 0.55);
+      pointer-events: none;
+    }
+
+    /* Grain cinéma */
+    .film-grain {
+      position: fixed;
+      inset: -50%;
+      z-index: 110;
+      pointer-events: none;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      animation: grainShift 0.9s steps(4) infinite;
+    }
+
+    @keyframes grainShift {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(-2%, 3%); }
+      50% { transform: translate(3%, -2%); }
+      75% { transform: translate(-3%, -3%); }
+      100% { transform: translate(2%, 2%); }
+    }
+
+    /* Reveal premium : blur + rise */
+    body.animations-ready .reveal {
+      opacity: 0;
+      transform: translateY(44px);
+      filter: blur(10px);
+      transition:
+        opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 1s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    body.animations-ready .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+
+    /* Stagger des enfants de grilles */
+    body.animations-ready .reveal .rc {
+      opacity: 0;
+      transform: translateY(34px) scale(0.97);
+      filter: blur(8px);
+      transition:
+        opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      transition-delay: calc(var(--i, 0) * 90ms);
+    }
+
+    body.animations-ready .reveal.is-visible .rc {
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+
+    /* Titres : révélation mot par mot */
+    .split .wi {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(0.55em) rotate(2deg);
+      filter: blur(8px);
+      transition:
+        opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+      transition-delay: calc(var(--wi, 0) * 65ms);
+    }
+
+    .split.split-in .wi {
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+
+    /* Boutons : sweep lumineux */
+    .button {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -85%;
+      width: 55%;
+      height: 100%;
+      background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+      transform: skewX(-22deg);
+      transition: left 0.65s ease;
+      pointer-events: none;
+    }
+
+    .button:hover::before {
+      left: 130%;
+    }
+
+    /* Versets : entrée en scène */
+    body.animations-ready .verse blockquote {
+      opacity: 0;
+      transform: scale(0.94) translateY(20px);
+      transition:
+        opacity 1.15s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1.15s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    body.animations-ready .verse blockquote.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .verse blockquote::before {
+      content: "\201C";
+      display: block;
+      margin-bottom: 6px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(4rem, 9vw, 7rem);
+      line-height: 0.5;
+      color: var(--gold-soft);
+      opacity: 0.55;
+    }
+
+    .verse cite {
+      position: relative;
+      display: inline-block;
+    }
+
+    .verse cite::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      width: 44px;
+      height: 1px;
+      background: var(--gold-soft);
+      transform: translateX(-50%);
+      opacity: 0.7;
+    }
+
+    /* Cartes : profondeur 3D au survol */
+    .artist-card,
+    .theme-card,
+    .need-card,
+    .mech-card {
+      will-change: transform;
+      transform-style: preserve-3d;
+    }
+
+    .artist-card .artist-body,
+    .theme-card > * {
+      transform: translateZ(24px);
+    }
+
+    /* Médias : zoom élégant */
+    .media-tile img,
+    .media-tile video {
+      transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .media-tile:hover img,
+    .media-tile:hover video {
+      transform: scale(1.07);
+    }
+
+    .media-tile::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      background: linear-gradient(115deg, transparent 40%, rgba(249, 221, 145, 0.16) 50%, transparent 60%);
+      background-size: 250% 100%;
+      background-position: 180% 0;
+      transition: background-position 0.9s ease;
+      pointer-events: none;
+    }
+
+    .media-tile:hover::before {
+      background-position: -80% 0;
+    }
+
+    /* Images parallaxe */
+    .px-img {
+      will-change: transform;
+    }
+
+    /* Éléments flottants décoratifs */
+    .shalom-box strong {
+      animation: heroFloatSoftP 6s ease-in-out infinite;
+    }
+
+    @keyframes heroFloatSoftP {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    /* Timeline : ligne dorée qui se dessine */
+    .event-row {
+      position: relative;
+    }
+
+    .event-row::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 0;
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      transition: width 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+      transition-delay: calc(var(--i, 0) * 110ms);
+    }
+
+    .reveal.is-visible .event-row::before {
+      width: 100%;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .preloader { display: none !important; }
+      .film-grain { display: none !important; }
+      .split .wi {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+      }
+      body.animations-ready .verse blockquote {
+        opacity: 1 !important;
+        transform: none !important;
       }
     }
   </style>
 </head>
-<body>
+<body class="is-loading">
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <img src="assets/logo-acclamons-jesus.png" alt="">
+      <div class="preloader-title">Acclamons Jésus <em>pour la Paix.</em></div>
+      <div class="preloader-bar"><span></span></div>
+    </div>
+  </div>
+
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="film-grain" aria-hidden="true"></div>
+
   <header class="site-header" id="siteHeader">
     <nav class="nav container" aria-label="Navigation principale">
-      <a class="brand" href="#top" aria-label="Acclamons Jésus">
+      <a class="brand" href="#top" aria-label="Acclamons Jésus pour la Paix">
         <img class="brand-logo" src="assets/logo-acclamons-jesus.png" alt="Acclamons Jésus">
       </a>
       <div class="nav-links" id="navLinks">
+        <a href="#contexte">Contexte</a>
         <a href="#concept">Concept</a>
-        <a href="#michel">Michel</a>
-        <a href="#artistes">Invités</a>
+        <a href="#paix">La Paix</a>
+        <a href="#artistes">Artistes</a>
         <a href="#programme">Programme</a>
-        <a href="#acces">Accès</a>
+        <a href="#solidarite">Solidarité</a>
         <a href="#contact">Contact</a>
       </div>
       <div class="nav-actions">
-        <a class="button" href="#contact">
+        <a class="button" href="commande.html">
           <span class="material-symbols-rounded" aria-hidden="true">confirmation_number</span>
           Réserver
         </a>
@@ -1512,73 +2638,137 @@
   </header>
 
   <main id="top">
-    <section class="hero" aria-label="Accueil">
+    <section class="hero" id="hero" aria-label="Accueil">
       <video class="hero-video" autoplay muted loop playsinline poster="assets/video-poster.jpg">
         <source src="assets/hero-video.mp4" type="video/mp4">
       </video>
-      <div class="hero-inner">
-        <div>
-          <h1>Acclamons Jésus</h1>
-          <p class="hero-copy">Trois jours d'actions caritatives, de jeunes talents et d'adoration, portés par Michel Bakenda, artiste gospel.</p>
-          <div class="hero-actions">
-            <a class="button" href="#contact">
-              <span class="material-symbols-rounded" aria-hidden="true">confirmation_number</span>
-              Réserver
-            </a>
-            <a class="button ghost" href="#concept">
-              <span class="material-symbols-rounded" aria-hidden="true">church</span>
-              Découvrir le projet
-            </a>
+      <div class="hero-aura" aria-hidden="true"></div>
+      <div class="hero-shine" aria-hidden="true"></div>
+
+      <div class="hero-slides">
+        <div class="hero-slide" data-slide="0" aria-hidden="true">
+          <div class="hero-slide-inner"></div>
+        </div>
+
+        <div class="hero-slide" data-slide="1">
+          <div class="hero-slide-inner">
+            <p class="hero-kicker">5<sup>e</sup> Édition · Festival Gospel</p>
+            <h1>Acclamons Jésus <em>pour la Paix.</em></h1>
           </div>
         </div>
-        <aside class="hero-panel" aria-label="Compte à rebours">
-          <div class="countdown-heading">
-            <span>Compte à rebours</span>
-            <strong>28-30 août 2026</strong>
+
+        <div class="hero-slide" data-slide="2">
+          <div class="hero-slide-inner">
+            <p class="hero-kicker">Notre mission 2026</p>
+            <p class="hero-desc">Trois jours d'adoration, de solidarité et de célébration au service de la paix à l'Est de la RDC et des familles des FARDC, portés par Michel Bakenda et une constellation d'artistes du gospel africain.</p>
           </div>
-          <div class="countdown-mobile-line" aria-hidden="true">
-            <span>28-30 août 2026</span>
-            <strong>J-<span data-unit="days">00</span></strong>
+        </div>
+
+        <div class="hero-slide" data-slide="3">
+          <div class="hero-slide-inner">
+            <div>
+              <p class="hero-kicker">Rejoignez-nous</p>
+              <div class="hero-meta">
+                <span><span class="material-symbols-rounded" aria-hidden="true">calendar_month</span>28 – 30 août 2026</span>
+                <span><span class="material-symbols-rounded" aria-hidden="true">location_on</span>Centre Culturel Grand Tambour, Kinshasa</span>
+                <span><span class="material-symbols-rounded" aria-hidden="true">groups</span>+ 10 000 personnes attendues</span>
+              </div>
+              <div class="hero-actions">
+                <a class="button" href="commande.html">
+                  <span class="material-symbols-rounded" aria-hidden="true">confirmation_number</span>
+                  Réserver ma place
+                </a>
+                <a class="button ghost" href="#concept">
+                  <span class="material-symbols-rounded" aria-hidden="true">church</span>
+                  Découvrir le projet
+                </a>
+              </div>
+            </div>
+            <aside class="hero-panel" aria-label="Compte à rebours">
+              <div class="countdown-heading">
+                <span>Compte à rebours</span>
+                <strong>28-30 août 2026</strong>
+              </div>
+              <div class="countdown-mobile-line" aria-hidden="true">
+                <span>28-30 août 2026</span>
+                <strong>J-<span data-unit="days">00</span></strong>
+              </div>
+              <div class="countdown-grid" id="countdown">
+                <div class="countdown-item"><strong data-unit="days">00</strong><span>Jours</span></div>
+                <div class="countdown-item"><strong data-unit="hours">00</strong><span>Heures</span></div>
+                <div class="countdown-item"><strong data-unit="minutes">00</strong><span>Min</span></div>
+                <div class="countdown-item"><strong data-unit="seconds">00</strong><span>Sec</span></div>
+              </div>
+              <div class="hero-days">
+                <div><strong>Jour 1</strong><span>Descente humanitaire</span></div>
+                <div><strong>Jour 2</strong><span>Jeunes talents</span></div>
+                <div><strong>Jour 3</strong><span>Show de célébration</span></div>
+              </div>
+            </aside>
           </div>
-          <div class="countdown-grid" id="countdown">
-            <div class="countdown-item"><strong data-unit="days">00</strong><span>Jours</span></div>
-            <div class="countdown-item"><strong data-unit="hours">00</strong><span>Heures</span></div>
-            <div class="countdown-item"><strong data-unit="minutes">00</strong><span>Min</span></div>
-            <div class="countdown-item"><strong data-unit="seconds">00</strong><span>Sec</span></div>
-          </div>
-        </aside>
+        </div>
+      </div>
+
+      <div class="hero-progress" aria-label="Progression des slides">
+        <button type="button" data-hero-go="0" class="is-active" aria-label="Slide 1"></button>
+        <button type="button" data-hero-go="1" aria-label="Slide 2"></button>
+        <button type="button" data-hero-go="2" aria-label="Slide 3"></button>
+        <button type="button" data-hero-go="3" aria-label="Slide 4"></button>
       </div>
     </section>
 
+    <section class="verse" aria-label="Verset">
+      <div class="container">
+        <blockquote>
+          « Heureux ceux qui œuvrent pour la paix, car ils seront appelés fils de Dieu. »
+          <cite>Matthieu 5 : 9</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="section dark" id="contexte">
+      <div class="context-grid container">
+        <div class="context-copy reveal">
+          <p class="eyebrow">Préambule &amp; Contexte</p>
+          <h2>Adorer, un acte de paix et de résistance.</h2>
+          <p class="lead-dark">L'Est de la République Démocratique du Congo traverse, depuis plus de deux décennies, une crise sécuritaire et humanitaire d'une ampleur sans précédent. Le Nord-Kivu, le Sud-Kivu et l'Ituri demeurent le théâtre d'affrontements qui ont déplacé des millions de personnes.</p>
+          <p>Les Forces Armées de la République Démocratique du Congo (FARDC), déployées sur ces lignes de front, portent le fardeau de la souveraineté nationale et de la protection des populations civiles. Derrière chaque uniforme se tient une famille qui attend, dans l'angoisse et le silence.</p>
+          <p>Dans ce contexte de détresse, la foi demeure l'un des derniers bastions de résilience. C'est dans cette optique que Michel Bakenda a conçu cette cinquième édition : elle rompt avec la simple logique du concert évangélique pour embrasser une vocation humanitaire, patriotique et spirituelle.</p>
+        </div>
+        <figure class="context-visual reveal">
+          <img src="assets/michel-adoration.png" alt="Artiste gospel en adoration sur scène">
+        </figure>
+      </div>
+    </section>
 
     <section class="section" id="concept">
       <div class="story-grid container">
         <div class="story-copy reveal">
           <div>
-            <p class="eyebrow">C'est quoi Acclamons Jésus ?</p>
-            <h2>Un rendez-vous gospel pour servir et acclamer.</h2>
+            <p class="eyebrow">Histoire &amp; Identité</p>
+            <h2>Bien plus qu'un concert : une assemblée sacrée.</h2>
           </div>
-          <p class="lead">Acclamons Jésus est un projet porté par la foi, la compassion et la louange. Pendant trois jours, l'événement relie des actions caritatives, une scène ouverte aux jeunes talents et un grand concert d'adoration.</p>
+          <p class="lead">« Acclamons Jésus » est né de la vision d'un artiste qui a fait de la louange un mode de vie et un outil de transformation sociale. Devenu le rendez-vous incontournable du gospel en RDC, l'événement repose sur trois piliers indissociables.</p>
           <div class="pillars">
-            <div class="pillar">
-              <span class="pillar-icon"><span class="material-symbols-rounded" aria-hidden="true">volunteer_activism</span></span>
-              <div>
-                <h3>Un élan de compassion</h3>
-                <p>Le 28 août met l'accent sur les maternités, les orphelinats et les homes, avec une présence concrète auprès des personnes accompagnées.</p>
-              </div>
-            </div>
-            <div class="pillar">
-              <span class="pillar-icon"><span class="material-symbols-rounded" aria-hidden="true">mic_external_on</span></span>
-              <div>
-                <h3>Une scène pour la relève</h3>
-                <p>Le 29 août donne une place aux jeunes talents, avec des passages live, des jeux concours et une énergie plus participative.</p>
-              </div>
-            </div>
             <div class="pillar">
               <span class="pillar-icon"><span class="material-symbols-rounded" aria-hidden="true">church</span></span>
               <div>
-                <h3>Une grande acclamation</h3>
-                <p>Le 30 août rassemble le public pour le concert Acclamons Jésus, avec Michel Bakenda, les invités et une atmosphère d'adoration.</p>
+                <h3>L'adoration comme fin en soi</h3>
+                <p>La musique, la prière et la Parole fusionnent pour créer une atmosphère propice aux rencontres avec le divin, dans la tradition de la « cultura » chrétienne congolaise.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <span class="pillar-icon"><span class="material-symbols-rounded" aria-hidden="true">diversity_3</span></span>
+              <div>
+                <h3>La communion fraternelle</h3>
+                <p>Une expression concrète de l'amour du prochain, qui rapproche civils et militaires, diaspora et mère patrie, autour d'une même espérance.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <span class="pillar-icon"><span class="material-symbols-rounded" aria-hidden="true">volunteer_activism</span></span>
+              <div>
+                <h3>L'action sociale</h3>
+                <p>La traduction concrète de la foi : une plateforme de solidarité au service des familles des soldats déployés au front.</p>
               </div>
             </div>
           </div>
@@ -1586,10 +2776,52 @@
         <figure class="image-feature reveal">
           <img src="assets/michel-bakenda-live.png" alt="Michel Bakenda sur scène pendant un concert gospel">
           <figcaption class="feature-caption">
-            <strong>Un projet avant tout spirituel.</strong>
-            <span>Trois jours reliés par le service, la transmission et une même acclamation autour de Jésus.</span>
+            <strong>Quatre éditions, une même flamme.</strong>
+            <span>Des moments d'intense adoration, de communion fraternelle et de croissance qui font aujourd'hui d'Acclamons Jésus la manifestation gospel la plus structurée de la RDC.</span>
           </figcaption>
         </figure>
+      </div>
+    </section>
+
+    <section class="section dark" id="paix">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">Thématique 2026</p>
+            <h2>La Paix, une force active de transformation.</h2>
+          </div>
+          <p>La prière et l'adoration ne sont pas une fuite : elles sont un investissement spirituel destiné à produire des fruits tangibles. Cette édition se distingue par trois engagements majeurs.</p>
+        </div>
+        <div class="theme-grid reveal">
+          <div class="theme-card">
+            <span class="badge"><span class="material-symbols-rounded" aria-hidden="true">handshake</span></span>
+            <h3>L'invitation aux familles des FARDC</h3>
+            <p>Michel Bakenda et son équipe se rendront dans les camps militaires pour inviter personnellement les femmes et les enfants des soldats au front.</p>
+          </div>
+          <div class="theme-card">
+            <span class="badge"><span class="material-symbols-rounded" aria-hidden="true">redeem</span></span>
+            <h3>Un espace de dons dédié</h3>
+            <p>Une plateforme structurée de collecte de dons matériels et financiers pour soutenir concrètement les familles des militaires déployés.</p>
+          </div>
+          <div class="theme-card">
+            <span class="badge"><span class="material-symbols-rounded" aria-hidden="true">flag</span></span>
+            <h3>La dimension patriotique</h3>
+            <p>Affirmer que la foi chrétienne et l'amour de la patrie sont compatibles, et que prier pour la paix est un acte de citoyenneté responsable.</p>
+          </div>
+        </div>
+        <div class="shalom-box reveal">
+          <strong>Shalom</strong>
+          <p>Dans la tradition biblique, la paix n'est pas seulement l'absence de guerre. Le terme hébreu « shalom » englobe la santé, la prospérité, la sécurité et l'harmonie dans toutes les dimensions de l'existence. C'est cette paix-là qu'Acclamons Jésus invoque et proclame.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="verse" aria-label="Verset">
+      <div class="container">
+        <blockquote>
+          « Je vous laisse la paix, je vous donne ma paix ; je ne vous la donne pas comme le monde la donne. »
+          <cite>Jean 14 : 27</cite>
+        </blockquote>
       </div>
     </section>
 
@@ -1597,96 +2829,89 @@
       <div class="container">
         <div class="section-heading reveal">
           <div>
-            <p class="eyebrow">Petite biographie</p>
+            <p class="eyebrow">Hôte &amp; Visionnaire</p>
             <h2>Michel Bakenda, l'initiateur du projet.</h2>
           </div>
-          <p>Artiste gospel francophone et conducteur de louange, Michel Bakenda initie Acclamons Jésus comme un temps de rassemblement autour de l'adoration, de la jeunesse et du service.</p>
+          <p>Chantre de l'Éternel, auteur-compositeur de renommée internationale et fondateur de la structure « Autour du Trône » et de sa fondation, il porte une vision qui dépasse le cadre artistique pour investir le champ de l'action sociale.</p>
         </div>
         <div class="michel-grid">
           <article class="portrait-card reveal">
             <img src="assets/michel-bakenda.jpg" alt="Portrait de Michel Bakenda">
             <div class="portrait-body">
-              <span>Artiste gospel</span>
+              <span>Chantre de l'Éternel</span>
               <h3>Michel Bakenda</h3>
-              <p>Son ministère musical met l'accent sur la prière chantée, la présence scénique et la participation du public. Avec Acclamons Jésus, il porte une vision qui dépasse l'affiche d'un concert.</p>
+              <p>Figure incontournable du gospel congolais, il a imposé un style unique mêlant adoration profonde et identité culturelle africaine. Ses albums ont touché des millions d'auditeurs à travers le monde.</p>
             </div>
           </article>
           <article class="live-card reveal">
             <img src="assets/michel-bakenda-live.png" alt="Michel Bakenda en performance live">
             <div class="live-caption">
-              <h3>Une vision de rassemblement.</h3>
-              <p>Le projet réunit soutien concret, encouragement des talents et grand moment de louange pour faire monter une même acclamation vers Jésus.</p>
+              <h3>Faire de la louange un acte de transformation nationale.</h3>
+              <p>Avec Acclamons Jésus, Michel Bakenda réunit soutien concret, encouragement des jeunes talents et grand moment d'adoration pour faire monter une même acclamation vers Jésus, au service de la paix.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="guest-stage" id="artistes" aria-label="Invités">
-      <div class="guest-stage-inner container">
-        <div class="guest-visual reveal" id="guestVisual">
-          <article class="guest-slide is-active" data-guest-slide="0">
-            <img src="assets/moise-mbiye.jpg" alt="Moise Mbiye">
-            <div class="guest-caption">
-              <span>Invité</span>
-              <h3>Moise Mbiye</h3>
-              <p>Une voix de foi et de profondeur pour une soirée tournée vers l'adoration.</p>
-            </div>
-          </article>
-          <article class="guest-slide" data-guest-slide="1">
-            <img src="assets/natalie-makoma.jpg" alt="Natalie Makoma">
-            <div class="guest-caption">
-              <span>Invitée</span>
-              <h3>Natalie Makoma</h3>
-              <p>Une présence lumineuse pour porter la célébration avec force et émotion.</p>
-            </div>
-          </article>
-          <article class="guest-slide" data-guest-slide="2">
-            <img src="assets/bishop-benjamin-dube.jpeg" alt="Bishop Benjamin Dube">
-            <div class="guest-caption">
-              <span>Invité spécial</span>
-              <h3>Bishop Benjamin Dube</h3>
-              <p>Une dimension internationale pour élever l'atmosphère de louange.</p>
-            </div>
-          </article>
-          <article class="guest-slide" data-guest-slide="3">
-            <img src="assets/eunice-manyanga.jpg" alt="Eunice Manyanga">
-            <div class="guest-caption">
-              <span>Invitée</span>
-              <h3>Eunice Manyanga</h3>
-              <p>Une couleur vocale chaleureuse pour rejoindre le cœur du public.</p>
-            </div>
-          </article>
-        </div>
-        <div class="guest-copy reveal">
+    <section class="section dark" id="artistes" aria-label="Artistes et invités">
+      <div class="container">
+        <div class="section-heading reveal">
           <div>
-            <p class="eyebrow">Invités</p>
-            <h2>Ils rejoignent l'acclamation.</h2>
+            <p class="eyebrow">Artistes &amp; Invités</p>
+            <h2>Une constellation du gospel africain.</h2>
           </div>
-          <p>Les invités apparaissent un par un, comme une annonce de scène. Chaque nom garde son moment avant le grand concert du 30 août.</p>
-          <div class="guest-list" aria-label="Liste des invités">
-            <button class="guest-trigger is-active" type="button" data-guest-index="0">
-              <img src="assets/moise-mbiye.jpg" alt="">
-              <div class="guest-trigger-copy"><strong>Moise Mbiye</strong><span>Invité</span></div>
-              <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-            </button>
-            <button class="guest-trigger" type="button" data-guest-index="1">
-              <img src="assets/natalie-makoma.jpg" alt="">
-              <div class="guest-trigger-copy"><strong>Natalie Makoma</strong><span>Invitée</span></div>
-              <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-            </button>
-            <button class="guest-trigger" type="button" data-guest-index="2">
-              <img src="assets/bishop-benjamin-dube.jpeg" alt="">
-              <div class="guest-trigger-copy"><strong>Bishop Benjamin Dube</strong><span>Invité spécial</span></div>
-              <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-            </button>
-            <button class="guest-trigger" type="button" data-guest-index="3">
-              <img src="assets/eunice-manyanga.jpg" alt="">
-              <div class="guest-trigger-copy"><strong>Eunice Manyanga</strong><span>Invitée</span></div>
-              <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-            </button>
-          </div>
-          <div class="guest-progress" aria-hidden="true"><span id="guestProgress"></span></div>
+          <p>Chaque artiste incarne des valeurs de foi, d'excellence et d'engagement social. Ensemble, ils bâtissent une cathédrale sonore d'adoration et d'intercession pour la paix.</p>
+        </div>
+        <div class="artist-grid reveal">
+          <article class="artist-card">
+            <div class="artist-photo"><img src="assets/moise-mbiye.jpg" alt="Moïse Mbiye"></div>
+            <div class="artist-body">
+              <span class="role">L'icône du gospel congolais</span>
+              <h3>Moïse Mbiye</h3>
+              <p>Pasteur de l'église Cité Béthel, auteur-compositeur et interprète. Son style mêle gospel et rumba congolaise. Six albums à son actif, dont « Héros », « Triomphe » et « Royal ».</p>
+            </div>
+          </article>
+          <article class="artist-card">
+            <div class="artist-photo"><img src="assets/natalie-makoma.jpg" alt="Nathalie Makoma"></div>
+            <div class="artist-body">
+              <span class="role">La voix de la diaspora</span>
+              <h3>Nathalie Makoma</h3>
+              <p>Chanteuse congolo-hollandaise, leader du groupe Makoma et lauréate du Kora Award 2002. Son album « Na Ndimi » témoigne d'un ancrage spirituel renouvelé.</p>
+            </div>
+          </article>
+          <article class="artist-card">
+            <div class="artist-photo"><img src="assets/bishop-benjamin-dube.jpeg" alt="Benjamin Dube"></div>
+            <div class="artist-body">
+              <span class="role">L'apôtre du gospel sud-africain</span>
+              <h3>Benjamin Dube</h3>
+              <p>Pasteur et fondateur du High Praise Centre Church à Johannesburg, plus de quinze albums dont plusieurs disques d'or et de platine. La dimension panafricaine de l'événement.</p>
+            </div>
+          </article>
+          <article class="artist-card">
+            <div class="artist-photo"><img src="assets/eunice-manyanga.jpg" alt="Eunice Manyanga"></div>
+            <div class="artist-body">
+              <span class="role">La relève féminine</span>
+              <h3>Eunice Manyanga</h3>
+              <p>Spécialiste de la fusion des rythmes africains traditionnels et du gospel féminin. Ses titres « Liziba » et « Amina » ont touché une audience internationale.</p>
+            </div>
+          </article>
+          <article class="artist-card">
+            <div class="artist-photo"><img src="assets/choir-stage.png" alt="Rosette Ngoie"></div>
+            <div class="artist-body">
+              <span class="role">La relève féminine</span>
+              <h3>Rosette Ngoie</h3>
+              <p>Chantre de renom, elle complète cette représentation féminine qui témoigne de la place centrale des femmes dans la louange et l'intercession pour la paix.</p>
+            </div>
+          </article>
+          <article class="artist-card">
+            <div class="artist-photo"><img src="assets/michel-bakenda.jpg" alt="Michel Bakenda"></div>
+            <div class="artist-body">
+              <span class="role">Hôte &amp; maître de cérémonie</span>
+              <h3>Michel Bakenda</h3>
+              <p>Le grand concert du Jour 3 rassemble tous les artistes autour de Michel Bakenda pour un moment d'adoration sans précédent, retransmis en direct.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -1695,36 +2920,399 @@
       <div class="container">
         <div class="section-heading reveal">
           <div>
-            <p class="eyebrow">Déroulé</p>
-            <h2>Trois jours consécutifs, un même élan.</h2>
+            <p class="eyebrow">Programme détaillé</p>
+            <h2>Trois jours, un même élan vers la paix.</h2>
           </div>
-          <p>Du 28 au 30 août, le programme avance par étapes: servir, révéler les jeunes talents, puis vivre le grand concert Acclamons Jésus.</p>
+          <p>Du 28 au 30 août, chaque journée est structurée pour maximiser l'impact spirituel, humanitaire et communautaire de l'événement.</p>
         </div>
-        <div class="timeline reveal">
-          <article class="event-row">
-            <div class="event-time">28 août</div>
-            <div class="event-main">
-              <h3>Actions caritatives</h3>
-              <p>Présence auprès des maternités, orphelinats et homes, avec des gestes de soutien et des temps de proximité.</p>
+
+        <div class="day-tabs reveal" role="tablist" aria-label="Journées du festival">
+          <button class="day-tab is-active" type="button" role="tab" aria-selected="true" data-day="0">
+            <strong>Jour 1 · 28 août</strong>
+            <b>Descente humanitaire</b>
+            <span>Dans les camps militaires</span>
+          </button>
+          <button class="day-tab" type="button" role="tab" aria-selected="false" data-day="1">
+            <strong>Jour 2 · 29 août</strong>
+            <b>Jeunes artistes</b>
+            <span>Concours de talents chrétiens</span>
+          </button>
+          <button class="day-tab" type="button" role="tab" aria-selected="false" data-day="2">
+            <strong>Jour 3 · 30 août</strong>
+            <b>Show de célébration</b>
+            <span>Le grand concert d'adoration</span>
+          </button>
+        </div>
+
+        <div class="day-panel is-active reveal" data-day-panel="0">
+          <p class="day-intro">La première journée est consacrée à une action humanitaire de proximité. Michel Bakenda et son équipe se rendent dans les camps militaires de Kinshasa pour inviter les familles des FARDC, recueillir des témoignages et initier la collecte de dons.</p>
+          <div class="timeline">
+            <div class="event-row"><div class="event-time">08H00</div><div class="event-main"><h3>Rassemblement &amp; briefing</h3><p>Réunion de l'équipe au Centre Culturel Grand Tambour.</p></div></div>
+            <div class="event-row"><div class="event-time">09H00</div><div class="event-main"><h3>Départ en caravane</h3><p>Direction les camps militaires (Kokolo, Lufungula, Tshatshi…).</p></div></div>
+            <div class="event-row"><div class="event-time">10H00 – 12H00</div><div class="event-main"><h3>Rencontres avec les familles</h3><p>Distribution d'invitations et collecte des besoins.</p></div></div>
+            <div class="event-row"><div class="event-time">12H00 – 13H00</div><div class="event-main"><h3>Prière &amp; adoration</h3><p>Moment de communion avec les familles présentes.</p></div></div>
+            <div class="event-row"><div class="event-time">14H00 – 16H00</div><div class="event-main"><h3>Visite des familles les plus vulnérables</h3><p>Remise de kits de première nécessité.</p></div></div>
+            <div class="event-row"><div class="event-time">16H00 – 17H00</div><div class="event-main"><h3>Conférence de presse</h3><p>Lancement officiel de la plateforme de dons.</p></div></div>
+            <div class="event-row"><div class="event-time">18H00</div><div class="event-main"><h3>Retour &amp; préparation</h3><p>Retour au Centre Culturel Grand Tambour et préparation du lendemain.</p></div></div>
+          </div>
+        </div>
+
+        <div class="day-panel reveal" data-day-panel="1">
+          <p class="day-intro">La deuxième journée met en lumière la relève du gospel congolais. Des groupes de jeunes artistes chrétiens, sélectionnés sur le talent et l'engagement spirituel, se produisent sur la grande scène.</p>
+          <div class="timeline">
+            <div class="event-row"><div class="event-time">10H00</div><div class="event-main"><h3>Ouverture des portes</h3><p>Accueil du public.</p></div></div>
+            <div class="event-row"><div class="event-time">11H00 – 12H30</div><div class="event-main"><h3>Session de louange</h3><p>Avec les groupes choraux locaux.</p></div></div>
+            <div class="event-row"><div class="event-time">13H00 – 14H00</div><div class="event-main"><h3>Pause déjeuner</h3><p>Animation des espaces forains.</p></div></div>
+            <div class="event-row"><div class="event-time">14H00 – 17H00</div><div class="event-main"><h3>Concours de talents</h3><p>Prestations des jeunes artistes sélectionnés.</p></div></div>
+            <div class="event-row"><div class="event-time">17H00 – 18H00</div><div class="event-main"><h3>Délibération du jury</h3><p>Remise des prix aux lauréats.</p></div></div>
+            <div class="event-row"><div class="event-time">18H00 – 19H00</div><div class="event-main"><h3>Concert de clôture</h3><p>Participation surprise d'un artiste invité.</p></div></div>
+            <div class="event-row"><div class="event-time">19H00 – 20H00</div><div class="event-main"><h3>Prière pour la paix</h3><p>Temps d'intercession et collecte de dons.</p></div></div>
+          </div>
+        </div>
+
+        <div class="day-panel reveal" data-day-panel="2">
+          <p class="day-intro">La troisième journée constitue l'apogée de l'événement. Michel Bakenda, hôte et maître de cérémonie, est accompagné d'une constellation d'artistes internationaux. La journée est retransmise en direct sur les réseaux sociaux et le site de l'événement.</p>
+          <div class="timeline">
+            <div class="event-row"><div class="event-time">14H00</div><div class="event-main"><h3>Ouverture des portes</h3><p>Accueil du public.</p></div></div>
+            <div class="event-row"><div class="event-time">15H00 – 15H30</div><div class="event-main"><h3>Louange d'ouverture</h3><p>Session avec les chorales d'ouverture et remise des prix aux lauréats.</p></div></div>
+            <div class="event-row"><div class="event-time">Show</div><div class="event-main"><h3>Rosette Ngoie &amp; Eunice Manyanga</h3><p>Prestations de la relève féminine du gospel.</p></div></div>
+            <div class="event-row"><div class="event-time">Show</div><div class="event-main"><h3>Nathalie Makoma</h3><p>La voix de la diaspora congolaise.</p></div></div>
+            <div class="event-row"><div class="event-time">Show</div><div class="event-main"><h3>Benjamin Dube <span style="opacity:.7">(Afrique du Sud)</span></h3><p>L'apôtre du gospel panafricain.</p></div></div>
+            <div class="event-row"><div class="event-time">Show</div><div class="event-main"><h3>Moïse Mbiye</h3><p>L'icône du gospel congolais.</p></div></div>
+            <div class="event-row"><div class="event-time">Grand final</div><div class="event-main"><h3>Grand concert de Michel Bakenda</h3><p>Avec la participation de tous les artistes.</p></div></div>
+            <div class="event-row"><div class="event-time">Clôture</div><div class="event-main"><h3>Prière pour la paix</h3><p>Bénédiction apostolique et clôture du festival.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="solidarite">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">Plateforme d'assistance</p>
+            <h2>Au cœur battant : les familles des FARDC.</h2>
+          </div>
+          <p>La dimension humanitaire n'est pas un ajout opportuniste, mais une réponse structurée à un besoin réel et urgent. Des milliers de familles de militaires vivent dans la précarité et l'oubli.</p>
+        </div>
+
+        <p class="eyebrow reveal">Diagnostic des besoins</p>
+        <div class="needs-grid reveal">
+          <div class="need-card">
+            <span class="need-ico"><span class="material-symbols-rounded" aria-hidden="true">grocery</span></span>
+            <h3>Matériels</h3>
+            <p>Nourriture, vêtements, soins médicaux, frais de scolarité pour les enfants.</p>
+          </div>
+          <div class="need-card">
+            <span class="need-ico"><span class="material-symbols-rounded" aria-hidden="true">psychology</span></span>
+            <h3>Psychologiques</h3>
+            <p>Anxiété, dépression, traumatisme lié à l'absence prolongée et au risque permanent.</p>
+          </div>
+          <div class="need-card">
+            <span class="need-ico"><span class="material-symbols-rounded" aria-hidden="true">groups</span></span>
+            <h3>Sociaux</h3>
+            <p>Isolement, stigmatisation et difficultés d'intégration dans les communautés civiles.</p>
+          </div>
+          <div class="need-card">
+            <span class="need-ico"><span class="material-symbols-rounded" aria-hidden="true">volunteer_activism</span></span>
+            <h3>Spirituels</h3>
+            <p>Besoin de réconfort, d'espérance et de soutien moral dans la foi.</p>
+          </div>
+        </div>
+
+        <p class="eyebrow reveal" style="margin-top:44px">Trois mécanismes d'assistance</p>
+        <div class="mech-grid reveal">
+          <div class="mech-card">
+            <div class="mech-num">01</div>
+            <h3>Collecte de dons matériels</h3>
+            <p>Des bacs de collecte accueillent vivres, vêtements, produits d'hygiène et fournitures scolaires. Les dons sont inventoriés, triés et distribués aux familles les plus vulnérables.</p>
+          </div>
+          <div class="mech-card">
+            <div class="mech-num">02</div>
+            <h3>Collecte de fonds financiers</h3>
+            <p>Un compte bancaire dédié et des canaux mobile money financent bourses scolaires, soins médicaux et kits d'urgence. Une commission de transparence assure la traçabilité des fonds.</p>
+          </div>
+          <div class="mech-card">
+            <div class="mech-num">03</div>
+            <h3>Accompagnement psycho-spirituel</h3>
+            <p>Au-delà du matériel, un espace d'écoute, de conseil et de prière. Des pasteurs, encadreurs et psychologues sont mobilisés pour un soutien holistique.</p>
+          </div>
+        </div>
+
+        <p class="eyebrow reveal" style="margin-top:44px">Partenariats stratégiques</p>
+        <div class="partners-row reveal">
+          <span class="partner-chip"><span class="material-symbols-rounded" aria-hidden="true">shield</span>Ministère de la Défense Nationale</span>
+          <span class="partner-chip"><span class="material-symbols-rounded" aria-hidden="true">health_and_safety</span>ONG humanitaires (Croix-Rouge, Caritas)</span>
+          <span class="partner-chip"><span class="material-symbols-rounded" aria-hidden="true">business_center</span>Entreprises partenaires</span>
+          <span class="partner-chip"><span class="material-symbols-rounded" aria-hidden="true">campaign</span>Médias &amp; sensibilisation</span>
+        </div>
+
+        <div class="donate-block reveal" id="faire-un-don">
+          <div class="donate-intro">
+            <div>
+              <p class="eyebrow">Faire un don</p>
+              <h3>Soutenez concrètement les familles des FARDC.</h3>
             </div>
-            <span class="tag">Solidarité</span>
-          </article>
-          <article class="event-row">
-            <div class="event-time">29 août</div>
-            <div class="event-main">
-              <h3>Jeunes talents + jeux concours</h3>
-              <p>Une journée plus participative pour mettre en lumière la relève, créer l'engagement et préparer l'atmosphère du concert.</p>
+            <p>Chaque contribution — financière ou matérielle — est inventoriée, tracée et distribuée par la commission de transparence. Indiquez votre mode de versement préféré et recevez les instructions de confirmation.</p>
+          </div>
+
+          <div class="donate-layout">
+            <div class="donate-panel">
+              <h4>Votre engagement</h4>
+              <p>Don financier ou matériel — remplissez le formulaire pour recevoir un accusé de réception et les coordonnées de versement.</p>
+
+              <form id="donForm" novalidate>
+                <div class="don-type-tabs" role="tablist" aria-label="Type de don">
+                  <button type="button" class="is-active" data-don-type="financier" role="tab" aria-selected="true">Don financier</button>
+                  <button type="button" data-don-type="materiel" role="tab" aria-selected="false">Don matériel</button>
+                </div>
+
+                <div class="don-financial-panel" id="donFinancialPanel">
+                  <div class="don-amounts" id="donAmounts" aria-label="Montants suggérés">
+                    <button type="button" data-amount="10">10 $</button>
+                    <button type="button" data-amount="25">25 $</button>
+                    <button type="button" data-amount="50" class="is-active">50 $</button>
+                    <button type="button" data-amount="100">100 $</button>
+                    <button type="button" data-amount="250">250 $</button>
+                  </div>
+                  <div class="don-field">
+                    <label for="donAmount">Montant (USD)</label>
+                    <input id="donAmount" name="amount" type="number" min="1" step="1" value="50" required>
+                  </div>
+                </div>
+
+                <div class="don-material-panel" id="donMaterialPanel" hidden>
+                  <div class="don-field">
+                    <label for="donMaterialType">Nature du don matériel</label>
+                    <select id="donMaterialType" name="materialType">
+                      <option value="vivres">Vivres non périssables</option>
+                      <option value="vetements">Vêtements (adultes &amp; enfants)</option>
+                      <option value="hygiene">Produits d'hygiène</option>
+                      <option value="scolaire">Fournitures scolaires</option>
+                      <option value="medical">Kits médicaux essentiels</option>
+                      <option value="autre">Autre (préciser ci-dessous)</option>
+                    </select>
+                  </div>
+                  <div class="don-field">
+                    <label for="donMaterialQty">Quantité estimée</label>
+                    <input id="donMaterialQty" name="materialQty" type="text" placeholder="Ex. 5 cartons, 20 sacs, 3 cartons scolaires…">
+                  </div>
+                </div>
+
+                <div class="don-field-row">
+                  <div class="don-field">
+                    <label for="donFirstName">Prénom *</label>
+                    <input id="donFirstName" name="firstName" required autocomplete="given-name">
+                  </div>
+                  <div class="don-field">
+                    <label for="donLastName">Nom *</label>
+                    <input id="donLastName" name="lastName" required autocomplete="family-name">
+                  </div>
+                </div>
+                <div class="don-field-row">
+                  <div class="don-field">
+                    <label for="donEmail">Email *</label>
+                    <input id="donEmail" name="email" type="email" required autocomplete="email" placeholder="votre@email.com">
+                  </div>
+                  <div class="don-field">
+                    <label for="donPhone">Téléphone *</label>
+                    <input id="donPhone" name="phone" type="tel" required autocomplete="tel" placeholder="+243 …">
+                  </div>
+                </div>
+                <div class="don-field">
+                  <label for="donMessage">Message (optionnel)</label>
+                  <textarea id="donMessage" name="message" placeholder="Organisation, souhait de dédicace, besoin de reçu fiscal…"></textarea>
+                </div>
+
+                <div class="don-field">
+                  <label>Mode de versement *</label>
+                  <div class="don-pay-list" id="donPayList">
+                    <button type="button" class="don-pay-item is-active" data-pay="mobile">
+                      <span class="ico"><span class="material-symbols-rounded" aria-hidden="true">phone_android</span></span>
+                      <span><strong>Mobile Money</strong><span>M-Pesa · Orange Money · Airtel Money</span></span>
+                      <span class="radio" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="don-pay-item" data-pay="virement">
+                      <span class="ico"><span class="material-symbols-rounded" aria-hidden="true">account_balance</span></span>
+                      <span><strong>Virement bancaire</strong><span>Compte dédié Plateforme FARDC</span></span>
+                      <span class="radio" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="don-pay-item" data-pay="diaspora">
+                      <span class="ico"><span class="material-symbols-rounded" aria-hidden="true">public</span></span>
+                      <span><strong>Diaspora</strong><span>PayPal · Carte bancaire · Western Union</span></span>
+                      <span class="radio" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="don-pay-item" data-pay="surplace">
+                      <span class="ico"><span class="material-symbols-rounded" aria-hidden="true">location_on</span></span>
+                      <span><strong>Sur place</strong><span>Guichets &amp; bacs de collecte sur site</span></span>
+                      <span class="radio" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="don-pay-item" data-pay="materiel">
+                      <span class="ico"><span class="material-symbols-rounded" aria-hidden="true">inventory_2</span></span>
+                      <span><strong>Dépôt matériel</strong><span>Points de collecte physiques</span></span>
+                      <span class="radio" aria-hidden="true"></span>
+                    </button>
+                  </div>
+                </div>
+
+                <button class="button" type="submit" style="width:100%;justify-content:center">
+                  <span class="material-symbols-rounded" aria-hidden="true">volunteer_activism</span>
+                  Confirmer mon don
+                </button>
+                <p class="don-form-note" id="donFormNote" aria-live="polite"></p>
+              </form>
             </div>
-            <span class="tag">Talents</span>
-          </article>
-          <article class="event-row">
-            <div class="event-time">30 août</div>
-            <div class="event-main">
-              <h3>Concert Acclamons Jésus</h3>
-              <p>Grand rassemblement gospel avec Michel Bakenda, les invités, la louange live et une finale centrée sur l'adoration.</p>
+
+            <div class="donate-panel" aria-live="polite">
+              <h4>Instructions de versement</h4>
+              <p>Sélectionnez un mode ci-contre pour afficher les coordonnées correspondantes. Conservez la référence <strong>DON-FARDC-[votre nom]</strong> dans le libellé de paiement.</p>
+
+              <div class="don-detail is-visible" data-detail="mobile">
+                <h5>Mobile Money — RDC</h5>
+                <ul>
+                  <li><span class="material-symbols-rounded" aria-hidden="true">payments</span><span><strong>M-Pesa (Vodacom)</strong> — +243 81 000 00 00 · Nom : Fondation Michel Bakenda</span></li>
+                  <li><span class="material-symbols-rounded" aria-hidden="true">payments</span><span><strong>Orange Money</strong> — +243 89 000 00 00 · Nom : Plateforme Solidarité FARDC</span></li>
+                  <li><span class="material-symbols-rounded" aria-hidden="true">payments</span><span><strong>Airtel Money</strong> — +243 99 000 00 00 · Nom : Acclamons Jésus Paix</span></li>
+                  <li><span class="material-symbols-rounded" aria-hidden="true">info</span><span>Envoyez une capture d'écran de la transaction à <strong>don@acclamonsjesus.org</strong> avec votre nom complet.</span></li>
+                </ul>
+              </div>
+
+              <div class="don-detail" data-detail="virement">
+                <h5>Virement bancaire</h5>
+                <ul>
+                  <li><span class="material-symbols-rounded" aria-hidden="true">account_balance</span><span><strong>Banque</strong> — Rawbank RDC</span></li>
+                  <li><span class="material-symbols-rounded" aria-hidden="true">badge</span><span><strong>Titulaire</strong> — Fondation Michel Bakenda · Plateforme Solidarité FARDC</span></li>
+                  <li><span class="material-symbols-rounded" aria-hidden="true">tag</span><span><strong>Compte USD</strong> — 05100-0000000000-00</span></li>
+                  <li><span class="material-symbols-rounded" aria-hidden="true">tag</span><span><strong>Compte CDF</strong> — 05100-0000000001-00</span></li>
+                  <li><span class="material-symbols-rounded" aria-hidden="true">description</span><span><strong>Motif</strong> — DON-FARDC-[votre nom] · Acclamons Jésus 2026</span></li>
+                </ul>
+              </div>
+
+              <div class="don-detail" data-detail="diaspora">
+                <h5>Diaspora &amp; international</h5>
+                <ul>
+                  <li><span class="material-symbols-rounded" aria-hidden="true">language</span><span><strong>PayPal</strong> — donate@acclamonsjesus.org</span></li>
+                  <li><span class="material-symbols-rounded" aria-hidden="true">credit_card</span><span><strong>Carte bancaire</strong> — lien sécurisé envoyé par email après validation du formulaire</span></li>
+                  <li><span class="material-symbols-rounded" aria-hidden="true">sync_alt</span><span><strong>Western Union / MoneyGram</strong> — Bénéficiaire : Fondation Michel Bakenda, Kinshasa, RDC</span></li>
+                  <li><span class="material-symbols-rounded" aria-hidden="true">euro</span><span><strong>Virement SEPA / SWIFT</strong> — IBAN communiqué sur demande à don@acclamonsjesus.org</span></li>
+                </ul>
+              </div>
+
+              <div class="don-detail" data-detail="surplace">
+                <h5>Versement sur place</h5>
+                <ul>
+                  <li><span class="material-symbols-rounded" aria-hidden="true">event</span><span><strong>28 – 30 août 2026</strong> — Guichet solidarité au Centre Culturel Grand Tambour</span></li>
+                  <li><span class="material-symbols-rounded" aria-hidden="true">schedule</span><span><strong>Horaires</strong> — 09h00 – 18h00 (J1 à J3)</span></li>
+                  <li><span class="material-symbols-rounded" aria-hidden="true">payments</span><span><strong>Modes acceptés</strong> — Espèces (USD/CDF), Mobile Money, chèque certifié</span></li>
+                  <li><span class="material-symbols-rounded" aria-hidden="true">receipt_long</span><span>Un reçu nominatif vous sera remis sur place par la commission de transparence.</span></li>
+                </ul>
+              </div>
+
+              <div class="don-detail" data-detail="materiel">
+                <h5>Dépôt de dons matériels</h5>
+                <ul>
+                  <li><span class="material-symbols-rounded" aria-hidden="true">location_on</span><span><strong>Centre Culturel Grand Tambour</strong> — Lingwala, Kinshasa · 28 – 30 août 2026</span></li>
+                  <li><span class="material-symbols-rounded" aria-hidden="true">military_tech</span><span><strong>Camps militaires Kinshasa</strong> — Collecte J1 (28 août), équipe Autour du Trône</span></li>
+                  <li><span class="material-symbols-rounded" aria-hidden="true">church</span><span><strong>Église Cité Béthel</strong> — Dépôt sur rendez-vous · +243 81 000 00 00</span></li>
+                  <li><span class="material-symbols-rounded" aria-hidden="true">inventory</span><span>Vivres, vêtements, hygiène, fournitures scolaires — inventoriés et triés avant distribution.</span></li>
+                </ul>
+              </div>
+
+              <div class="don-note">
+                <span class="material-symbols-rounded" aria-hidden="true">verified_user</span>
+                <span>100 % des fonds sont affectés aux familles des FARDC. Un rapport d'impact post-événement est transmis à chaque donateur identifié. Vous pouvez aussi ajouter un don lors de votre <a href="commande.html" style="color:var(--gold-soft);font-weight:800">réservation billet</a>.</span>
+              </div>
             </div>
-            <span class="tag">Concert</span>
-          </article>
+          </div>
+
+          <div class="don-channels reveal">
+            <article class="don-channel">
+              <div class="channel-ico"><span class="material-symbols-rounded" aria-hidden="true">phone_android</span></div>
+              <h5>Mobile Money</h5>
+              <p>Paiement instantané depuis Kinshasa et toute la RDC.</p>
+              <ul>
+                <li><strong>M-Pesa</strong> · +243 81 000 00 00</li>
+                <li><strong>Orange</strong> · +243 89 000 00 00</li>
+                <li><strong>Airtel</strong> · +243 99 000 00 00</li>
+              </ul>
+            </article>
+            <article class="don-channel">
+              <div class="channel-ico"><span class="material-symbols-rounded" aria-hidden="true">account_balance</span></div>
+              <h5>Virement bancaire</h5>
+              <p>Compte dédié Rawbank — traçabilité garantie.</p>
+              <ul>
+                <li><strong>USD</strong> · 05100-0000000000-00</li>
+                <li><strong>CDF</strong> · 05100-0000000001-00</li>
+                <li><strong>Titulaire</strong> · Fondation Michel Bakenda</li>
+              </ul>
+            </article>
+            <article class="don-channel">
+              <div class="channel-ico"><span class="material-symbols-rounded" aria-hidden="true">public</span></div>
+              <h5>Diaspora</h5>
+              <p>Depuis l'étranger, plusieurs canaux sécurisés.</p>
+              <ul>
+                <li><strong>PayPal</strong> · donate@acclamonsjesus.org</li>
+                <li><strong>Western Union</strong> · Kinshasa, RDC</li>
+                <li><strong>Carte / SWIFT</strong> · sur demande</li>
+              </ul>
+            </article>
+            <article class="don-channel">
+              <div class="channel-ico"><span class="material-symbols-rounded" aria-hidden="true">inventory_2</span></div>
+              <h5>Dons matériels</h5>
+              <p>Vivres, vêtements, hygiène, fournitures scolaires.</p>
+              <ul>
+                <li><strong>Grand Tambour</strong> · 28 – 30 août</li>
+                <li><strong>Camps militaires</strong> · J1</li>
+                <li><strong>Cité Béthel</strong> · sur RDV</li>
+              </ul>
+            </article>
+            <article class="don-channel">
+              <div class="channel-ico"><span class="material-symbols-rounded" aria-hidden="true">confirmation_number</span></div>
+              <h5>Via billetterie</h5>
+              <p>Ajoutez un don solidarité lors de votre réservation.</p>
+              <ul>
+                <li><strong>Montants</strong> · 10 $ à 100 $ ou libre</li>
+                <li><strong>Page</strong> · <a href="commande.html" style="color:var(--gold-soft);font-weight:800">commande.html</a></li>
+              </ul>
+            </article>
+            <article class="don-channel">
+              <div class="channel-ico"><span class="material-symbols-rounded" aria-hidden="true">volunteer_activism</span></div>
+              <h5>Sur place</h5>
+              <p>Guichet solidarité ouvert les 3 jours du festival.</p>
+              <ul>
+                <li><strong>Lieu</strong> · Centre Culturel Grand Tambour</li>
+                <li><strong>Horaires</strong> · 09h – 18h</li>
+                <li><strong>Reçu</strong> · remis immédiatement</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="verse" aria-label="Verset">
+      <div class="container">
+        <blockquote>
+          « N'oubliez pas l'hospitalité, car en l'exerçant quelques-uns ont logé des anges sans le savoir. »
+          <cite>Hébreux 13 : 2</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="section dark" aria-label="Chiffres clés">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">Chiffres clés &amp; portée</p>
+            <h2>Un événement à la dimension médiatique exceptionnelle.</h2>
+          </div>
+          <p>Le Centre Culturel Grand Tambour, en face du Palais du Peuple, accueille plusieurs milliers de spectateurs par jour, avec une diffusion en direct sur Facebook, YouTube et le site dédié.</p>
+        </div>
+        <div class="stats-grid reveal">
+          <div class="stat"><strong>+10 000</strong><span>Personnes attendues sur les 3 jours</span></div>
+          <div class="stat"><strong>3</strong><span>Jours d'adoration, de solidarité et de célébration</span></div>
+          <div class="stat"><strong>5<sup>e</sup></strong><span>Édition d'Acclamons Jésus</span></div>
+          <div class="stat"><strong>+ 6</strong><span>Artistes de renom national et international</span></div>
         </div>
       </div>
     </section>
@@ -1732,38 +3320,38 @@
     <section class="section dark" id="acces">
       <div class="access-grid container">
         <div class="access-copy reveal">
-          <p class="eyebrow">Accès et réservations</p>
+          <p class="eyebrow">Accès &amp; réservations</p>
           <h2>Préparer les accès pour les 3 jours.</h2>
-          <p>Les catégories restent prêtes sans inventer les prix. Les réservations peuvent couvrir le concert du 30 août, les accès privilégiés et les soutiens liés aux actions caritatives.</p>
+          <p>Réservez pour le grand concert du 30 août, les accès privilégiés ou associez-vous aux actions de solidarité. Les modalités précises sont confirmées par la production à l'ouverture officielle.</p>
           <div class="hero-actions">
-            <a class="button" href="#contact">
+            <a class="button" href="commande.html">
               <span class="material-symbols-rounded" aria-hidden="true">mail</span>
               Réserver
             </a>
           </div>
         </div>
         <div class="passes reveal" aria-label="Types d'accès">
-          <button class="pass-card is-selected" type="button">
+          <a class="pass-card is-selected" href="commande.html?type=standard">
             <div>
               <h3>Accès Standard</h3>
-              <p>Entrée pour le concert Acclamons Jésus du 30 août, avec placement selon l'organisation de la salle.</p>
+              <p>Entrée pour le show de célébration du 30 août, placement selon l'organisation de la salle.</p>
             </div>
-            <strong class="pass-note">À venir</strong>
-          </button>
-          <button class="pass-card" type="button">
+            <strong class="pass-note">Réserver</strong>
+          </a>
+          <a class="pass-card" href="commande.html?type=vip">
             <div>
               <h3>Accès VIP</h3>
-              <p>Zone dédiée, entrée prioritaire et avantages à confirmer par la production pour le grand concert.</p>
+              <p>Zone dédiée, entrée prioritaire et avantages confirmés par la production pour le grand concert.</p>
             </div>
-            <strong class="pass-note">À venir</strong>
-          </button>
-          <button class="pass-card" type="button">
+            <strong class="pass-note">Réserver</strong>
+          </a>
+          <a class="pass-card" href="commande.html?type=presse">
             <div>
-              <h3>Partenaires</h3>
+              <h3>Partenaires &amp; Presse</h3>
               <p>Accès prévu pour sponsors, presse, invités et équipes associées aux activités du 28 au 30 août.</p>
             </div>
             <strong class="pass-note">Contact</strong>
-          </button>
+          </a>
         </div>
       </div>
     </section>
@@ -1773,9 +3361,9 @@
         <div class="section-heading reveal">
           <div>
             <p class="eyebrow">Médias</p>
-            <h2>Vidéo d'accueil et visuels artiste.</h2>
+            <h2>Un avant-goût de l'atmosphère.</h2>
           </div>
-          <p>La vidéo d'accueil, le portrait et la photo live donnent au public une première sensation de l'atmosphère avant le grand concert du 30 août.</p>
+          <p>La vidéo d'accueil, les portraits et les visuels live donnent une première sensation de l'intensité qui attend le public au Centre Culturel Grand Tambour.</p>
         </div>
         <div class="media-grid reveal">
           <div class="media-tile large">
@@ -1793,8 +3381,8 @@
             <div class="media-caption"><span>Live</span><span class="material-symbols-rounded" aria-hidden="true">mic_external_on</span></div>
           </div>
           <div class="media-tile wide">
-            <img src="assets/video-poster.jpg" alt="Image de scène extraite de la vidéo d'accueil">
-            <div class="media-caption"><span>Ambiance</span><span class="material-symbols-rounded" aria-hidden="true">stage</span></div>
+            <img src="assets/choir-stage.png" alt="Chorale gospel en pleine adoration">
+            <div class="media-caption"><span>Adoration</span><span class="material-symbols-rounded" aria-hidden="true">stage</span></div>
           </div>
         </div>
       </div>
@@ -1803,17 +3391,21 @@
     <section class="final-cta" id="contact">
       <div class="cta-inner container">
         <div class="reveal">
-          <p class="eyebrow">Contact</p>
-          <h2>Réserver sa place pour Acclamons Jésus.</h2>
-          <p>Laisse une adresse pour être rappelé dès l'ouverture officielle des réservations.</p>
+          <p class="eyebrow">Contact &amp; prochaines étapes</p>
+          <h2>Rejoignez-nous pour la Paix.</h2>
+          <p>Chaque billet acheté, chaque don offert, chaque prière élevée contribue à bâtir un mur de paix contre les vents de guerre. Laissez une adresse pour être rappelé dès l'ouverture officielle des réservations et des partenariats.</p>
+          <div class="cta-contacts">
+            <span><span class="material-symbols-rounded" aria-hidden="true">location_on</span>Centre Culturel Grand Tambour, Lingwala, Kinshasa</span>
+            <span><span class="material-symbols-rounded" aria-hidden="true">groups_2</span>Fondation Michel Bakenda</span>
+          </div>
         </div>
         <div class="reveal">
           <form class="signup" id="signupForm">
             <label class="sr-only" for="email">Adresse email</label>
-            <input id="email" name="email" type="email" placeholder="tonemail@example.com" required>
+            <input id="email" name="email" type="email" placeholder="votreemail@example.com" required>
             <button class="button" type="submit">
               <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span>
-              Réserver
+              Rejoindre
             </button>
           </form>
           <p class="form-note" id="formNote" aria-live="polite"></p>
@@ -1823,15 +3415,29 @@
   </main>
 
   <footer class="site-footer">
-    <div class="footer-grid container">
-      <div>
-        <strong>Acclamons Jésus</strong>
-        <span> · 3 jours d'activités gospel avec Michel Bakenda et invités</span>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <strong>Acclamons Jésus pour la Paix</strong>
+          <p>5<sup>e</sup> édition · 28 – 30 août 2026 · Centre Culturel Grand Tambour, Kinshasa. Un projet de la Fondation Michel Bakenda et de la structure « Autour du Trône ».</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explorer</h4>
+          <a href="#concept">Le concept</a>
+          <a href="#paix">Thématique 2026</a>
+          <a href="#artistes">Artistes &amp; invités</a>
+          <a href="#programme">Programme</a>
+        </div>
+        <div class="footer-col">
+          <h4>Participer</h4>
+          <a href="#faire-un-don">Faire un don</a>
+          <a href="commande.html">Accès &amp; billetterie</a>
+          <a href="#contact">Contact</a>
+        </div>
       </div>
-      <div class="footer-links">
-        <a href="#programme">Programme</a>
-        <a href="#artistes">Invités</a>
-        <a href="#contact">Contact</a>
+      <div class="footer-bottom">
+        <span>© 2026 Acclamons Jésus. Tous droits réservés.</span>
+        <span>« Acclamons Jésus pour la Paix. » — 2 Chroniques 7 : 14</span>
       </div>
     </div>
   </footer>
@@ -1840,12 +3446,62 @@
     const header = document.getElementById("siteHeader");
     const menuButton = document.getElementById("menuButton");
     const navLinks = document.getElementById("navLinks");
-    const passCards = Array.from(document.querySelectorAll(".pass-card"));
     const revealItems = Array.from(document.querySelectorAll(".reveal"));
-    const guestSlides = Array.from(document.querySelectorAll(".guest-slide"));
-    const guestTriggers = Array.from(document.querySelectorAll(".guest-trigger"));
-    const guestProgress = document.getElementById("guestProgress");
-    const countdownTarget = new Date("2026-08-28T09:00:00+01:00").getTime();
+    const dayTabs = Array.from(document.querySelectorAll(".day-tab"));
+    const dayPanels = Array.from(document.querySelectorAll(".day-panel"));
+    const hero = document.getElementById("hero");
+    const heroSlides = Array.from(hero.querySelectorAll(".hero-slide"));
+    const heroProgressButtons = Array.from(document.querySelectorAll("[data-hero-go]"));
+    const heroDurations = [1800, 4200, 4200, 5600];
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let heroIndex = 0;
+    let heroTimer;
+
+    function showHeroSlide(index) {
+      heroIndex = ((index % heroSlides.length) + heroSlides.length) % heroSlides.length;
+      heroSlides.forEach((slide, i) => {
+        slide.classList.toggle("is-live", i === heroIndex);
+      });
+      heroProgressButtons.forEach((button) => {
+        button.classList.toggle("is-active", Number(button.dataset.heroGo) === heroIndex);
+      });
+    }
+
+    function scheduleHeroSlide() {
+      window.clearTimeout(heroTimer);
+      heroTimer = window.setTimeout(() => {
+        showHeroSlide(heroIndex + 1);
+        scheduleHeroSlide();
+      }, heroDurations[heroIndex]);
+    }
+
+    function startHeroSequence() {
+      if (prefersReducedMotion) {
+        showHeroSlide(3);
+        return;
+      }
+      showHeroSlide(0);
+      scheduleHeroSlide();
+    }
+
+    heroProgressButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        showHeroSlide(Number(button.dataset.heroGo));
+        scheduleHeroSlide();
+      });
+    });
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        window.clearTimeout(heroTimer);
+      } else if (!prefersReducedMotion) {
+        scheduleHeroSlide();
+      }
+    });
+
+    startHeroSequence();
+
+    const countdownTarget = new Date("2026-08-28T08:00:00+01:00").getTime();
     const initialAnchor = window.location.hash ? document.getElementById(decodeURIComponent(window.location.hash.slice(1))) : null;
 
     if (initialAnchor) {
@@ -1885,10 +3541,17 @@
     window.addEventListener("scroll", updateHeader, { passive: true });
     updateHeader();
 
-    passCards.forEach((card) => {
-      card.addEventListener("click", () => {
-        passCards.forEach((item) => item.classList.remove("is-selected"));
-        card.classList.add("is-selected");
+    dayTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const day = tab.dataset.day;
+        dayTabs.forEach((item) => {
+          const active = item === tab;
+          item.classList.toggle("is-active", active);
+          item.setAttribute("aria-selected", String(active));
+        });
+        dayPanels.forEach((panel) => {
+          panel.classList.toggle("is-active", panel.dataset.dayPanel === day);
+        });
       });
     });
 
@@ -1915,41 +3578,6 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
 
-    let activeGuest = 0;
-    let guestTimer;
-
-    function showGuest(index) {
-      if (!guestSlides.length) return;
-      activeGuest = (index + guestSlides.length) % guestSlides.length;
-
-      guestSlides.forEach((slide, slideIndex) => {
-        slide.classList.toggle("is-active", slideIndex === activeGuest);
-      });
-
-      guestTriggers.forEach((trigger, triggerIndex) => {
-        trigger.classList.toggle("is-active", triggerIndex === activeGuest);
-      });
-
-      if (guestProgress) {
-        guestProgress.style.transform = `translateX(${activeGuest * 100}%)`;
-      }
-    }
-
-    function startGuestTimer() {
-      window.clearInterval(guestTimer);
-      guestTimer = window.setInterval(() => showGuest(activeGuest + 1), 4200);
-    }
-
-    guestTriggers.forEach((trigger) => {
-      trigger.addEventListener("click", () => {
-        showGuest(Number(trigger.dataset.guestIndex || 0));
-        startGuestTimer();
-      });
-    });
-
-    showGuest(0);
-    startGuestTimer();
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -1969,8 +3597,257 @@
     document.getElementById("signupForm").addEventListener("submit", (event) => {
       event.preventDefault();
       event.currentTarget.reset();
-      document.getElementById("formNote").textContent = "Merci, ta demande de réservation est bien notée.";
+      document.getElementById("formNote").textContent = "Merci, votre demande est bien enregistrée. Nous vous recontacterons.";
     });
+
+    const donForm = document.getElementById("donForm");
+    if (donForm) {
+      const donTypeTabs = Array.from(donForm.querySelectorAll("[data-don-type]"));
+      const donAmountBtns = Array.from(document.querySelectorAll("#donAmounts button"));
+      const donAmountInput = document.getElementById("donAmount");
+      const donPayItems = Array.from(document.querySelectorAll("#donPayList .don-pay-item"));
+      const donDetails = Array.from(document.querySelectorAll(".don-detail"));
+      const donFinancialPanel = document.getElementById("donFinancialPanel");
+      const donMaterialPanel = document.getElementById("donMaterialPanel");
+      const donFormNote = document.getElementById("donFormNote");
+      let selectedPay = "mobile";
+
+      function showDonDetail(pay) {
+        selectedPay = pay;
+        donPayItems.forEach((item) => item.classList.toggle("is-active", item.dataset.pay === pay));
+        donDetails.forEach((detail) => detail.classList.toggle("is-visible", detail.dataset.detail === pay));
+      }
+
+      function setDonType(isMaterial) {
+        donTypeTabs.forEach((t) => {
+          const active = (t.dataset.donType === "materiel") === isMaterial;
+          t.classList.toggle("is-active", active);
+          t.setAttribute("aria-selected", active ? "true" : "false");
+        });
+        donFinancialPanel.classList.toggle("is-hidden", isMaterial);
+        donFinancialPanel.hidden = isMaterial;
+        donMaterialPanel.classList.toggle("is-visible", isMaterial);
+        donMaterialPanel.hidden = !isMaterial;
+        donAmountInput.required = !isMaterial;
+        if (isMaterial) showDonDetail("materiel");
+        else showDonDetail(selectedPay === "materiel" ? "mobile" : selectedPay);
+      }
+
+      donTypeTabs.forEach((tab) => {
+        tab.addEventListener("click", () => setDonType(tab.dataset.donType === "materiel"));
+      });
+
+      donAmountBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          donAmountBtns.forEach((b) => b.classList.remove("is-active"));
+          btn.classList.add("is-active");
+          donAmountInput.value = btn.dataset.amount;
+        });
+      });
+
+      donAmountInput.addEventListener("input", () => {
+        const val = Number(donAmountInput.value);
+        donAmountBtns.forEach((b) => b.classList.toggle("is-active", Number(b.dataset.amount) === val));
+      });
+
+      donPayItems.forEach((item) => {
+        item.addEventListener("click", () => showDonDetail(item.dataset.pay));
+      });
+
+      donForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!donForm.reportValidity()) return;
+        const isMaterial = donTypeTabs.find((t) => t.classList.contains("is-active"))?.dataset.donType === "materiel";
+        const amount = isMaterial ? "Don matériel" : donAmountInput.value + " $";
+        const payLabel = donPayItems.find((i) => i.classList.contains("is-active"))?.querySelector("strong")?.textContent || "";
+        donFormNote.textContent = "Merci pour votre générosité ! Un accusé avec les instructions " + payLabel + " (" + amount + ") sera envoyé à votre email.";
+        donForm.reset();
+        donAmountInput.value = "50";
+        donAmountBtns.forEach((b) => b.classList.toggle("is-active", b.dataset.amount === "50"));
+        showDonDetail("mobile");
+      });
+    }
+
+    /* ============================================
+       PREMIUM LAYER — interactions & animations
+       ============================================ */
+
+    // Preloader
+    const preloader = document.getElementById("preloader");
+
+    function hidePreloader() {
+      if (!preloader || preloader.classList.contains("is-done")) return;
+      preloader.classList.add("is-done");
+      document.body.classList.remove("is-loading");
+      window.setTimeout(() => preloader.remove(), 1200);
+    }
+
+    if (prefersReducedMotion) {
+      hidePreloader();
+    } else {
+      window.addEventListener("load", () => window.setTimeout(hidePreloader, 900));
+      window.setTimeout(hidePreloader, 3200);
+    }
+
+    // Barre de progression du scroll
+    const scrollProgress = document.getElementById("scrollProgress");
+    let progressTicking = false;
+
+    function updateScrollProgress() {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      scrollProgress.style.width = max > 0 ? (window.scrollY / max) * 100 + "%" : "0";
+      progressTicking = false;
+    }
+
+    window.addEventListener("scroll", () => {
+      if (!progressTicking) {
+        progressTicking = true;
+        window.requestAnimationFrame(updateScrollProgress);
+      }
+    }, { passive: true });
+    updateScrollProgress();
+
+    // Titres : révélation mot par mot
+    if (!prefersReducedMotion) {
+      const splitTargets = document.querySelectorAll(".section-heading h2, .story-copy h2, .context-copy h2, .access-copy h2, .cta-inner h2");
+      splitTargets.forEach((heading) => {
+        if (heading.querySelector("sup, em, span")) return;
+        const words = heading.textContent.trim().split(/\s+/);
+        heading.innerHTML = words
+          .map((word, i) => `<span class="w"><span class="wi" style="--wi:${i}">${word}</span></span>`)
+          .join(" ");
+        heading.classList.add("split");
+      });
+
+      const splitObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("split-in");
+            splitObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.4 });
+
+      document.querySelectorAll(".split").forEach((el) => splitObserver.observe(el));
+    }
+
+    // Versets : entrée en scène
+    const verseObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          verseObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.35 });
+
+    document.querySelectorAll(".verse blockquote").forEach((el) => verseObserver.observe(el));
+
+    // Stagger automatique des grilles
+    const staggerParents = document.querySelectorAll(".artist-grid, .theme-grid, .needs-grid, .mech-grid, .stats-grid, .partners-row, .don-channels, .timeline, .passes");
+    staggerParents.forEach((parent) => {
+      Array.from(parent.children).forEach((child, i) => {
+        child.classList.add("rc");
+        child.style.setProperty("--i", String(i));
+      });
+    });
+
+    // Compteurs animés
+    function animateCounter(el, prefix, target) {
+      const duration = 1600;
+      const start = performance.now();
+
+      function format(value) {
+        return String(value).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+      }
+
+      function tick(now) {
+        const p = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - p, 4);
+        el.textContent = prefix + format(Math.round(target * eased));
+        if (p < 1) window.requestAnimationFrame(tick);
+      }
+
+      window.requestAnimationFrame(tick);
+    }
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const match = el.textContent.trim().match(/^([+]?\s*)([\d\s]+)$/);
+        if (match) {
+          const target = Number(match[2].replace(/\s/g, ""));
+          if (!prefersReducedMotion && target > 0) {
+            animateCounter(el, match[1], target);
+          }
+        }
+        counterObserver.unobserve(el);
+      });
+    }, { threshold: 0.6 });
+
+    document.querySelectorAll(".stat strong").forEach((el) => {
+      if (!el.querySelector("sup")) counterObserver.observe(el);
+    });
+
+    // Parallaxe images
+    if (!prefersReducedMotion) {
+      const parallaxImgs = Array.from(document.querySelectorAll(".image-feature img, .context-visual img, .live-card img, .portrait-card img"));
+      parallaxImgs.forEach((img) => {
+        img.classList.add("px-img");
+        img.style.scale = "1.15";
+      });
+
+      let pxTicking = false;
+
+      function updateParallax() {
+        const vh = window.innerHeight;
+        parallaxImgs.forEach((img) => {
+          const rect = img.getBoundingClientRect();
+          if (rect.bottom < -100 || rect.top > vh + 100) return;
+          const offset = (rect.top + rect.height / 2 - vh / 2) * -0.07;
+          img.style.transform = `translateY(${offset.toFixed(1)}px)`;
+        });
+        pxTicking = false;
+      }
+
+      window.addEventListener("scroll", () => {
+        if (!pxTicking) {
+          pxTicking = true;
+          window.requestAnimationFrame(updateParallax);
+        }
+      }, { passive: true });
+      updateParallax();
+    }
+
+    // Boutons magnétiques + tilt 3D (desktop uniquement)
+    const finePointer = window.matchMedia("(pointer: fine)").matches;
+
+    if (finePointer && !prefersReducedMotion) {
+      document.querySelectorAll(".button").forEach((btn) => {
+        btn.addEventListener("mousemove", (e) => {
+          const rect = btn.getBoundingClientRect();
+          const x = (e.clientX - rect.left - rect.width / 2) * 0.22;
+          const y = (e.clientY - rect.top - rect.height / 2) * 0.32;
+          btn.style.transform = `translate(${x.toFixed(1)}px, ${(y - 2).toFixed(1)}px)`;
+        });
+        btn.addEventListener("mouseleave", () => {
+          btn.style.transform = "";
+        });
+      });
+
+      document.querySelectorAll(".artist-card, .theme-card").forEach((card) => {
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const rx = ((e.clientY - rect.top) / rect.height - 0.5) * -7;
+          const ry = ((e.clientX - rect.left) / rect.width - 0.5) * 7;
+          card.style.transform = `perspective(900px) rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg) translateY(-4px)`;
+        });
+        card.addEventListener("mouseleave", () => {
+          card.style.transform = "";
+        });
+      });
+    }
   </script>
 </body>
 </html>
