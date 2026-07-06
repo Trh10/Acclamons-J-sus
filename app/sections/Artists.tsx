@@ -41,7 +41,7 @@ const artists = [
   {
     name: 'Michel Bakenda',
     genre: 'Hôte & maître de cérémonie',
-    image: '/images/artist-michel-bakenda.jpg',
+    image: '/images/michel-bakenda-portrait.png',
     bio: 'Figure incontournable du gospel congolais. Le grand concert du Jour 3 rassemble tous les artistes autour de Michel Bakenda pour un moment d\'adoration sans précédent, retransmis en direct.',
   },
 ]
