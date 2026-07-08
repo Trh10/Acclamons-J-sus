@@ -64,7 +64,7 @@ export function Gallery() {
                   style={{ paddingBottom: `${(index % 3 + 2) * 20}%` }}
                 >
                   <div
-                    className="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700"
+                    className="absolute inset-0 bg-cover bg-center transition-all duration-700"
                     style={{ backgroundImage: `url(${asset(image.src)})` }}
                   />
                   <div className="absolute inset-0 bg-deep-black/0 group-hover:bg-deep-black/40 transition-all duration-500" />

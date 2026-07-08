@@ -15,7 +15,7 @@ export function ImageParallax({ src, alt, className = '' }: ImageParallaxProps) 
       <img
         src={asset(src)}
         alt={alt}
-        className="h-full w-full object-cover grayscale"
+        className="h-full w-full object-cover"
         loading="lazy"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-deep-black/20 via-transparent to-deep-black/40" />

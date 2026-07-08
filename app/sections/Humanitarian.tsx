@@ -99,7 +99,7 @@ export function Humanitarian() {
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 1 }}
-                    className="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-700"
+                    className="absolute inset-0 bg-cover bg-center transition-all duration-700"
                     style={{ backgroundImage: `url(${asset(project.image)})` }}
                   />
                 </div>

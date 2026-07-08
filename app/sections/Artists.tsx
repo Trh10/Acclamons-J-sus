@@ -93,7 +93,6 @@ export function Artists() {
                   <motion.div
                     animate={{
                       scale: hoveredIndex === index ? 1.05 : 1,
-                      filter: hoveredIndex === index ? 'grayscale(0%)' : 'grayscale(100%)'
                     }}
                     transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
                     className="absolute inset-0"

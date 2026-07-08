@@ -35,10 +35,7 @@ export function Navigation() {
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
   }
 
-  const useDarkLogo = isScrolled || menuOpen
-  const logoSrc = asset(
-    useDarkLogo ? '/logos/logo-edition5-noir.png' : '/logos/logo-edition5-blanc-dore.png'
-  )
+  const logoSrc = asset('/logos/logo-oficiel.png')
 
   return (
     <header
@@ -49,15 +46,15 @@ export function Navigation() {
         <a
           href="#hero"
           className="legacy-brand"
-          aria-label="Acclamons Jésus pour la Paix"
+          aria-label="Acclamons Jésus Célébration"
           onClick={(e) => { e.preventDefault(); scrollTo('#hero') }}
         >
           <img
             src={logoSrc}
-            alt="Acclamons Jésus — 5e édition"
+            alt="Acclamons Jésus Célébration"
             className="legacy-brand-logo"
-            width={120}
-            height={72}
+            width={1024}
+            height={1536}
           />
         </a>
 

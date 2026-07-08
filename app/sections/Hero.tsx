@@ -11,15 +11,18 @@ function pad(n: number) {
   return String(n).padStart(2, '0')
 }
 
-function slideStyle(active: boolean, padBottom?: boolean): CSSProperties {
+function slideStyle(active: boolean, options?: { padBottom?: boolean; centered?: boolean }): CSSProperties {
+  const { padBottom, centered } = options ?? {}
   return {
     position: 'absolute',
     inset: 0,
     display: 'flex',
-    alignItems: 'flex-end',
+    alignItems: centered ? 'center' : 'flex-end',
     padding: padBottom
       ? '96px 0 clamp(180px, 22vh, 280px)'
-      : '96px 0 clamp(150px, 17vh, 220px)',
+      : centered
+        ? '96px 0'
+        : '96px 0 clamp(150px, 17vh, 220px)',
     opacity: active ? 1 : 0,
     visibility: active ? 'visible' : 'hidden',
     transform: active ? 'none' : 'translateY(28px)',
@@ -133,7 +136,7 @@ export function Hero() {
 
       <div
         className="legacy-hero-slides"
-        style={{ position: 'relative', width: '100%', minHeight: 'min(820px, calc(100svh - 74px))' }}
+        style={{ position: 'relative', width: '100%', minHeight: 'min(820px, calc(100svh - 88px))' }}
       >
         <div
           className={`legacy-hero-slide${activeSlide === 0 ? ' is-live' : ''}`}
@@ -147,19 +150,25 @@ export function Hero() {
         <div
           className={`legacy-hero-slide${activeSlide === 1 ? ' is-live' : ''}`}
           data-slide="1"
-          style={slideStyle(activeSlide === 1, true)}
+          style={slideStyle(activeSlide === 1, { centered: true })}
           aria-hidden={activeSlide !== 1}
         >
           <div className="legacy-hero-slide-inner">
-            <p className="legacy-hero-kicker">5<sup>e</sup> Édition · Festival Gospel</p>
-            <h1>Acclamons Jésus <em>pour la Paix.</em></h1>
+            <div className="legacy-hero-brand-row">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={asset('/logos/logo-edition5-blanc-dore.png')}
+                alt="Acclamons Jésus — 5e édition"
+                className="legacy-hero-edition-logo"
+              />
+            </div>
           </div>
         </div>
 
         <div
           className={`legacy-hero-slide${activeSlide === 2 ? ' is-live' : ''}`}
           data-slide="2"
-          style={slideStyle(activeSlide === 2, true)}
+          style={slideStyle(activeSlide === 2, { padBottom: true })}
           aria-hidden={activeSlide !== 2}
         >
           <div className="legacy-hero-slide-inner">

@@ -26,9 +26,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           <FadeIn className="lg:col-span-1">
             <img
-              src={asset('/logos/logo-edition5-blanc-dore.png')}
-              alt="Acclamons Jésus — 5e édition"
-              className="h-20 w-auto mb-6"
+              src={asset('/logos/logo-officiel.png')}
+              alt="Acclamons Jésus Celebration"
+              className="h-20 w-auto max-w-[280px] mb-6"
             />
             <p className="text-body-sm text-pure-white/50 leading-relaxed mb-6">
               5<sup>e</sup> édition · 28 – 30 août 2026 · Centre Culturel Grand Tambour, Kinshasa.
