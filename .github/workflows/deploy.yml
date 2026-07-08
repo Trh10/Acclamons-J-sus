@@ -7,6 +7,12 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: gh-pages
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -26,6 +32,9 @@ jobs:
           GITHUB_PAGES: true
           NEXT_PUBLIC_BASE_PATH: /Acclamons-J-sus
 
+      - name: Ensure GitHub Pages compatibility
+        run: touch ./out/.nojekyll
+
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
         with:
@@ -33,3 +42,4 @@ jobs:
           publish_dir: ./out
           publish_branch: gh-pages
           force_orphan: true
+          commit_message: "Deploy ${{ github.sha }}"
