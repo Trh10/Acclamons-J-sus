@@ -9,7 +9,7 @@ import { ChevronRight, Clock, MapPin, Users } from 'lucide-react'
 
 const days = [
   {
-    day: 'Jeudi',
+    day: 'Vendredi',
     date: '28 Août',
     theme: 'Descente humanitaire',
     description: 'Action humanitaire de proximité dans les camps militaires de Kinshasa : invitation des familles des FARDC, collecte de dons et lancement officiel de la plateforme de solidarité.',
@@ -24,7 +24,7 @@ const days = [
     ]
   },
   {
-    day: 'Vendredi',
+    day: 'Samedi',
     date: '29 Août',
     theme: 'Jeunes artistes',
     description: 'Mise en lumière de la relève du gospel congolais : concours de talents chrétiens, louange communautaire et prière pour la paix.',
@@ -39,7 +39,7 @@ const days = [
     ]
   },
   {
-    day: 'Samedi',
+    day: 'Dimanche',
     date: '30 Août',
     theme: 'Show de célébration',
     description: 'L\'apogée de l\'événement : Michel Bakenda et une constellation d\'artistes internationaux pour un grand concert d\'adoration retransmis en direct.',

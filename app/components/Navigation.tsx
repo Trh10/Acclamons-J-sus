@@ -35,7 +35,8 @@ export function Navigation() {
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
   }
 
-  const logoSrc = asset('/logos/logo-oficiel.png')
+  const useColoredLogo = isScrolled || menuOpen
+  const logoSrc = asset(useColoredLogo ? '/logos/logo-oficiel.png' : '/logos/logo-oficiel-blanc.png')
 
   return (
     <header

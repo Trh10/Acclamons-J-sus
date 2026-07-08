@@ -337,7 +337,11 @@ h1, h2, h3, h4, h5, h6 {
   object-fit: contain;
   object-position: left center;
   filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.22));
-  transition: opacity 220ms ease;
+  transition: opacity 220ms ease, filter 220ms ease;
+}
+
+.site-header:not(.is-scrolled):not(.menu-active) .legacy-brand-logo {
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.35));
 }
 
 .legacy-nav-links {
