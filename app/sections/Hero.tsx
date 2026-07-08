@@ -4,7 +4,8 @@ import { useState, useEffect, useRef, useCallback, type CSSProperties } from 're
 import { Calendar, MapPin, Users, Ticket, Church } from 'lucide-react'
 import { asset } from '../lib/site'
 
-const HERO_DURATIONS = [1800, 4200, 4200, 5600]
+const HERO_SLIDE_COUNT = 3
+const HERO_DURATIONS = [4200, 4200, 5600]
 const COUNTDOWN_TARGET = new Date('2026-08-28T08:00:00+01:00').getTime()
 
 function pad(n: number) {
@@ -32,13 +33,13 @@ function slideStyle(active: boolean, options?: { padBottom?: boolean; centered?:
 }
 
 export function Hero() {
-  const [activeSlide, setActiveSlide] = useState(1)
+  const [activeSlide, setActiveSlide] = useState(0)
   const [countdown, setCountdown] = useState({ days: '00', hours: '00', minutes: '00', seconds: '00' })
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const slideRef = useRef(1)
+  const slideRef = useRef(0)
 
   const showSlide = useCallback((index: number) => {
-    const next = ((index % 4) + 4) % 4
+    const next = ((index % HERO_SLIDE_COUNT) + HERO_SLIDE_COUNT) % HERO_SLIDE_COUNT
     slideRef.current = next
     setActiveSlide(next)
   }, [])
@@ -54,10 +55,10 @@ export function Hero() {
   useEffect(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (reduced) {
-      showSlide(3)
+      showSlide(2)
       return
     }
-    showSlide(1)
+    showSlide(0)
     scheduleSlide()
 
     const onVisibility = () => {
@@ -141,17 +142,8 @@ export function Hero() {
         <div
           className={`legacy-hero-slide${activeSlide === 0 ? ' is-live' : ''}`}
           data-slide="0"
-          style={slideStyle(activeSlide === 0)}
+          style={slideStyle(activeSlide === 0, { centered: true })}
           aria-hidden={activeSlide !== 0}
-        >
-          <div className="legacy-hero-slide-inner" />
-        </div>
-
-        <div
-          className={`legacy-hero-slide${activeSlide === 1 ? ' is-live' : ''}`}
-          data-slide="1"
-          style={slideStyle(activeSlide === 1, { centered: true })}
-          aria-hidden={activeSlide !== 1}
         >
           <div className="legacy-hero-slide-inner">
             <div className="legacy-hero-brand-row">
@@ -166,10 +158,10 @@ export function Hero() {
         </div>
 
         <div
-          className={`legacy-hero-slide${activeSlide === 2 ? ' is-live' : ''}`}
-          data-slide="2"
-          style={slideStyle(activeSlide === 2, { padBottom: true })}
-          aria-hidden={activeSlide !== 2}
+          className={`legacy-hero-slide${activeSlide === 1 ? ' is-live' : ''}`}
+          data-slide="1"
+          style={slideStyle(activeSlide === 1, { padBottom: true })}
+          aria-hidden={activeSlide !== 1}
         >
           <div className="legacy-hero-slide-inner">
             <p className="legacy-hero-kicker">Notre mission 2026</p>
@@ -182,10 +174,10 @@ export function Hero() {
         </div>
 
         <div
-          className={`legacy-hero-slide${activeSlide === 3 ? ' is-live' : ''}`}
-          data-slide="3"
-          style={slideStyle(activeSlide === 3)}
-          aria-hidden={activeSlide !== 3}
+          className={`legacy-hero-slide${activeSlide === 2 ? ' is-live' : ''}`}
+          data-slide="2"
+          style={slideStyle(activeSlide === 2)}
+          aria-hidden={activeSlide !== 2}
         >
           <div className="legacy-hero-slide-inner">
             <div>
@@ -237,7 +229,7 @@ export function Hero() {
       </div>
 
       <div className="legacy-hero-progress" aria-label="Progression des slides">
-        {[0, 1, 2, 3].map((i) => (
+        {[0, 1, 2].map((i) => (
           <button
             key={i}
             type="button"
