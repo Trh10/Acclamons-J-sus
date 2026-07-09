@@ -344,6 +344,16 @@ h1, h2, h3, h4, h5, h6 {
   filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.35));
 }
 
+.footer-brand-logo {
+  display: block;
+  width: auto;
+  height: clamp(120px, 16vw, 168px);
+  max-width: none;
+  object-fit: contain;
+  object-position: left center;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.4));
+}
+
 .legacy-nav-links {
   justify-self: center;
   display: flex;
@@ -931,6 +941,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 680px) {
   :root { --legacy-container: min(100vw - 28px, 520px); }
   .legacy-brand-logo { height: 96px; max-width: none; }
+  .footer-brand-logo { height: 104px; }
   .legacy-hero-edition-logo { height: clamp(100px, 28vw, 160px); max-width: min(85vw, 400px); }
   .legacy-hero { min-height: 92svh; }
   .legacy-hero h1 { max-width: 100%; font-size: clamp(2.7rem, 13vw, 4.6rem); }

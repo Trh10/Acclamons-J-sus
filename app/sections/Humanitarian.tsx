@@ -19,7 +19,7 @@ const projects = [
     title: 'Collecte de dons matériels',
     location: 'Kinshasa · FARDC',
     description: 'Des bacs de collecte accueillent vivres, vêtements, produits d\'hygiène et fournitures scolaires. Les dons sont inventoriés, triés et distribués aux familles les plus vulnérables.',
-    image: '/images/humanitarian-volunteers.jpg',
+    image: '/images/humanitarian-volunteers.png',
     raised: 'En cours',
     goal: 'Objectif communautaire'
   },
@@ -27,7 +27,7 @@ const projects = [
     title: 'Collecte de fonds financiers',
     location: 'Mobile Money · Virement',
     description: 'Compte bancaire dédié et canaux M-Pesa, Orange Money, Airtel Money pour financer bourses scolaires, soins médicaux et kits d\'urgence. Commission de transparence pour la traçabilité.',
-    image: '/images/financial-donations.jpg',
+    image: '/images/financial-donations.png',
     raised: 'Plateforme active',
     goal: '100 % aux familles FARDC'
   },
@@ -35,7 +35,7 @@ const projects = [
     title: 'Accompagnement psycho-spirituel',
     location: 'Grand Tambour · Camps',
     description: 'Espace d\'écoute, de conseil et de prière pour les familles en anxiété et en isolement. Pasteurs, encadreurs et psychologues mobilisés pour un soutien holistique.',
-    image: '/images/psycho-spiritual-support.jpg',
+    image: '/images/psycho-spiritual-support.png',
     raised: 'Mobilisation',
     goal: 'Soutien holistique'
   },
