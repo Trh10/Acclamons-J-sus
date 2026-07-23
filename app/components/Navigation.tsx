@@ -5,12 +5,14 @@ import { Ticket, Menu, X } from 'lucide-react'
 import { asset } from '../lib/site'
 
 const navLinks = [
+  { name: 'Spot', href: '#spot' },
   { name: 'Contexte', href: '#about' },
   { name: 'Concept', href: '#manifesto' },
   { name: 'La Paix', href: '#theme' },
   { name: 'Artistes', href: '#artists' },
   { name: 'Programme', href: '#experience' },
   { name: 'Solidarité', href: '#humanitarian' },
+  { name: 'Médias', href: '#gallery' },
   { name: 'Contact', href: '#contact' },
 ]
 

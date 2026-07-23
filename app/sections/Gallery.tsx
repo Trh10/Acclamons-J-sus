@@ -7,14 +7,22 @@ import { FadeIn } from '../components/FadeIn'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const galleryImages = [
-  { src: '/images/gallery-adoration.png', caption: 'Adoration sur scène' },
-  { src: '/images/gallery-live.png', caption: 'Michel Bakenda live' },
-  { src: '/images/gallery-choir.png', caption: 'Chorale gospel' },
-  { src: '/images/gallery-portrait.jpg', caption: 'Portrait Michel Bakenda' },
-  { src: '/images/worship-portrait.png', caption: 'Moment de worship' },
-  { src: '/images/artist-moise-mbiye.jpg', caption: 'Moïse Mbiye' },
-  { src: '/images/artist-natalie-makoma.jpg', caption: 'Nathalie Makoma' },
-  { src: '/images/humanitarian.jpg', caption: 'Célébration gospel' },
+  { src: '/images/editions/edition-2017-poster.png', caption: '1ère édition — Septembre 2017' },
+  { src: '/images/editions/edition-2018-poster.png', caption: '2ème édition — Août 2018' },
+  { src: '/images/editions/edition-2019-poster.png', caption: '3ème édition — Août 2019' },
+  { src: '/images/editions/edition-2019-poster-orange.png', caption: '3ème édition — Affiche Orange' },
+  { src: '/images/editions/arrivee-artistes.png', caption: 'Accueil des artistes invités' },
+  { src: '/images/editions/coulisses-artistes.png', caption: 'Moment de joie en coulisses' },
+  { src: '/images/editions/scene-adoration.png', caption: 'Adoration sur scène' },
+  { src: '/images/editions/scene-duo-chant.png', caption: 'Duo de louange sur scène' },
+  { src: '/images/editions/scene-chorale.png', caption: 'Chorale et artistes sur scène' },
+  { src: '/images/editions/scene-ecran-acclamons.png', caption: 'Acclamons Jésus sur grand écran' },
+  { src: '/images/editions/scene-louange.png', caption: 'Moment de louange intense' },
+  { src: '/images/editions/public-soiree.png', caption: 'Le public en soirée' },
+  { src: '/images/editions/public-applaudissements.png', caption: 'Le public en communion' },
+  { src: '/images/editions/public-orange.png', caption: 'Festival et partenaires Orange' },
+  { src: '/images/editions/public-interieur.png', caption: 'Public recueilli et attentif' },
+  { src: '/images/editions/interview-presse.png', caption: 'Interview et échanges médias' },
 ]
 
 export function Gallery() {
@@ -46,7 +54,7 @@ export function Gallery() {
           </FadeIn>
 
           <h2 className="font-serif text-display-lg text-pure-white">
-            Un avant-goût de l&apos;atmosphère au Grand Tambour.
+            Souvenirs des éditions précédentes.
           </h2>
         </div>
 

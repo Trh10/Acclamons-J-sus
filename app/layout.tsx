@@ -11,7 +11,9 @@ export const metadata: Metadata = {
     title: 'Acclamons Jésus pour la Paix — 5e Édition 2026',
     description: '28-30 août 2026 · Centre Culturel Grand Tambour · Kinshasa',
     type: 'website',
+    url: 'https://acclamonsjesus.com',
   },
+  metadataBase: new URL('https://acclamonsjesus.com'),
 }
 
 export default function RootLayout({

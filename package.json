@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "powershell -NoProfile -Command \"Remove-Item Env:GITHUB_PAGES -ErrorAction SilentlyContinue; Remove-Item Env:NEXT_PUBLIC_BASE_PATH -ErrorAction SilentlyContinue; next dev\"",
     "build": "next build",
+    "deploy:pages": "powershell -ExecutionPolicy Bypass -File scripts/deploy-pages.ps1",
+    "deploy:domain": "powershell -ExecutionPolicy Bypass -File scripts/deploy-domain.ps1",
     "start": "next start",
     "lint": "next lint"
   },
