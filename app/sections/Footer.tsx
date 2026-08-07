@@ -8,7 +8,7 @@ const navItems = [
   { label: 'Le Festival', href: '#about' },
   { label: 'Programme', href: '#experience' },
   { label: 'Artistes', href: '#artists' },
-  { label: 'Billetterie', href: asset('/commande.html') },
+  { label: 'Billetterie', href: '#tickets' },
   { label: 'Solidarité FARDC', href: '#humanitarian' },
   { label: 'Faire un don', href: '#faire-un-don' },
 ]

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import { FadeIn } from '../components/FadeIn'
 import { TextReveal } from '../components/TextReveal'
 import { Heart, Package, Wallet, HandHeart, ArrowRight } from 'lucide-react'
-import { asset } from '../lib/site'
+import { asset, TICKETING_URL } from '../lib/site'
 
 const stats = [
   { icon: Heart, value: '+10 000', label: 'Personnes attendues sur 3 jours', color: 'text-soft-gold' },
@@ -178,7 +178,12 @@ export function Humanitarian() {
           </div>
 
           <div className="text-center">
-            <a href={asset('/commande.html')} className="legacy-btn">
+            <a
+              href={TICKETING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="legacy-btn"
+            >
               Faire un don
             </a>
             <p className="mt-6 text-body-sm text-charcoal/50 max-w-md mx-auto">

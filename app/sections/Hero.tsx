@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback, type CSSProperties } from 'react'
 import { Calendar, MapPin, Users, Ticket, Church } from 'lucide-react'
-import { asset } from '../lib/site'
+import { asset, TICKETING_URL } from '../lib/site'
 
 const HERO_SLIDE_COUNT = 3
 const HERO_DURATIONS = [4200, 4200, 5600]
@@ -197,7 +197,12 @@ export function Hero() {
                 </span>
               </div>
               <div className="legacy-hero-actions">
-                <a href={asset('/commande.html')} className="legacy-btn">
+                <a
+                  href={TICKETING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="legacy-btn"
+                >
                   <Ticket size={18} aria-hidden="true" />
                   Réserver ma place
                 </a>

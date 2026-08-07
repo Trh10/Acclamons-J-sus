@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { asset } from '../lib/site'
+import { asset, TICKETING_URL } from '../lib/site'
 import { FadeIn } from '../components/FadeIn'
 import { TextReveal } from '../components/TextReveal'
 import { ChevronRight, Clock, MapPin, Users } from 'lucide-react'
@@ -170,7 +170,12 @@ export function Experience() {
         </AnimatePresence>
 
         <FadeIn delay={0.5} className="mt-16 text-center">
-          <a href={asset('/commande.html')} className="btn-sacred text-charcoal border-charcoal hover:text-pure-white inline-block">
+          <a
+            href={TICKETING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-sacred text-charcoal border-charcoal hover:text-pure-white inline-block"
+          >
             Réserver pour le grand concert
           </a>
         </FadeIn>

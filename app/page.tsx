@@ -4,6 +4,7 @@ import { Manifesto } from './sections/Manifesto'
 import { About } from './sections/About'
 import { Theme } from './sections/Theme'
 import { Experience } from './sections/Experience'
+import { Tickets } from './sections/Tickets'
 import { Artists } from './sections/Artists'
 import { Humanitarian } from './sections/Humanitarian'
 import { Gallery } from './sections/Gallery'
@@ -19,6 +20,7 @@ export default function Home() {
       <About />
       <Theme />
       <Experience />
+      <Tickets />
       <Artists />
       <Humanitarian />
       <Gallery />

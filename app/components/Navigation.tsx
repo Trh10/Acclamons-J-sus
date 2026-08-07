@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Ticket, Menu, X } from 'lucide-react'
-import { asset } from '../lib/site'
+import { asset, TICKETING_URL } from '../lib/site'
 
 const navLinks = [
   { name: 'Spot', href: '#spot' },
@@ -11,6 +11,7 @@ const navLinks = [
   { name: 'La Paix', href: '#theme' },
   { name: 'Artistes', href: '#artists' },
   { name: 'Programme', href: '#experience' },
+  { name: 'Billetterie', href: '#tickets' },
   { name: 'Solidarité', href: '#humanitarian' },
   { name: 'Médias', href: '#gallery' },
   { name: 'Contact', href: '#contact' },
@@ -74,7 +75,12 @@ export function Navigation() {
         </div>
 
         <div className="legacy-nav-actions">
-          <a href={asset('/commande.html')} className="legacy-btn">
+          <a
+            href={TICKETING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="legacy-btn"
+          >
             <Ticket size={18} aria-hidden="true" />
             Réserver
           </a>
