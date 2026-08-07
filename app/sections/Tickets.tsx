@@ -57,7 +57,7 @@ export function Tickets() {
             <div className="flex flex-wrap items-center justify-center gap-6 text-pure-white/60 mb-10">
               <span className="inline-flex items-center gap-2">
                 <Calendar size={18} className="text-soft-gold" aria-hidden="true" />
-                30 août 2026 · Grand concert
+                30 août 2026 · 15h00 · Grand concert
               </span>
               <span className="inline-flex items-center gap-2">
                 <MapPin size={18} className="text-soft-gold" aria-hidden="true" />
